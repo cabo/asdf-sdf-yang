@@ -1,0 +1,7 @@
+<note title="Discussion Venues" removeInRFC="true">
+<t>Discussion of this document takes place on the
+  A Semantic Definition Format for Data and Interactions of Things Working Group mailing list (asdf@ietf.org),
+  which is archived at <eref target="https://mailarchive.ietf.org/arch/browse/asdf/"/>.</t>
+<t>Source for this draft and an issue tracker can be found at
+  <eref target="https://github.com/cabo/asdf-sdf-yang"/>.</t>
+</note>
