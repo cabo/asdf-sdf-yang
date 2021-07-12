@@ -3,7 +3,7 @@ title: >
   Mapping between YANG and SDF
 abbrev: Mapping between YANG and SDF
 docname: draft-kiesewalter-asdf-yang-sdf-latest
-date: 2021-07-08
+date: 2021-07-12
 
 stand_alone: true
 
@@ -73,7 +73,16 @@ creating translators.
 Introduction        {#intro}
 ============
 
-(See Abstract for now, add references {{-yang}} and {{-sdf}}.)
+YANG {{-yang}} and SDF {{-sdf}} are two languages for modelling the interaction with and
+the data interchanged with devices in the network.
+As their areas of application (network management, IoT, resp.)
+overlap, it is useful to be able to translate between the two.
+
+The present specification provides information about how models in one
+of the two languages can be translated into the other.
+This specification is not intended to be normative, but to help with
+creating translators.
+
 
 
 Pairing SDF and YANG features
@@ -204,7 +213,7 @@ Module                 {#design-module}
 * SDF:
   * {{Section 3.1 (information block) of -sdf}}
   * {{Sections 3.2 and 4 (namespaces section) of -sdf}}
-  
+
 After conversion the SDF model as a whole corresponds to the YANG module. The argument of the `namespace` statement of the YANG module is added to the SDF `namespace section` together with the argument of the YANG module's `prefix` statement which also becomes the `default namespace` in the SDF model. Additionally, the namespaces and prefixes of each of the modules mentioned in the `import` statements are added to the namespace of the SDF model. Libyang loads the imported modules automatically and in the correct revision. These modules are then also converted and stored so their definitions can be referenced via the `sdfRef` common quality when necessary.
 
 The contents of the `organization`, `contact` and `yang-version` statements are stored alongside the actual `description` of the YANG module in a special sdfData definition designated to hold information on the module that does not fit into the SDF information block. This is done in the way described in {{design-roundtrips}} to facilitate round trips in the future. The module's description is scanned for information regarding copyright and licensing which are then transferred to the `copyright` and `license` qualities of the SDF model's information block. The `version` quality of the SDF model's information block is set to the first revision date given in the YANG module's `revision` statement. All other revision dates are ignored as of now.
@@ -217,7 +226,7 @@ Submodule
 ---------
 
 * YANG: {{Section 7.2 (submodule) of -yang}}
-  
+
 A sub-module that is included into its super-module via the `include` statement is integrated into the super-module and converted that way. This is the simplest option due to the way Libyang represents included sub-modules. A sub-module that occurs without its super-module is converted to its own SDF model as described in {{design-module}}.
 
 Container Statement
@@ -238,7 +247,7 @@ Leaf Statement         {#design-leaf}
 * SDF:
   * {{Sections 2.2.2 and 5.2 (sdfProperty) of -sdf}}
   * {{Section 4.7 (data qualities) of -sdf}}
-  
+
 Leaf nodes in YANG represent scalar variables. If a leaf node occurs at the top-level of the module or as a direct child node of a top-level container (which is converted to sdfObject) it is transformed to an sdfProperty. On any other level a leaf becomes a property of the compound-type definition equivalent to the leaf's parent node. In both cases the SDF `type` data quality is set to one of the simple data types because leaf nodes can only be of simple data types. Leaf nodes can be assigned default values which are used in case the leaf node does not exist in an instance of the YANG module. A leaf's default value is converted to SDF as the data quality `default`. The `units` sub-statement of a leaf node in YANG becomes the SDF data quality `unit`. This quality is is constrained to the SenML unit names. Although it could cause conformance issues, the content of the YANG units statement is not processed to fit the SenML unit names as of now. This is due to the low probability that a unit from a YANG module is not listed in the SenML unit names in comparison to the time required to implement a mechanism to check conformance and convert non-conforming units. This feature might be added in later versions of the converter, though. YANG leaf nodes can be marked as mandatory to occur in an instance of the module by the `mandatory` statement. The statement takes `true` and `false` as arguments. This can easily be mapped to SDF through the sdfRequired common quality. A reference to the SDF definition equivalent to the YANG leaf node marked as mandatory is added to the containing sdfObject's sdfRequired quality. If the sdfRequired quality does not already exist in the sdfObject it is added now.
 
 Leaf-List Statement    {#sec-map-leaflist}
@@ -248,7 +257,7 @@ Leaf-List Statement    {#sec-map-leaflist}
 * SDF:
   * {{Sections 2.2.2 and 5.2 (sdfProperty) of -sdf}}
   * {{Section 4.7 (data qualities) of -sdf}}
-  
+
 Similarly to leaf nodes, leaf-list nodes hold data of simple types in YANG but as items in an array. As such, leaf-list definitions are converted to sdfProperty if they occur on the top-level or one level below in a module. On any other level a leaf-list becomes a property of the compound-type definition corresponding to the leaf-list's parent definition. In both cases the type is set to `array`. The items of the array are of simple data types since leaf-list definitions can only have simple data types as well. The minimal and maximal number of elements in a YANG leaf-list can be specified by the `min-elements` and `max-elements` sub-statements. This is analogue to SDF's `minItems` and `maxItems` data qualities which are set accordingly by the converter. A YANG leaf-list can specify whether the system or the user is responsible for ordering the leaf-lists entries. This information is stored in the `ordered-by` statement in YANG which is represented in SDF by a remark in the description (as shown in {{design-roundtrips}}) of the SDF equivalent to the leaf-list node in question. Since leaf-list nodes are just leaf nodes that can occur multiple times the `units` and `default` statements of leaf-list nodes are converted as described in {{design-leaf}}.
 
 List Statement
@@ -268,7 +277,7 @@ Grouping Statement
 
 * YANG: {{Section 7.12 (grouping) of -yang}}
 * SDF: {{Section 5.5 (sdfData) of -sdf}}
-  
+
 Grouping nodes are very similar to container nodes with the difference that the set of nodes defined in a grouping do not occur in the data tree unless the grouping has been referenced one or more times by uses nodes. Thus, a grouping node is converted to a compound-type sdfData definition which also defines a reusable definition that is not a declaration.
 
 Uses Statement
@@ -276,7 +285,7 @@ Uses Statement
 
 * YANG: {{Section 7.13 (uses) of -yang}}
 * SDF: {{Section 4.4 (sdfRef) of -sdf}}
-  
+
 A uses node has the purpose of referencing a grouping node. The set of child nodes of the referenced grouping are copied to wherever the uses node is featured. Some of the referenced grouping's sub-statements can be altered via the refine statement of the uses node. In SDF a uses node is represented by the sdfRef quality which is added to the definition corresponding to the parent node of the uses node. As an argument the sdfRef contains a reference to the sdfData definition corresponding to the grouping referenced by the uses node. If the uses node contains a refine statement its contents are converted as they would be if they occurred in a node.
 
 Choice Statement
@@ -284,7 +293,7 @@ Choice Statement
 
 * YANG: {{Section 7.9 (choice) of -yang}}
 * SDF: {{Section 4.7.2 (sdfChoice) of -sdf}}
-  
+
 Conversion of the choice definitions from YANG is quite simple since it is similar to the sdfChoice quality. A choice definition is converted to an sdfChoice definition. The case definitions or other child definitions of the choice become one of the named alternatives of the resulting sdfChoice each.
 
 RPC Statement
@@ -292,7 +301,7 @@ RPC Statement
 
 * YANG: {{Section 7.14 (rpc) of -yang}}
 * SDF: {{Sections 2.2.3 and 5.3 (sdfAction) of -sdf}}
-  
+
 Remote procedure calls (RPCs) can be modelled in YANG with RPC nodes which have up to one `input` child node holding the commands input data and up to one `output` node for the output data. In YANG RPCs can only occur on the top-level because in contrast to actions in YANG they do not belong to a container. This can easily be represented by sdfActions. The corresponding sdfAction is not placed inside an sdfObject or sdfThing but at the top-level of the SDF model to represent independence from a container. The input node of the RPC is converted to the sdfInputData quality of the sdfAction which is of type object. Equivalently the output node of the RPC becomes the sdfAction's sdfOutputData which is also of type object. Groupings and typedefs in the RPC are converted to sdfData definitions inside the sdfAction.
 
 Action Statement
@@ -317,7 +326,7 @@ Augment Statement
 * YANG: {{Section 7.17 (augment) of -yang}}
 * SDF: {{Section 4.6. (common qualities) of -sdf}}
 
-The augment statement can either occur at the top-level of a module to add nodes to an existing target module or sub-module or in a uses statement to augment the targeted grouping. The conversion of the augment statement to SDF is not trivial because SDF does not feature this mechanism directly. Since the tool used to deserialize YANG modules (libyang) adds the nodes into the augment statement's target automatically this is adopted for conversion. The SDF model or sdfData definition that corresponds to the augment statement's target is converted with the augmentation already applied. A comment is added to the description as described in {{design-roundtrips}} to preserve where the augmentation was made from. If the resulting SDF model has to be converted back to YANG definitions that are marked as augmentations are converted back accordingly.
+The augment statement can either occur at the top-level of a module to add nodes to an existing target module or sub-module or in a uses statement to augment the targeted grouping. The conversion of the augment statement to SDF is not trivial because SDF does not feature this mechanism directly. Since the tool used to deserialize YANG modules (Libyang) adds the nodes into the augment statement's target automatically this is adopted for conversion. The SDF model or sdfData definition that corresponds to the augment statement's target is converted with the augmentation already applied. A comment is added to the description as described in {{design-roundtrips}} to preserve where the augmentation was made from. If the resulting SDF model has to be converted back to YANG definitions that are marked as augmentations are converted back accordingly.
 
 Anydata and Anyxml Statements
 -----------------------------
@@ -325,7 +334,7 @@ Anydata and Anyxml Statements
 * YANG: {{Sections 7.10 and 7.11 (augment) of -yang}}
 * SDF: {{Section 4.6 (common qualities) of -sdf}}
 
-The `anydata` and `anyxml` statements are designated for nodes in the schema tree whose structure is unknown at the module's design time or in general. Since this is not a concept that cannot be represented in SDF as of now, anydata and anyxml nodes are note converted. To preserve the information (e.g., for round trips) a comment is added to the SDF element corresponding to the anydata/anyxml node's parent node as described in {{design-roundtrips}}.
+The `anydata` and `anyxml` statements are designated for nodes in the schema tree whose structure is unknown at the module's design time or in general. Since this is not a concept that can be represented in SDF as of now, anydata and anyxml nodes are not converted. To preserve the information (e.g., for round trips) a comment is added to the SDF element corresponding to the anydata/anyxml node's parent node as described in {{design-roundtrips}}.
 
 Type Statement
 --------------
@@ -447,7 +456,7 @@ Identity Statement
 
 * YANG: {{Section 7.18 (identity) of -yang}}
 * SDF: {{Section 5.5 (sdfData) of -sdf}}
-  
+
 The YANG identity statement is used to denote the name and existence of an identity. Identities can be based on one ore more other identities. They are referenced with the `identityref` statement. This concept is converted to SDF by sdfData definitions for each identity. If an identity is based on one other identity this is represented in by an sdfRef to the sdfData element corresponding to the base identity. If an identity has multiple base identities it is converted to a compound-type sdfData definition with one property for each base identity. Each property contains an sdfRef to the sdfData element corresponding to one of the base identities.
 
 Config Statement
@@ -530,11 +539,11 @@ Common Qualities {#sec-map-comquali}
 ----------------
 
 * SDF: {{Section 4.6 (common qualities) of -sdf}}
-* YANG: 
-   * {{Section 7.21.3 (description) of -yang}} 
-   * {{Section 7.3 (typedef) of -yang}} 
-   * {{Section 9.9 (leafref) of -yang}} 
-   * {{Section 7.13 (uses) of -yang}} 
+* YANG:
+   * {{Section 7.21.3 (description) of -yang}}
+   * {{Section 7.3 (typedef) of -yang}}
+   * {{Section 9.9 (leafref) of -yang}}
+   * {{Section 7.13 (uses) of -yang}}
    * {{Section 3 (terminology for mandatory) of -yang}}
 
 The set of qualities that is grouped under the name of common qualities can be used to provide meta data for SDF definitions. The `description` quality is converted to the YANG description statement. The `label` quality is ignored because it is identical to the definitions identifier in most cases.
@@ -547,8 +556,8 @@ Data Qualities {#sec-map-dataquali}
 --------------
 
 * SDF: {{Section 4.7 (data qualities) of -sdf}}
-* YANG: 
-   * {{Section 7.4.1 (type) of -yang}} 
+* YANG:
+   * {{Section 7.4.1 (type) of -yang}}
 
 The set of qualities labelled as data qualities contains qualities that SDF borrowed from json-schema.org as well as qualities specifically defined for SDF. In the first group there is a total of 18 qualities out of which some are interdependent.
 
@@ -597,19 +606,20 @@ sdfData {#sec-map-sdfData}
 -------
 
 * SDF: {{Sections 2.2.5 and 5.5 (sdfData) of -sdf}}
-* YANG: 
-   * {{Section 7.13 (uses) of -yang}} 
+* YANG:
+   * {{Section 7.13 (uses) of -yang}}
    * {{Section 7.12 (grouping) of -yang}}
 
 Elements of the sdfData class are meant to hold data type definitions to be shared by sdfProperty, sdfAction and sdfEvent definitions. SdfData definitions can make use of the data qualities and the common qualities described in sections {{sec-map-dataquali}} and {{sec-map-comquali}} respectively. Because an sdfData element embodies a data type definition the YANG statements the `typedef` and `grouping` have to be used for conversion. Which of the two is used depends on the value of the `type` quality of the sdfData element. If the type is one of the simple data types, i.e., integer, number, boolean or string, the sdfData definition is converted to a YANG typedef. If the type is compound-type the sdfData definition is mapped to a grouping node with each of the compound-type's properties being mapped to a child node of the grouping. For sdfData definitions with type array the type mentioned in the `type` quality of the `items` quality is essential as well. If an array has items of any of the simple types the resulting YANG element is a grouping node containing a single leaf-list node. Otherwise, if the array items are compound-types the sdfData definition is converted into a grouping node containing a single list node. The list node's child nodes are equivalent to the compound-type item's properties. One issue with converting sdfData definitions of type array is the added grouping node that is necessary to hold the leaf-list/list node. If the grouping is used in the schema tree the added level will cause model instances of the original and converted model to be in-equivalent. If the sdfData definition is referenced in the SDF model via the `sdfRef` common quality this is represented in YANG with the `uses` statement pointing to the grouping equivalent to the sdfData definition.
+
 The `sdfRef` quality can occur at most once in each definition while there can be multiple `uses` statements in the same container/list/grouping. Thus, the aforementioned issue with array-typed sdfData definitions could be solved by, instead of representing definitions containing an sdfRef by a parent node containing a `uses` node, replacing the parent node with the uses node itself, effectively removing the excess level. This, however, gives rise to other issues because the name of the sdfRef's superordinate definition is lost. If the sdfData definition is converted to a typedef no such issues arise. The typdef in question is inserted as an argument to the YANG type quality wherever the original sdfData definition was referenced by an sdfRef. Another issue is a different view on global accessibility of data type definitions in YANG and SDF. In SDF all definitions are globally available as long as a default namespace is defined in the SDF model. In YANG on the other hand, only data type definitions (i.e., groupings and typedefs) that occur on the top-level of YANG module are globally accessible. Thus, to represent the global accessibility of all data type definitions in SDF, all converted sdfData definition equivalents in YANG are added to the top-level of the created module.
 
 sdfProperty {#sec-map-sdfProp}
 -----------
 
 * SDF: {{Sections 2.2.2 and 5.2 (sdfProperty) of -sdf}}
-* YANG: 
-   * {{Section 7.6 (leaf) of -yang}} 
+* YANG:
+   * {{Section 7.6 (leaf) of -yang}}
    * {{Section 7.7 (leaf-list) of -yang}}
    * {{Section 7.8 (list) of -yang}}
 
@@ -619,8 +629,8 @@ sdfAction
 ---------
 
 * SDF: {{Sections 2.2.3 and 5.3 (sdfAction) of -sdf}}
-* YANG: 
-   * {{Section 7.14 (rpc) of -yang}} 
+* YANG:
+   * {{Section 7.14 (rpc) of -yang}}
    * {{Section 7.15 (action) of -yang}}
 
 To represent commands/operations that can be invoked in a model the sdfAction class is used. Since commands can have input and output data the sdfAction class is equipped with the `sdfInputData` and `sdfOutputData` qualities that can both make use of the data qualities and the common qualities described in sections {{sec-map-dataquali}} and {{sec-map-comquali}} respectively. An sdfAction can also define its own set of data types in the form of sdfData definitions. Whether an sdfAction is converted to an RPC (which can only occur at the top-level of a module) or an action node (which is always tied to a container node) depends on its location inside the SDF model. SdfActions that are not part of an sdfObject but can be found independently at the top of an SDF model are converted to RPC nodes. All other actions occurring inside an sdfObject become action nodes inside the sdfObject's container equivalent in YANG. The sdfInputData and sdfOutputData of an sdfAction are converted like sdfProperties (see {{sec-map-sdfProp}}) and added as the input and output node of the RPC/action respectively.
