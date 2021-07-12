@@ -213,15 +213,6 @@ A sub-module that is included into its super-module via the *include* statement 
 
 Container Statement
 -------------------
-YANG:
-: {{Section 7.5 of -yang}}
-
-SDF:
-: \\
-  sdfObject {{Sections 2.2.1 and 5.1 of -sdf}},\\
-  sdfThing {{Sections 2.2.6 and 6.3 of -sdf}}
-
-[^besser]
 
 * YANG: {{Section 7.5 (container) of -yang}}
 * SDF:
@@ -513,9 +504,6 @@ Acknowledgements
 
 TBD.
 
-
-
-[^besser]: Vielleicht besser:
 
 
 <!--  LocalWords:  sdfRequired sdfObject SDF sdfProperty sdfObject's
