@@ -604,7 +604,7 @@ RPC Statement
 * YANG: {{Section 7.14 (rpc) of -yang}}
 * SDF: {{Sections 2.2.3 and 5.3 (sdfAction) of -sdf}}
 
-Remote procedure calls (RPCs) can be modelled in YANG with RPC nodes which have up to one `input` child node holding the commands input data and up to one `output` node for the output data. In YANG RPCs can only occur on the top-level because in contrast to actions in YANG they do not belong to a container. This can easily be represented by sdfActions. The corresponding sdfAction is not placed inside an sdfObject or sdfThing but at the top-level of the SDF model to represent independence from a container. The input node of the RPC is converted to the sdfInputData quality of the sdfAction which is of type object. Equivalently the output node of the RPC becomes the sdfAction's sdfOutputData which is also of type object. Groupings and typedefs in the RPC are converted to sdfData definitions inside the sdfAction.
+Remote procedure calls (RPCs) can be modeled in YANG with `rpc` nodes which have up to one `input` child node holding the commands input data and up to one `output` node for the output data. In YANG RPCs can only occur on the top-level because in contrast to actions in YANG they do not belong to a container. This can easily be represented by sdfActions. The corresponding sdfAction is not placed inside an sdfObject or sdfThing but at the top-level of the SDF model to represent independence from a container. The input node of the RPC is converted to the `sdfInputData` quality of the sdfAction which is of type `object`. Equivalently, the `output` node of the RPC becomes the sdfOutputData of the sdfAction, which is also of type `object`. Groupings and typedefs in the RPC are converted to `sdfData` definitions inside the sdfAction.
 
 Action Statement
 ----------------
@@ -612,7 +612,90 @@ Action Statement
 * YANG: {{Section 7.15 (action) of -yang}}
 * SDF: {{Sections 2.2.3 and 5.3 (sdfAction) of -sdf}}
 
-Action nodes in YANG work similarly to RPC nodes in the way that they are used to model operations that can be invoked in the module and also have up to one input and output child node respectively. As mentioned before YANG actions are affiliated to a container though. The representation of this affiliation is not quite trivial because YANG containers are not translated to sdfObjects in all cases. Only sdfObjects can have sdfActions, though. If an action occurs in a container that is a below-top-level container (and thus not converted to sdfObject) the affiliation cannot be represented directly in SDF as of now. To keep the semantics of the affiliation a copy of the contents of the converted container is added to the sdfAction's sdfInputData. Like for RPC nodes, the input nodes of the action are converted to the sdfInputData quality of the sdfAction which is of type object. Equivalently the output nodes of the action become the sdfAction's sdfOutputData which is also of type object. Groupings and typedefs in the action node are converted to sdfData definitions inside the sdfAction.
+`Action` nodes in YANG work similarly to `rpc` nodes in the way that they are used to model operations that can be invoked in the module and also have up to one `input` and `output` child node respectively. As mentioned before, YANG actions are affiliated to a container. The representation of this affiliation is not quite trivial because YANG containers are not translated to sdfObjects in all cases. Only sdfObjects can have sdfActions, however. If an action occurs in a container that is a below-top-level container (and thus not converted to sdfObject), as illustrated in {{fig-action}}, the affiliation cannot be represented directly in SDF as of now. {{fig-actioninstance}} shows how an XML instance of calling the action in {{fig-action}} and the reply would look like. As an input, the action specifies the container `server` it is affiliated to and its name. The actual action, `reset` and the value of its input, `reset-at` are specified inside the container instance. The result after converting the container from {{fig-action}} to SDF can be found in {{fig-actionsdf}}: To ensure equivalence of model instances a copy of the contents of the converted container is set as the sdfInputData of the sdfAction. The sdfInputData is of type `object`. The conversion of the actual action along with its input is added to the copy of the container conversion as another entry to its `properties` quality.
+Furthermore, a conversion note is added as described in Section {{design-roundtrips}}. Equivalently, the `output` nodes of the action become the sdfOutputData of the sdfAction which is also of type `object`. Groupings and typedefs in the `action` node are converted to `sdfData` definitions inside the sdfAction.
+
+    {
+        container example-container {}
+            container server {
+                leaf name { type string; }
+                action reset {
+                    input {
+                        leaf reset-at { type string; }
+                    }
+                    output {
+                        leaf reset-finished-at { type string; }
+                    }
+                }
+            }
+        }
+    }
+{: #fig-action title="YANG container using the action statement"}
+
+    {
+        <rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+            <action xmlns="urn:ietf:params:xml:ns:yang:1">
+                <server xmlns="urn:example:server-farm">
+                    <name>apache-1</name>
+                    <reset>
+                        <reset-at>2014-07-29T13:42:00Z</reset-at>
+                    </reset>
+                </server>
+            </action>
+        </rpc>
+
+        <rpc-reply message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+            <reset-finished-at xmlns="urn:example:server-farm">
+                2014-07-29T13:42:12Z
+            </reset-finished-at>
+        </rpc-reply>
+    }
+{: #fig-actioninstance title="XML instance of the action from the last figure"}
+
+    {
+        "sdfObject": {
+            "example-container": {
+              "sdfAction": {
+                "reset": {
+                  "description": "Action connected to server\n\n",
+                  "sdfInputData": {
+                    "properties": {
+                      "server": {
+                        "properties": {
+                          "name": { "type": "string"  },
+                          "reset": {
+                            "properties": {
+                              "reset-at": { "type": "string" }
+                            },
+                            "type": "object"
+                          }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "required": [ "server" ],
+                    "type": "object"
+                  },
+                  "sdfOutputData": {
+                    "properties": {
+                      "reset-finished-at": { "type": "string" }
+                    },
+                    "type": "object"
+                  }
+                }
+              },
+              "sdfProperty": {
+                "server": {
+                  "properties": {
+                    "name": { "type": "string" }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+        }
+    }
+{: #fig-actionsdf title="SDF conversion of the YANG container from Figure 13"}
 
 Notification Statement
 -----------------------
@@ -620,7 +703,7 @@ Notification Statement
 * YANG: {{Section 7.16 (notification) of -yang}}
 * SDF: {{Sections 2.2.4 and 5.4 (sdfEvent) of -sdf}}
 
-In YANG, notification nodes are used to model notification messages. Notification nodes are converted to sdfEvent definitions. Their child nodes are converted to the sdfEvent's sdfOutputData which is of type object. Groupings and typedefs in the notification node are converted to sdfData definitions inside the sdfEvent.
+In YANG, `notification` nodes are used to model notification messages. `Notification` nodes are converted to `sdfEvent` definitions. Their child nodes are converted to the sdfOutputData of the sdfEvent which is of type `object`. Groupings and typedefs in the `notification` node are converted to `sdfData` definitions inside the sdfEvent.
 
 Augment Statement
 -----------------
@@ -628,11 +711,42 @@ Augment Statement
 * YANG: {{Section 7.17 (augment) of -yang}}
 * SDF: {{Section 4.6. (common qualities) of -sdf}}
 
-The augment statement can either occur at the top-level of a module to add nodes to an existing target module or sub-module or in a `uses` statement to augment the targeted grouping. The conversion of the augment statement to SDF is not trivial because SDF does not feature this mechanism directly. 
+The `augment` statement can either occur at the top-level of a module to add nodes to an existing target module or sub-module, or in a `uses` statement to augment the targeted and thus integrated grouping. The conversion of the `augment` statement to SDF is not trivial because SDF does not feature this mechanism. 
 
-Since the tool used to deserialize YANG modules (Libyang) adds the nodes into the `augment` statement's target automatically in case the target is a module or sub-module this is adopted for conversion. The SDF model that corresponds to the augmentation target is converted with the augmentation already applied. A comment is added to the description as described in {{design-roundtrips}} to preserve where the augmentation was made from. If the resulting SDF model has to be converted back to YANG definitions that are marked as augmentations are converted back accordingly. This way of converting the `augment` statement from YANG to SDF causes problems if the augmentation target lies within a module whose converted version is already available and should not be replaced. Because, as of now, SDF does not offer means to extend already existing models retroactively these augmentations cannot be converted to SDF.
+The tool used to deserialize YANG modules, Libyang, adds the nodes into the target of the `augment` statement automatically for targets that are modules or sub-modules. This is adopted in the mapping: The SDF model that corresponds to target of the the `augment` statement is converted with the augmentation already applied. A conversion note is added to the description as described in section {{design-roundtrips}} to preserve where the augmentation was issued from. This mapping is illustrated in {{fig-augmented}}, {{fig-augmenting}} and {{fig-augmentsdf}}. If the resulting SDF model has to be converted back to YANG, definitions that are marked as augmentations are converted back accordingly. This way of mapping the `augment` statement to SDF causes problems if the augmentation target lies within a module whose converted version is already available and should not be replaced. Because, as of now, SDF does not offer means to extend already existing models retroactively these augmentations cannot be converted to SDF.
 
-When the augmentation target is a grouping the augmentation cannot be represented in SDF, either. The reason for this is that grouping nodes are converted to SDF definitions with the type `object`. The nodes inside the grouping are converted with the help of the `properties` quality. It is currently not possible to add properties to the `properties` quality, it can only be overridden as a whole. 
+When the target of the augment is a grouping the augmentation cannot be represented in SDF, either. The reason for this is that `grouping` nodes are converted to SDF definitions with the type `object`. The nodes inside the grouping are converted with the help of the `properties` quality. It is currently not possible to add properties to the `properties` quality, it can only be overridden as a whole. 
+
+    {
+        module example-module {
+            // [...]
+            leaf leaf1 { type string; }
+        }
+    }
+{: #fig-augmented title="YANG module that serves as an augmentation target"}
+
+    {
+        module augmenting-module {
+            // [...]
+            augment "/example" {
+                leaf additional-leaf { type string; }
+           }
+        }
+    }
+{: #fig-augmenting title="YANG module using the augment statement on the module from the last figure"}
+    {
+        {
+            ; [...]
+            "sdfProperty": {
+                "leaf1": { "type": "string" },
+                "additional-leaf": {
+                    "description": "!Conversion note: augmented-by augmenting-module!\n",
+                    "type": "string"
+                }
+            }
+        }
+    }
+{: #fig-augmentsdf title="SDF conversion of the YANG module from Figure 16 after conversion of the YANG module from Figure 17"}
 
 Anydata and Anyxml Statements
 -----------------------------
@@ -640,7 +754,7 @@ Anydata and Anyxml Statements
 * YANG: {{Sections 7.10 and 7.11 (augment) of -yang}}
 * SDF: {{Section 4.6 (common qualities) of -sdf}}
 
-The `anydata` and `anyxml` statements are designated for nodes in the schema tree whose structure is unknown at the module's design time or in general. Since this is not a concept that can be represented in SDF as of now, anydata and anyxml nodes are not converted. To preserve the information (e.g., for round trips) a comment is added to the SDF element corresponding to the anydata/anyxml node's parent node as described in {{design-roundtrips}}.
+The `anydata` and `anyxml` statements are designated for nodes in the schema tree whose structure is unknown at the design time of the module or in general. Since this is not a concept that can be represented in SDF as of now, `anydata` and `anyxml` nodes are not converted. Instead, to preserve the information a conversion note is added to the SDF element corresponding to the parent node of the `anydata` or `anyxml` node as described in section {{design-roundtrips}}.
 
 Type Statement
 --------------
@@ -648,9 +762,9 @@ Type Statement
 * YANG: {{Section 7.4 (type) of -yang}}
 * SDF: {{Section 4.7 (data qualities) of -sdf}}
 
-Conversion for the `type` statement from YANG is very straightforward if the argument is a simple data type since the SDF data qualities also contain a `type` quality. A derived type used as an argument to the YANG `type` statement is converted to an `sdfRef` to the `sdfData` corresponding to that derived type. If the derived type is restricted (e.g., via the length statement) the restrictions are converted as they would be for the base type and added to the SDF definition containing the type in question.
+The `type` statement of YANG is used to specify the built-in or derived type used by a `leaf` or `typedef` node. Mapping this statement to YANG is trivial if the argument is a simple data type because the SDF data qualities also contain a `type` quality. A derived type used as an argument to the YANG `type` statement is converted via the `sdfRef` quality. As an argument, the `sdfRef` quality contains a reference to the `sdfData` definition corresponding to the derived type. If the derived type is restricted, for example with the `length` statement, the restrictions are converted as they would be for the base type and added to the SDF definition containing the type in question.
 
-There are multiple sub-statements to the type statement that depend on its value.
+There are multiple sub-statements to the `type` statement that depend on its value. The conversion of those sub-statements is discussed in the section of the built-in type the sub-statement belongs to.
 
 String Built-In Type {#design-string}
 --------------------
@@ -658,13 +772,56 @@ String Built-In Type {#design-string}
 * YANG: {{Section 9.4 (string) of -yang}}
 * SDF: {{Section 4.7 (data qualities) of -sdf}}
 
-The YANG built-in type string is converted to SDF's built-in type string. Strings in YANG can be restricted regarding their length and patterns (containing regular expressions).
+The YANG built-in type `string` is converted to the SDF built-in type `string`. Strings in YANG can be restricted in length and by regular expressions. 
 
-The length statement can specify either a constant length, a lower inclusive length, an upper inclusive length or both a lower and upper inclusive length. A length statement can also specify more than one disjoint constant length or length ranges. The values `min` and `max` in a length statement represent the minimum and maximum lengths accepted for strings. If the length statement in YANG does not contain a constant value but a length range it is converted to the `minLength` and `maxLength` data qualities in SDF. If a constant value is defined through the YANG length statement the `minLength` and `maxLength` qualities are set to the same value. If the length statement specifies multiple length ranges or constant values the sdfChoice quality is used for conversion. The named alternatives of the sdfChoice contain the single converted length ranges or constant values each. If the `min` and `max` values are present in the YANG length statement they are converted to the respective minimum and maximum lengths accepted for strings.
+The `length` statement can specify either a constant length, a lower inclusive length, an upper inclusive length or both a lower and upper inclusive length. A `length` statement can also specify more than one disjoint constant length or length ranges. The values `min` and `max` in a `length` statement represent the minimum and maximum lengths accepted for strings. If the `length` statement in YANG does not contain a constant value but a length range it is converted to the `minLength` and `maxLength` SDF qualities. This is illustrated in {{fig-string}} and {{fig-stringsdf}}. If a constant value is defined through the YANG `length` statement the `minLength` and `maxLength` qualities are set to the same value. If the `length` statement specifies multiple length ranges or constant values the `sdfChoice` quality is used for conversion. The named alternatives of the sdfChoice contain the single converted length ranges or constant values each. If the `min` and `max` values are present in the YANG `length` statement they are converted to the respective minimum and maximum lengths accepted for strings.
 
-To represent YANG string patterns the `pattern` data quality of SDF can be used. One problem in the conversion of patterns is that YANG strings can be restricted by multiple patterns but SDF definitions of type string can have at most one pattern. To represent multiple patterns from YANG in SDF the patterns are combined into one regular expression with the help of positive look-ahead. This, however, does not always convey the meaning of the original regular expression. Another issue is the possibility to declare invert-match patterns in YANG. These types of patterns are converted to SDF by adding negative look-ahead to the regular expression. To preserve the original patterns and to facilitate round trips the original patterns are stored in the description of the containing definition as described in {{design-roundtrips}}.
+The YANG `pattern` statement can be used to hold regular expressions that the affiliated string has to match. To patterns from YANG in SDF the `pattern` quality can be used. One problem in the conversion of patterns is that YANG strings can be restricted by multiple patterns but SDF strings can have at most one pattern. To represent multiple patterns from YANG in SDF the patterns are combined into one regular expression with the help of positive look-ahead. {{fig-string}} contains an example leaf of type `string` with multiple defined patterns which is converted as shown in {{fig-stringsdf}}. 
+This does not always convey the meaning of the original regular expression. Another issue is the possibility to declare invert-match patterns in YANG. These types of patterns are converted to SDF by adding negative look-ahead to the regular expression, as illustrated in {{fig-invertmatch}} and {{fig-invertmatchsdf}}. To preserve the original patterns and to facilitate round trips, the original patterns are stored with a conversion note in the description of the containing definition as described in section {{design-roundtrips}}. 
 
-Another, more general problem regarding the conversion of regular expressions from YANG to SDF is the fact that YANG uses a regular expression language as defined by W3C Schema while SDF adopts the one from JSON Schema. Both regular expression languages share most of their features but differ in some details. Since this does not cause problems in most cases and regarding the time constraints of this thesis, this issue is not given any further attention beyond what was stated in this paragraph. There is, however, a project of the IETF Network Working Group to create an interoperable regular expression format I-Regexp. Once the work on the draft has progressed the format might be adopted by the converter.
+    {
+        leaf example {
+            type string {
+                length "1..4";
+                pattern "[0-9]*";
+                pattern "[a-z]*";
+            }
+        }
+    }
+{: #fig-string title="YANG leaf node with type string, multiple pattern statements and a length statement"}
+
+    {
+        "sdfProperty": {
+            "example": {
+                "description": "!Conversion note: pattern [0-9]*!\n!Conversion note: pattern [a-z]*!\n",
+                "maxLength": 4.0,
+                "minLength": 1.0,
+                "pattern": "(?=[0-9]*)[a-z]*",
+                "type": "string"
+            }
+        }
+    }
+{: #fig-stringsdf title="SDF conversion of the YANG leaf from the last figure"}
+
+    {
+        leaf example {
+            type string {
+                pattern "[0-9]*" { modifier invert-match; }
+            }
+        }
+    }
+{: #fig-invertmatch title="YANG `leaf` definition with type `string` and an invert-match pattern"}
+
+    {
+        "sdfProperty": {
+            "example": {
+                "description": "!Conversion note: pattern [0-9]*!\n",
+                "pattern": "((?!([0-9]*)).)*",
+                "type": "string"
+            }
+        }
+    }
+{: #fig-invertmatchsdf title="SDF conversion of the YANG leaf from the last figure"}
 
 Decimal64 Built-In Type {#design-dec64}
 -----------------------
