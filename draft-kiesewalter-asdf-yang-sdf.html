@@ -1016,11 +1016,11 @@ address div.right {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Mapping between YANG and SDF</td>
-<td class="right">July 2021</td>
+<td class="right">November 2021</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Kiesewalter &amp; Bormann</td>
-<td class="center">Expires 13 January 2022</td>
+<td class="center">Expires 11 May 2022</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1033,12 +1033,12 @@ address div.right {
 <dd class="internet-draft">draft-kiesewalter-asdf-yang-sdf-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2021-07-12" class="published">12 July 2021</time>
+<time datetime="2021-11-07" class="published">7 November 2021</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2022-01-13">13 January 2022</time></dd>
+<dd class="expires"><time datetime="2022-05-11">11 May 2022</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1095,7 +1095,7 @@ creating translators.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 13 January 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 11 May 2022.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1488,7 +1488,7 @@ the tree of an instance of the model.<a href="#section-2-3" class="pilcrow">¶</
           <tr>
             <td class="text-left" rowspan="1" colspan="1">base</td>
             <td class="text-left" rowspan="1" colspan="1"> </td>
-            <td class="text-left" rowspan="1" colspan="1">sdfRef to the sdfData definition corresponding the the base</td>
+            <td class="text-left" rowspan="1" colspan="1">sdfRef to the sdfData definition corresponding to the base</td>
           </tr>
           <tr>
             <td class="text-left" rowspan="1" colspan="1">bit</td>
@@ -2103,8 +2103,8 @@ Since <code>leaf-list</code> nodes are just <code>leaf</code> nodes that can occ
             </ul>
 </li>
         </ul>
-<p id="section-3.6-2">The <code>list</code> statement of YANG is similar to the <code>leaf-list</code> statement. The only difference is that, opposed to leaf-lists, lists represent an assortment of <em>nodes</em> that can occur multiple times. Therefore, YANG lists are mapped to SDF similarly to leaf-lists. <code>List</code> nodes on the top-level or one level below become sdfProperties. On any other level a list is converted to an entry to the <code>properties</code> quality of the compound-type definition corresponding to the parent node of the list. The type is set to <code>array</code> for both alternatives. Since lists contain a set of nodes, the items of the corresponding array are of type <code>object</code>.  The minimal and maximal number of elements in a list can be specified by the <code>min-elements</code> and <code>max-elements</code> sub-statements. This is analogue to the <code>minItems</code> and <code>maxItems</code> qualities of SDF which are set accordingly by the converter. <code>List</code> nodes in YANG can define one or multiple keys leafs of the list via the <code>key</code> statement. There is no SDF quality that could represent this feature. To preserve the information the names of the list keys are stored in the description of the SDF definition in question as described in section <a href="#design-roundtrips" class="xref">Section 5.2</a>. 
-The <code>unique</code> sub-statement of the YANG list defines a number of descendant <code>leaf</code> nodes of the list that must have a unique combination of values in a module instance. This concept can be partly represented through the <code>uniqueItems</code> quality of SDF. However, the boolean-typed <code>uniqueItems</code> quality only specifies that the items of an SDF array have to be unique with <em>all</em> of their values combined. The YANG statement <code>unique</code> specifies a <em>selection</em> of <code>leaf</code> node values in the list that must be unique when combined. Thus, in addition to setting the <code>uniqueItems</code> quality of the SDF equivalent of the YANG list to true, a conversion note is added to the SDF equivalents of all leafs that are mentioned in the <code>unique</code> statement. This is done as shown in Section <a href="#design-roundtrips" class="xref">Section 5.2</a>. The <code>ordered-by</code> statement of a list is also preserved in a conversion note. 
+<p id="section-3.6-2">The <code>list</code> statement of YANG is similar to the <code>leaf-list</code> statement. The only difference is that, opposed to leaf-lists, lists represent an assortment of <em>nodes</em> that can occur multiple times. Therefore, YANG lists are mapped to SDF similarly to leaf-lists. <code>List</code> nodes on the top-level or one level below become sdfProperties. On any other level a list is converted to an entry to the <code>properties</code> quality of the compound-type definition corresponding to the parent node of the list. The type is set to <code>array</code> for both alternatives. Since lists contain a set of nodes, the items of the corresponding array are of type <code>object</code>.  The minimal and maximal number of elements in a list can be specified by the <code>min-elements</code> and <code>max-elements</code> sub-statements. This is analogue to the <code>minItems</code> and <code>maxItems</code> qualities of SDF which are set accordingly by the converter. <code>List</code> nodes in YANG can define one or multiple keys leafs of the list via the <code>key</code> statement. There is no SDF quality that could represent this feature. To preserve the information the names of the list keys are stored in the description of the SDF definition in question as described in section <a href="#design-roundtrips" class="xref">Section 5.2</a>.
+The <code>unique</code> sub-statement of the YANG list defines a number of descendant <code>leaf</code> nodes of the list that must have a unique combination of values in a module instance. This concept can be partly represented through the <code>uniqueItems</code> quality of SDF. However, the boolean-typed <code>uniqueItems</code> quality only specifies that the items of an SDF array have to be unique with <em>all</em> of their values combined. The YANG statement <code>unique</code> specifies a <em>selection</em> of <code>leaf</code> node values in the list that must be unique when combined. Thus, in addition to setting the <code>uniqueItems</code> quality of the SDF equivalent of the YANG list to true, a conversion note is added to the SDF equivalents of all leafs that are mentioned in the <code>unique</code> statement. This is done as shown in Section <a href="#design-roundtrips" class="xref">Section 5.2</a>. The <code>ordered-by</code> statement of a list is also preserved in a conversion note.
 An example conversion of a <code>list</code> node with the mentioned sub-statements to SDF can be found in <a href="#fig-list" class="xref">Figure 7</a> and <a href="#fig-listtosdf" class="xref">Figure 8</a>.<a href="#section-3.6-2" class="pilcrow">¶</a></p>
 <span id="name-yang-list-node"></span><div id="fig-list">
 <figure id="figure-7">
@@ -2185,7 +2185,7 @@ An example conversion of a <code>list</code> node with the mentioned sub-stateme
           <li class="normal" id="section-3.8-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.4" class="relref">4.4</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.4" class="relref">sdfRef</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.8-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-3.8-2">A <code>uses</code> node has the purpose of referencing a <code>grouping</code> node. The set of child nodes of the referenced grouping are copied to wherever the <code>uses</code> node is featured. Some of the sub-statements of the referenced grouping can be altered 
+<p id="section-3.8-2">A <code>uses</code> node has the purpose of referencing a <code>grouping</code> node. The set of child nodes of the referenced grouping are copied to wherever the <code>uses</code> node is featured. Some of the sub-statements of the referenced grouping can be altered
 via the <code>refine</code> statement of the <code>uses</code> node. In SDF a <code>uses</code> node is represented by the <code>sdfRef</code> quality which is added to the definition in question. As an argument the sdfRef contains a reference to the <code>sdfData</code> definition corresponding to the grouping referenced by the <code>uses</code> node. If the <code>uses</code> node contains a <code>refine</code> statement, the specified refinements are also applied in the target SDF definition. An example for such a conversion is illustrated in <a href="#fig-usesgrouping" class="xref">Figure 9</a> and <a href="#fig-usesgroupingsdf" class="xref">Figure 10</a>.<a href="#section-3.8-2" class="pilcrow">¶</a></p>
 <span id="name-yang-module-with-uses-and-g"></span><div id="fig-usesgrouping">
 <figure id="figure-9">
@@ -2626,7 +2626,7 @@ Furthermore, a conversion note is added as described in Section <a href="#design
         </ul>
 <p id="section-3.16-2">The YANG built-in type <code>string</code> is converted to the SDF built-in type <code>string</code>. Strings in YANG can be restricted in length and by regular expressions.<a href="#section-3.16-2" class="pilcrow">¶</a></p>
 <p id="section-3.16-3">The <code>length</code> statement can specify either a constant length, a lower inclusive length, an upper inclusive length or both a lower and upper inclusive length. A <code>length</code> statement can also specify more than one disjoint constant length or length ranges. The values <code>min</code> and <code>max</code> in a <code>length</code> statement represent the minimum and maximum lengths accepted for strings. If the <code>length</code> statement in YANG does not contain a constant value but a length range it is converted to the <code>minLength</code> and <code>maxLength</code> SDF qualities. This is illustrated in <a href="#fig-string" class="xref">Figure 19</a> and <a href="#fig-stringsdf" class="xref">Figure 20</a>. If a constant value is defined through the YANG <code>length</code> statement the <code>minLength</code> and <code>maxLength</code> qualities are set to the same value. If the <code>length</code> statement specifies multiple length ranges or constant values the <code>sdfChoice</code> quality is used for conversion. The named alternatives of the sdfChoice contain the single converted length ranges or constant values each. If the <code>min</code> and <code>max</code> values are present in the YANG <code>length</code> statement they are converted to the respective minimum and maximum lengths accepted for strings.<a href="#section-3.16-3" class="pilcrow">¶</a></p>
-<p id="section-3.16-4">The YANG <code>pattern</code> statement can be used to hold regular expressions that the affiliated string has to match. To patterns from YANG in SDF the <code>pattern</code> quality can be used. One problem in the conversion of patterns is that YANG strings can be restricted by multiple patterns but SDF strings can have at most one pattern. To represent multiple patterns from YANG in SDF the patterns are combined into one regular expression with the help of positive look-ahead. <a href="#fig-string" class="xref">Figure 19</a> contains an example leaf of type <code>string</code> with multiple defined patterns which is converted as shown in <a href="#fig-stringsdf" class="xref">Figure 20</a>. 
+<p id="section-3.16-4">The YANG <code>pattern</code> statement can be used to hold regular expressions that the affiliated string has to match. To patterns from YANG in SDF the <code>pattern</code> quality can be used. One problem in the conversion of patterns is that YANG strings can be restricted by multiple patterns but SDF strings can have at most one pattern. To represent multiple patterns from YANG in SDF the patterns are combined into one regular expression with the help of positive look-ahead. <a href="#fig-string" class="xref">Figure 19</a> contains an example leaf of type <code>string</code> with multiple defined patterns which is converted as shown in <a href="#fig-stringsdf" class="xref">Figure 20</a>.
 This does not always convey the meaning of the original regular expression. Another issue is the possibility to declare invert-match patterns in YANG. These types of patterns are converted to SDF by adding negative look-ahead to the regular expression, as illustrated in <a href="#fig-invertmatch" class="xref">Figure 21</a> and <a href="#fig-invertmatchsdf" class="xref">Figure 22</a>. To preserve the original patterns and to facilitate round trips, the original patterns are stored with a conversion note in the description of the containing definition as described in section <a href="#design-roundtrips" class="xref">Section 5.2</a>.<a href="#section-3.16-4" class="pilcrow">¶</a></p>
 <span id="name-yang-leaf-node-with-type-st"></span><div id="fig-string">
 <figure id="figure-19">

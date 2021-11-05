@@ -5,8 +5,8 @@
 Network Working Group                                     J. Kiesewalter
 Internet-Draft                                        Universität Bremen
 Intended status: Informational                           C. Bormann, Ed.
-Expires: 13 January 2022                          Universität Bremen TZI
-                                                            12 July 2021
+Expires: 11 May 2022                              Universität Bremen TZI
+                                                         7 November 2021
 
 
                       Mapping between YANG and SDF
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 January 2022.
+   This Internet-Draft will expire on 11 May 2022.
 
 Copyright Notice
 
@@ -255,7 +255,7 @@ Table of Contents
     |                 | a typedef    | sdfData element                |
     +-----------------+--------------+--------------------------------+
     | base            |              | sdfRef to the sdfData          |
-    |                 |              | definition corresponding the   |
+    |                 |              | definition corresponding to    |
     |                 |              | the base                       |
     +-----------------+--------------+--------------------------------+
     | bit             |              | 'parent' definition is of      |
