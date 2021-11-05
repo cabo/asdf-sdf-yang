@@ -19,11 +19,11 @@ of the two languages can be translated into the other.
 This specification is not intended to be normative, but to help with
 creating translators. 
     " name="description">
-<meta content="xml2rfc 3.9.1" name="generator">
+<meta content="xml2rfc 3.11.1" name="generator">
 <meta content="Internet-Draft" name="keyword">
 <meta content="draft-kiesewalter-asdf-yang-sdf-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.9.1
+  xml2rfc 3.11.1
     Python 3.9.5
     appdirs 1.4.4
     ConfigArgParse 1.3
@@ -1113,9 +1113,9 @@ creating translators.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
             publication of this document. Please review these documents
             carefully, as they describe your rights and restrictions with
             respect to this document. Code Components extracted from this
-            document must include Simplified BSD License text as described in
+            document must include Revised BSD License text as described in
             Section 4.e of the Trust Legal Provisions and are provided without
-            warranty as described in the Simplified BSD License.<a href="#section-boilerplate.2-2" class="pilcrow">¶</a></p>
+            warranty as described in the Revised BSD License.<a href="#section-boilerplate.2-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="toc">
@@ -1123,190 +1123,190 @@ creating translators.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
         <a href="#" onclick="scroll(0,0)" class="toplink">▲</a><h2 id="name-table-of-contents">
 <a href="#name-table-of-contents" class="section-name selfRef">Table of Contents</a>
         </h2>
-<nav class="toc"><ul class="ulBare ulEmpty compact toc">
-<li class="ulBare ulEmpty compact toc" id="section-toc.1-1.1">
+<nav class="toc"><ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1">
             <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="xref">1</a>.  <a href="#name-introduction" class="xref">Introduction</a></p>
 </li>
-          <li class="ulBare ulEmpty compact toc" id="section-toc.1-1.2">
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
             <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="xref">2</a>.  <a href="#name-pairing-sdf-and-yang-featur" class="xref">Pairing SDF and YANG features</a></p>
 </li>
-          <li class="ulBare ulEmpty compact toc" id="section-toc.1-1.3">
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
             <p id="section-toc.1-1.3.1"><a href="#section-3" class="xref">3</a>.  <a href="#name-mapping-from-yang-to-sdf" class="xref">Mapping from YANG to SDF</a></p>
-<ul class="compact ulBare ulEmpty toc">
-<li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.1">
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1">
                 <p id="section-toc.1-1.3.2.1.1" class="keepWithNext"><a href="#section-3.1" class="xref">3.1</a>.  <a href="#name-module" class="xref">Module</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.2">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2">
                 <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="xref">3.2</a>.  <a href="#name-submodule" class="xref">Submodule</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.3">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.3">
                 <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="xref">3.3</a>.  <a href="#name-container-statement" class="xref">Container Statement</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.4">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.4">
                 <p id="section-toc.1-1.3.2.4.1"><a href="#section-3.4" class="xref">3.4</a>.  <a href="#name-leaf-statement" class="xref">Leaf Statement</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.5">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.5">
                 <p id="section-toc.1-1.3.2.5.1"><a href="#section-3.5" class="xref">3.5</a>.  <a href="#name-leaf-list-statement" class="xref">Leaf-List Statement</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.6">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.6">
                 <p id="section-toc.1-1.3.2.6.1"><a href="#section-3.6" class="xref">3.6</a>.  <a href="#name-list-statement" class="xref">List Statement</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.7">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.7">
                 <p id="section-toc.1-1.3.2.7.1"><a href="#section-3.7" class="xref">3.7</a>.  <a href="#name-grouping-statement" class="xref">Grouping Statement</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.8">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.8">
                 <p id="section-toc.1-1.3.2.8.1"><a href="#section-3.8" class="xref">3.8</a>.  <a href="#name-uses-statement" class="xref">Uses Statement</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.9">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.9">
                 <p id="section-toc.1-1.3.2.9.1"><a href="#section-3.9" class="xref">3.9</a>.  <a href="#name-choice-statement" class="xref">Choice Statement</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.10">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.10">
                 <p id="section-toc.1-1.3.2.10.1"><a href="#section-3.10" class="xref">3.10</a>. <a href="#name-rpc-statement" class="xref">RPC Statement</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.11">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.11">
                 <p id="section-toc.1-1.3.2.11.1"><a href="#section-3.11" class="xref">3.11</a>. <a href="#name-action-statement" class="xref">Action Statement</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.12">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.12">
                 <p id="section-toc.1-1.3.2.12.1"><a href="#section-3.12" class="xref">3.12</a>. <a href="#name-notification-statement" class="xref">Notification Statement</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.13">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.13">
                 <p id="section-toc.1-1.3.2.13.1"><a href="#section-3.13" class="xref">3.13</a>. <a href="#name-augment-statement" class="xref">Augment Statement</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.14">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.14">
                 <p id="section-toc.1-1.3.2.14.1"><a href="#section-3.14" class="xref">3.14</a>. <a href="#name-anydata-and-anyxml-statemen" class="xref">Anydata and Anyxml Statements</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.15">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.15">
                 <p id="section-toc.1-1.3.2.15.1"><a href="#section-3.15" class="xref">3.15</a>. <a href="#name-type-statement" class="xref">Type Statement</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.16">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.16">
                 <p id="section-toc.1-1.3.2.16.1"><a href="#section-3.16" class="xref">3.16</a>. <a href="#name-string-built-in-type" class="xref">String Built-In Type</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.17">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.17">
                 <p id="section-toc.1-1.3.2.17.1"><a href="#section-3.17" class="xref">3.17</a>. <a href="#name-decimal64-built-in-type" class="xref">Decimal64 Built-In Type</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.18">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.18">
                 <p id="section-toc.1-1.3.2.18.1"><a href="#section-3.18" class="xref">3.18</a>. <a href="#name-integer-built-in-types" class="xref">Integer Built-In Types</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.19">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.19">
                 <p id="section-toc.1-1.3.2.19.1"><a href="#section-3.19" class="xref">3.19</a>. <a href="#name-boolean-built-in-type" class="xref">Boolean Built-In Type</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.20">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.20">
                 <p id="section-toc.1-1.3.2.20.1"><a href="#section-3.20" class="xref">3.20</a>. <a href="#name-binary-built-in-type" class="xref">Binary Built-In Type</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.21">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.21">
                 <p id="section-toc.1-1.3.2.21.1"><a href="#section-3.21" class="xref">3.21</a>. <a href="#name-enumeration-built-in-type" class="xref">Enumeration Built-In Type</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.22">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.22">
                 <p id="section-toc.1-1.3.2.22.1"><a href="#section-3.22" class="xref">3.22</a>. <a href="#name-bits-built-in-type" class="xref">Bits Built-In Type</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.23">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.23">
                 <p id="section-toc.1-1.3.2.23.1"><a href="#section-3.23" class="xref">3.23</a>. <a href="#name-union-built-in-type" class="xref">Union Built-In Type</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.24">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.24">
                 <p id="section-toc.1-1.3.2.24.1"><a href="#section-3.24" class="xref">3.24</a>. <a href="#name-leafref-and-identityref-bui" class="xref">Leafref and Identityref Built-In Types</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.25">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.25">
                 <p id="section-toc.1-1.3.2.25.1"><a href="#section-3.25" class="xref">3.25</a>. <a href="#name-empty-built-in-type" class="xref">Empty Built-In Type</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.26">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.26">
                 <p id="section-toc.1-1.3.2.26.1"><a href="#section-3.26" class="xref">3.26</a>. <a href="#name-instance-identifier-built-i" class="xref">Instance-Identifier Built-In Type</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.27">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.27">
                 <p id="section-toc.1-1.3.2.27.1"><a href="#section-3.27" class="xref">3.27</a>. <a href="#name-derived-type-typedef-statem" class="xref">Derived Type (Typedef) Statement</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.28">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.28">
                 <p id="section-toc.1-1.3.2.28.1"><a href="#section-3.28" class="xref">3.28</a>. <a href="#name-identity-statement" class="xref">Identity Statement</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.29">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.29">
                 <p id="section-toc.1-1.3.2.29.1"><a href="#section-3.29" class="xref">3.29</a>. <a href="#name-config-statement" class="xref">Config Statement</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.30">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.30">
                 <p id="section-toc.1-1.3.2.30.1"><a href="#section-3.30" class="xref">3.30</a>. <a href="#name-status-statement" class="xref">Status Statement</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.31">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.31">
                 <p id="section-toc.1-1.3.2.31.1"><a href="#section-3.31" class="xref">3.31</a>. <a href="#name-reference-statement" class="xref">Reference Statement</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.32">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.32">
                 <p id="section-toc.1-1.3.2.32.1"><a href="#section-3.32" class="xref">3.32</a>. <a href="#name-when-and-must-statements" class="xref">When and Must Statements</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.3.2.33">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.33">
                 <p id="section-toc.1-1.3.2.33.1"><a href="#section-3.33" class="xref">3.33</a>. <a href="#name-extension-statement" class="xref">Extension Statement</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulBare ulEmpty compact toc" id="section-toc.1-1.4">
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="xref">4</a>.  <a href="#name-mapping-from-sdf-to-yang" class="xref">Mapping from SDF to YANG</a></p>
-<ul class="compact ulBare ulEmpty toc">
-<li class="compact ulBare ulEmpty toc" id="section-toc.1-1.4.2.1">
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.1">
                 <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="xref">4.1</a>.  <a href="#name-information-block" class="xref">Information Block</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.4.2.2">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.2">
                 <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="xref">4.2</a>.  <a href="#name-namespace-section" class="xref">Namespace Section</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.4.2.3">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.3">
                 <p id="section-toc.1-1.4.2.3.1"><a href="#section-4.3" class="xref">4.3</a>.  <a href="#name-sdfthing" class="xref">sdfThing</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.4.2.4">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4">
                 <p id="section-toc.1-1.4.2.4.1"><a href="#section-4.4" class="xref">4.4</a>.  <a href="#name-sdfobject" class="xref">sdfObject</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.4.2.5">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.5">
                 <p id="section-toc.1-1.4.2.5.1"><a href="#section-4.5" class="xref">4.5</a>.  <a href="#name-common-qualities" class="xref">Common Qualities</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.4.2.6">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.6">
                 <p id="section-toc.1-1.4.2.6.1"><a href="#section-4.6" class="xref">4.6</a>.  <a href="#name-data-qualities" class="xref">Data Qualities</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.4.2.7">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.7">
                 <p id="section-toc.1-1.4.2.7.1"><a href="#section-4.7" class="xref">4.7</a>.  <a href="#name-sdfdata" class="xref">sdfData</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.4.2.8">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.8">
                 <p id="section-toc.1-1.4.2.8.1"><a href="#section-4.8" class="xref">4.8</a>.  <a href="#name-sdfproperty" class="xref">sdfProperty</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.4.2.9">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.9">
                 <p id="section-toc.1-1.4.2.9.1"><a href="#section-4.9" class="xref">4.9</a>.  <a href="#name-sdfaction" class="xref">sdfAction</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.4.2.10">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.10">
                 <p id="section-toc.1-1.4.2.10.1"><a href="#section-4.10" class="xref">4.10</a>. <a href="#name-sdfevent" class="xref">sdfEvent</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulBare ulEmpty compact toc" id="section-toc.1-1.5">
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="xref">5</a>.  <a href="#name-challenges" class="xref">Challenges</a></p>
-<ul class="compact ulBare ulEmpty toc">
-<li class="compact ulBare ulEmpty toc" id="section-toc.1-1.5.2.1">
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1">
                 <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="xref">5.1</a>.  <a href="#name-differences-in-expressivene" class="xref">Differences in Expressiveness of SDF and YANG</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.5.2.2">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2">
                 <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="xref">5.2</a>.  <a href="#name-round-trips" class="xref">Round Trips</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.5.2.3">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3">
                 <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="xref">5.3</a>.  <a href="#name-type-references" class="xref">Type References</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulBare ulEmpty compact toc" id="section-toc.1-1.6">
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
             <p id="section-toc.1-1.6.1"><a href="#section-6" class="xref">6</a>.  <a href="#name-implementation-consideratio" class="xref">Implementation Considerations</a></p>
 </li>
-          <li class="ulBare ulEmpty compact toc" id="section-toc.1-1.7">
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
             <p id="section-toc.1-1.7.1"><a href="#section-7" class="xref">7</a>.  <a href="#name-iana-considerations" class="xref">IANA Considerations</a></p>
 </li>
-          <li class="ulBare ulEmpty compact toc" id="section-toc.1-1.8">
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
             <p id="section-toc.1-1.8.1"><a href="#section-8" class="xref">8</a>.  <a href="#name-security-considerations" class="xref">Security considerations</a></p>
 </li>
-          <li class="ulBare ulEmpty compact toc" id="section-toc.1-1.9">
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
             <p id="section-toc.1-1.9.1"><a href="#section-9" class="xref">9</a>.  <a href="#name-references" class="xref">References</a></p>
-<ul class="compact ulBare ulEmpty toc">
-<li class="compact ulBare ulEmpty toc" id="section-toc.1-1.9.2.1">
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.1">
                 <p id="section-toc.1-1.9.2.1.1"><a href="#section-9.1" class="xref">9.1</a>.  <a href="#name-normative-references" class="xref">Normative References</a></p>
 </li>
-              <li class="compact ulBare ulEmpty toc" id="section-toc.1-1.9.2.2">
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.2">
                 <p id="section-toc.1-1.9.2.2.1"><a href="#section-9.2" class="xref">9.2</a>.  <a href="#name-informative-references" class="xref">Informative References</a></p>
 </li>
             </ul>
 </li>
-          <li class="ulBare ulEmpty compact toc" id="section-toc.1-1.10">
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
             <p id="section-toc.1-1.10.1"><a href="#appendix-A" class="xref"></a><a href="#name-acknowledgements" class="xref">Acknowledgements</a></p>
 </li>
-          <li class="ulBare ulEmpty compact toc" id="section-toc.1-1.11">
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
             <p id="section-toc.1-1.11.1"><a href="#appendix-B" class="xref"></a><a href="#name-authors-addresses" class="xref">Authors' Addresses</a></p>
 </li>
         </ul>
@@ -1816,17 +1816,73 @@ the tree of an instance of the model.<a href="#section-2-3" class="pilcrow">¶</
           <li class="normal" id="section-3.1-1.2">
             <p id="section-3.1-1.2.1">SDF:<a href="#section-3.1-1.2.1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-3.1-1.2.2.1">Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-3.1" class="relref">3.1</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-3.1" class="relref">information block</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.1-1.2.2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-3.1-1.2.2.1">Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-3.1" class="relref">3.1</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-3.1" class="relref">information block</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.1-1.2.2.1" class="pilcrow">¶</a>
 </li>
-              <li class="normal" id="section-3.1-1.2.2.2">Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-3.2" class="relref">3.2</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4" class="relref">4</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4" class="relref">namespaces section</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.1-1.2.2.2" class="pilcrow">¶</a>
+              <li class="normal" id="section-3.1-1.2.2.2">Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-3.2" class="relref">3.2</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4" class="relref">4</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4" class="relref">namespaces section</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.1-1.2.2.2" class="pilcrow">¶</a>
 </li>
             </ul>
 </li>
         </ul>
-<p id="section-3.1-2">After conversion the SDF model as a whole corresponds to the YANG module. The argument of the <code>namespace</code> statement of the YANG module is added to the SDF <code>namespace section</code> together with the argument of the YANG module's <code>prefix</code> statement which also becomes the <code>default namespace</code> in the SDF model. Additionally, the namespaces and prefixes of each of the modules mentioned in the <code>import</code> statements are added to the namespace of the SDF model. Libyang loads the imported modules automatically and in the correct revision. These modules are then also converted and stored so their definitions can be referenced via the <code>sdfRef</code> common quality when necessary.<a href="#section-3.1-2" class="pilcrow">¶</a></p>
-<p id="section-3.1-3">The contents of the <code>organization</code>, <code>contact</code> and <code>yang-version</code> statements are stored alongside the actual <code>description</code> of the YANG module in a special sdfData definition designated to hold information on the module that does not fit into the SDF information block. This is done in the way described in <a href="#design-roundtrips" class="xref">Section 5.2</a> to facilitate round trips in the future. The module's description is scanned for information regarding copyright and licensing which are then transferred to the <code>copyright</code> and <code>license</code> qualities of the SDF model's information block. The <code>version</code> quality of the SDF model's information block is set to the first revision date given in the YANG module's <code>revision</code> statement. All other revision dates are ignored as of now.<a href="#section-3.1-3" class="pilcrow">¶</a></p>
-<p id="section-3.1-4">YANG modules can define features via the <code>feature</code> statement to make parts of the module conditional. The abilities of a server are checked against the module's features. Nodes reference features as an argument to the <code>if-feature</code> statement. If a server does not support a certain feature nodes that reference that feature are ignored by the server. Since this functionality cannot be represented in SDF yet, YANG features are stored in the description of the sdfData definition designated to hold information on the module. The note that is added to the descriptions looks as described in <a href="#design-roundtrips" class="xref">Section 5.2</a>.<a href="#section-3.1-4" class="pilcrow">¶</a></p>
-<p id="section-3.1-5">If the <code>deviation</code> statement (introducing a deviation from the original YANG module) is present in the YANG module Libyang applies the deviation directly and the converter converts the module that way. The presence of the deviation in the original YANG module is not indicated in the resulting SDF model as of now which might cause inconsistencies after round trips.  This, however, is not believed to be of great importance because deviations are supposed to only occur in unpublished modules.<a href="#section-3.1-5" class="pilcrow">¶</a></p>
+<p id="section-3.1-2">The <code>module</code> statement in YANG subsumes all other statements included in a module. After conversion the SDF model as a whole corresponds to the YANG module. The argument of the <code>namespace</code> statement of the YANG module is added to the SDF <code>namespace</code> quality together with the argument of the <code>prefix</code> statement of the YANG module which also becomes the entry of the <code>defaultNamespace</code> quality in the SDF model. Additionally, the namespaces and prefixes of each of the modules mentioned in the <code>import</code> statements are added to the <code>namespace</code> quality of the SDF model. Libyang loads the imported modules automatically and in the correct version. These modules are then also converted and stored so their definitions can be referenced via the <code>sdfRef</code> common quality when necessary. <a href="#lst-moduletosdf" class="xref">Figure 2</a> and <a href="#lst-module" class="xref">Figure 1</a> illustrate these mappings.<a href="#section-3.1-2" class="pilcrow">¶</a></p>
+<p id="section-3.1-3">The contents of the <code>organization</code>, <code>contact</code> and <code>yang-version</code> statements are stored alongside the description of the YANG module in a special <code>sdfData</code> definition designated to hold information on the module that does not fit into the SDF information block. This is done in with a conversion note to facilitate round trips in the future as described in <a href="#design-roundtrips" class="xref">Section 5.2</a>. To illustrate this conversion, <a href="#lst-moduletosdf" class="xref">Figure 2</a> contains a converted model with an <code>sdfData</code> definition called <code>ietf-foo-info</code>. The original YANG module can be found in <a href="#lst-module" class="xref">Figure 1</a>. The description of the module is scanned for information regarding copyright and licensing which are then transferred to the <code>copyright</code> and <code>license</code> qualities of the information block in the SDF model. The <code>version</code> quality of the information block is set to the first revision date given in the YANG <code>revision</code> statement. All other revision dates are ignored as of now.<a href="#section-3.1-3" class="pilcrow">¶</a></p>
+<p id="section-3.1-4">YANG modules can define features via the <code>feature</code> statement to make parts of the module conditional. The abilities of a server are checked against the features stated in the module. Nodes reference features as an argument to the <code>if-feature</code> statement. If a server does not support a certain feature, nodes that reference that feature are ignored by the server. Since this functionality cannot be represented in SDF yet, YANG features are stored in the description of the <code>sdfData</code> definition designated to hold information on the module. The conversion note that is added to the descriptions looks as described in <a href="#design-roundtrips" class="xref">Section 5.2</a>.<a href="#section-3.1-4" class="pilcrow">¶</a></p>
+<p id="section-3.1-5">If the <code>deviation</code> statement (introducing a deviation from the original YANG module) is present in the YANG module, Libyang applies the deviation directly and the converter converts the module that way. The presence of the deviation in the original YANG module is not indicated in the resulting SDF model as of now which might cause inconsistencies after round trips. This is not believed to be of great importance because deviations are supposed to only occur in unpublished modules.<a href="#section-3.1-5" class="pilcrow">¶</a></p>
+<span id="name-example-yang-module"></span><div id="lst-module">
+<figure id="figure-1">
+          <div class="alignLeft art-text artwork" id="section-3.1-6.1">
+<pre>
+{
+    module ietf-foo {
+        namespace "urn:ietf:params:xml:ns:yang:ietf-foo";
+        prefix "foo";
+        organization "Foo Inc.";
+        contact "foo@mail.com";
+        description
+            "This is an example module
+
+             Copyright Foo Inc.
+
+             License XY";
+        revision 2016-03-20;
+        feature bar;
+        feature baz;
+
+        // ... more statements
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-1" class="selfRef">Figure 1</a>:
+<a href="#name-example-yang-module" class="selfRef">Example YANG module</a>
+          </figcaption></figure>
+</div>
+<span id="name-sdf-conversion-of-yang-modu"></span><div id="lst-moduletosdf">
+<figure id="figure-2">
+          <div class="alignLeft art-text artwork" id="section-3.1-7.1">
+<pre>
+{
+    {
+        "defaultNamespace": "foo",
+        "info": {
+            "copyright": "Copyright Foo Inc.",
+            "license": "License XY",
+            "title": "ietf-foo",
+            "version": "2016-03-20"
+        },
+        "namespace": { "foo": "urn:ietf:params:xml:ns:yang:ietf-foo" },
+        "sdfData": {
+            "ietf-foo-info": {
+                "description": "This is an example module\n\nCopyright Foo Inc.\n\nLicense XY\n!Conversion note: revision 2016-03-20!\n\n!Conversion note: organization Foo Inc.!\n\n!Conversion note: contact foo@mail.com!\n!Conversion note: feature bar!\n\n!Conversion note: feature baz!\n"
+            }
+        }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-2" class="selfRef">Figure 2</a>:
+<a href="#name-sdf-conversion-of-yang-modu" class="selfRef">SDF conversion of YANG module from the last figure</a>
+          </figcaption></figure>
+</div>
 </section>
 </div>
 <div id="submodule">
@@ -1838,7 +1894,7 @@ the tree of an instance of the model.<a href="#section-2-3" class="pilcrow">¶</
 <li class="normal" id="section-3.2-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.2" class="relref">7.2</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.2" class="relref">submodule</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.2-1.1" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-3.2-2">A sub-module that is included into its super-module via the <code>include</code> statement is integrated into the super-module and converted that way. This is the simplest option due to the way Libyang represents included sub-modules. A sub-module that occurs without its super-module is converted to its own SDF model as described in <a href="#design-module" class="xref">Section 3.1</a>.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
+<p id="section-3.2-2">If a complex YANG module is composed of several components, the single components can be represented via the <code>submodule</code> statement. For conversion, the nodes of a submodule that is included into its super-module with the <code>include</code> statement are integrated into the super-module and converted that way. This is due to the way Libyang represents included submodules. Submodules on their own cannot be converted since Libyang does not parse files that solely contain a submodule.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="container-statement">
@@ -1852,15 +1908,72 @@ the tree of an instance of the model.<a href="#section-2-3" class="pilcrow">¶</
           <li class="normal" id="section-3.3-1.2">
             <p id="section-3.3-1.2.1">SDF:<a href="#section-3.3-1.2.1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-3.3-1.2.2.1">Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-2.2.1" class="relref">2.2.1</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.1" class="relref">5.1</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.1" class="relref">sdfObject</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.3-1.2.2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-3.3-1.2.2.1">Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-2.2.1" class="relref">2.2.1</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.1" class="relref">5.1</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.1" class="relref">sdfObject</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.3-1.2.2.1" class="pilcrow">¶</a>
 </li>
-              <li class="normal" id="section-3.3-1.2.2.2">Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-2.2.6" class="relref">2.2.6</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-6.3" class="relref">6.3</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-6.3" class="relref">sdfThing</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.3-1.2.2.2" class="pilcrow">¶</a>
+              <li class="normal" id="section-3.3-1.2.2.2">Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-2.2.6" class="relref">2.2.6</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-6.3" class="relref">6.3</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-6.3" class="relref">sdfThing</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.3-1.2.2.2" class="pilcrow">¶</a>
 </li>
             </ul>
 </li>
         </ul>
-<p id="section-3.3-2">YANG uses container nodes to group together other nodes. Containers on the top-level of a module are converted to sdfObjects. A container that is a direct child node to a top-level container node is converted to a compound-type sdfProperty inside of said sdfObject. Any other container becomes a property of the compound-type definition corresponding to the container's parent node. Since the first SDF draft did not contain the compound-type as a possible argument to the type quality containers used to be translated to sdfThings. This, however, was not a very fitting conversion semantically. At that time, sdfThings were the only elements that could contain elements of the same class, i.e., sdfThings could contain other sdfThings. This ability is required to represent the tree structure of YANG where e.g., containers can contain other containers. In the next SDF draft the compound-type was introduced. This feature effectively makes it possible for elements of the sdfData and sdfProperty classes to contain elements that share the same qualities.
-A sub-statement to the container statement that cannot be represented in SDF as of now is the optional <code>presence</code> statement. The argument of the presence statement assigns a meaning to the presence or absence of a container node in an instance of the module. This concept is expressed in the description of the SDF definition analogously to the container node as shown in <a href="#design-roundtrips" class="xref">Section 5.2</a>.<a href="#section-3.3-2" class="pilcrow">¶</a></p>
+<p id="section-3.3-2">YANG uses <code>container</code> nodes to group together other nodes. Containers on the top-level of a module are converted to <code>sdfObject</code> definitions. This is illustrated in the definition called <code>level0</code> in <a href="#lst-container" class="xref">Figure 3</a> and <a href="#lst-containertosdf" class="xref">Figure 4</a>. A container that is a direct child node to a top-level container is converted to a compound-type <code>sdfProperty</code> definition inside an sdfObject, as illustrated in the definition called <code>level1</code> in <a href="#lst-container" class="xref">Figure 3</a> and <a href="#lst-containertosdf" class="xref">Figure 4</a>. Any other container becomes an entry to the <code>properties</code> quality of the compound-type definition corresponding to the parent node of the container. An example of this mapping can be found in <a href="#lst-container" class="xref">Figure 3</a> and <a href="#lst-containertosdf" class="xref">Figure 4</a> in the definition called <code>level2</code>.<a href="#section-3.3-2" class="pilcrow">¶</a></p>
+<p id="section-3.3-3">Since the first SDF Internet-Draft did not contain the compound-type as a possible argument to the <code>type</code> quality, containers used to be translated to <code>sdfThing</code> definitions. This, was not a very suitable conversion semantically, however. At that time, sdfThings were the only elements that could contain elements of the same class, that is sdfThings could contain other sdfThings. This ability is required to represent the tree structure of YANG where, for example, containers can contain other containers. In the second SDF Internet-Draft the compound-type was introduced. This feature effectively makes it possible for elements of the <code>sdfData</code> and <code>sdfProperty</code> classes to contain elements that share the same qualities.<a href="#section-3.3-3" class="pilcrow">¶</a></p>
+<p id="section-3.3-4">A sub-statement to the <code>container</code> statement that cannot be represented in SDF as of now is the optional <code>presence</code> statement. The argument of the <code>presence</code> statement assigns a meaning to the presence or absence of a <code>container</code> node in an instance of the module. This concept is expressed in the description of the SDF definition in question as shown in <a href="#design-roundtrips" class="xref">Section 5.2</a>. This is also illustrated in the definition <code>level2</code> in <a href="#lst-container" class="xref">Figure 3</a> and <a href="#lst-containertosdf" class="xref">Figure 4</a>.<a href="#section-3.3-4" class="pilcrow">¶</a></p>
+<span id="name-yang-module-with-multiple-n"></span><div id="lst-container">
+<figure id="figure-3">
+          <div class="alignLeft art-text artwork" id="section-3.3-5.1">
+<pre>
+{
+    module container-example {
+        // [...]
+        container level0 {
+            container level1 {
+                container level2 {
+                    presence "Enables SSH";
+                    // [...]
+                }
+            }
+        }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-3" class="selfRef">Figure 3</a>:
+<a href="#name-yang-module-with-multiple-n" class="selfRef">YANG module with multiple nested container statements</a>
+          </figcaption></figure>
+</div>
+<span id="name-sdf-conversion-of-the-yang-"></span><div id="lst-containertosdf">
+<figure id="figure-4">
+          <div class="alignLeft art-text artwork" id="section-3.3-6.1">
+<pre>
+{
+    {
+        ; [...]
+        "sdfObject": {
+            "level0": {
+                "sdfProperty": {
+                    "level1": {
+                        "properties": {
+                            "level2": {
+                                "properties": {
+                                    "description": "!Conversion note: presence Enables SSH!\n",
+                                    ; [...]
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "type": "object"
+                    }
+                }
+            }
+        }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-4" class="selfRef">Figure 4</a>:
+<a href="#name-sdf-conversion-of-the-yang-" class="selfRef">SDF conversion of the YANG module from the last figure</a>
+          </figcaption></figure>
+</div>
 </section>
 </div>
 <div id="design-leaf">
@@ -1874,14 +1987,80 @@ A sub-statement to the container statement that cannot be represented in SDF as 
           <li class="normal" id="section-3.4-1.2">
             <p id="section-3.4-1.2.1">SDF:<a href="#section-3.4-1.2.1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-3.4-1.2.2.1">Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-2.2.2" class="relref">2.2.2</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.2" class="relref">5.2</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.2" class="relref">sdfProperty</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.4-1.2.2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-3.4-1.2.2.1">Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-2.2.2" class="relref">2.2.2</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.2" class="relref">5.2</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.2" class="relref">sdfProperty</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.4-1.2.2.1" class="pilcrow">¶</a>
 </li>
-              <li class="normal" id="section-3.4-1.2.2.2">Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.4-1.2.2.2" class="pilcrow">¶</a>
+              <li class="normal" id="section-3.4-1.2.2.2">Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.4-1.2.2.2" class="pilcrow">¶</a>
 </li>
             </ul>
 </li>
         </ul>
-<p id="section-3.4-2">Leaf nodes in YANG represent scalar variables. If a leaf node occurs at the top-level of the module or as a direct child node of a top-level container (which is converted to sdfObject) it is transformed to an sdfProperty. On any other level a leaf becomes a property of the compound-type definition equivalent to the leaf's parent node. In both cases the SDF <code>type</code> data quality is set to one of the simple data types because leaf nodes can only be of simple data types. Leaf nodes can be assigned default values which are used in case the leaf node does not exist in an instance of the YANG module. A leaf's default value is converted to SDF as the data quality <code>default</code>. The <code>units</code> sub-statement of a leaf node in YANG becomes the SDF data quality <code>unit</code>. This quality is constrained to the SenML unit names. Although it could cause conformance issues, the content of the YANG units statement is not processed to fit the SenML unit names as of now. This is due to the low probability that a unit from a YANG module is not listed in the SenML unit names in comparison to the time required to implement a mechanism to check conformance and convert non-conforming units. This feature might be added in later versions of the converter, though. YANG leaf nodes can be marked as mandatory to occur in an instance of the module by the <code>mandatory</code> statement. The statement takes <code>true</code> and <code>false</code> as arguments. This can easily be mapped to SDF through the sdfRequired common quality. A reference to the SDF definition equivalent to the YANG leaf node marked as mandatory is added to the containing sdfObject's sdfRequired quality. If the sdfRequired quality does not already exist in the sdfObject it is added now.<a href="#section-3.4-2" class="pilcrow">¶</a></p>
+<p id="section-3.4-2"><code>Leaf</code> nodes in YANG represent scalar variables. If a <code>leaf</code> statement occurs at the top-level of the module or as a direct child node of a top-level container (which is converted to sdfObject) it becomes an sdfProperty. On any other level a leaf is mapped to an entry of the <code>properties</code> quality of the compound-type definition corresponding to the parent node of the leaf. In both cases the SDF <code>type</code> quality is set to one of the simple data types because <code>leaf</code> nodes can only have simple data types. <code>Leaf</code> nodes can be assigned default values which are used in case the node does not exist in an instance of the YANG module. The default value of a leaf is converted to SDF through the quality <code>default</code>. The <code>units</code> sub-statement of a <code>leaf</code> node in YANG becomes the SDF quality <code>unit</code>. An example of such a conversion can be found in the <code>level0</code> element in <a href="#fig-leaf" class="xref">Figure 5</a> and <a href="#fig-leaftosdf" class="xref">Figure 6</a>. The SDF quality <code>unit</code> is constrained to the SenML unit names. Although it could cause conformance issues, the content of the YANG <code>units</code> statement is not processed to fit the SenML unit names as of now. This is due to the low probability that a unit from a YANG module is not listed in the SenML unit names in comparison to the time required to implement a mechanism to check conformance and convert non-conforming units. This feature might be added in later versions of the converter. YANG <code>leaf</code> nodes can be marked as mandatory to occur in an instance of the module by the <code>mandatory</code> statement. The statement takes <code>true</code> and <code>false</code> as arguments. This can easily be mapped to SDF through the <code>sdfRequired</code> quality. A reference to the SDF equivalent of the mandatory YANG <code>leaf</code> node is added to the <code>sdfRequired</code> quality of the containing sdfObject. If a mandatory leaf is transformed to an entry in the <code>properties</code> quality of a compound-type definition in SDF, said entry is mentioned in the <code>required</code> quality. If the <code>sdfRequired</code> or <code>required</code> quality does not already exist it is added at this point. The latter is demonstrated in the <code>level2</code> element in <a href="#fig-leaf" class="xref">Figure 5</a> and <a href="#fig-leaftosdf" class="xref">Figure 6</a>.<a href="#section-3.4-2" class="pilcrow">¶</a></p>
+<span id="name-yang-module-containing-mult"></span><div id="fig-leaf">
+<figure id="figure-5">
+          <div class="alignLeft art-text artwork" id="section-3.4-3.1">
+<pre>
+{
+    module leaf-example {
+        // [...]
+        leaf level0 {
+            type int32;
+            units "kg";
+            default 14;
+        }
+        container dummy0 {
+            leaf level1 { type string; }
+            container dummy1 {
+                leaf level2 {
+                    type string;
+                    mandatory true;
+                }
+            }
+        }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-5" class="selfRef">Figure 5</a>:
+<a href="#name-yang-module-containing-mult" class="selfRef">YANG module containing multiple leaf statements</a>
+          </figcaption></figure>
+</div>
+<span id="name-sdf-conversion-of-the-yang-m"></span><div id="fig-leaftosdf">
+<figure id="figure-6">
+          <div class="alignLeft art-text artwork" id="section-3.4-4.1">
+<pre>
+{
+    {
+        ; [...]
+        "sdfObject": {
+            "dummy0": {
+                "sdfProperty": {
+                    "dummy1": {
+                        "properties": {
+                            "level2": { "type": "string" }
+                        },
+                        "required": [ "level2" ],
+                        "type": "object"
+                    },
+                    "level1": { "type": "string" }
+                }
+            }
+        },
+        "sdfProperty": {
+            "level0": {
+                "default": 14,
+                ; [...]
+                "type": "integer",
+                "unit": "kg"
+            }
+        }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-6" class="selfRef">Figure 6</a>:
+<a href="#name-sdf-conversion-of-the-yang-m" class="selfRef">SDF conversion of the YANG module from the last figure</a>
+          </figcaption></figure>
+</div>
 </section>
 </div>
 <div id="sec-map-leaflist">
@@ -1895,14 +2074,15 @@ A sub-statement to the container statement that cannot be represented in SDF as 
           <li class="normal" id="section-3.5-1.2">
             <p id="section-3.5-1.2.1">SDF:<a href="#section-3.5-1.2.1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-3.5-1.2.2.1">Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-2.2.2" class="relref">2.2.2</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.2" class="relref">5.2</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.2" class="relref">sdfProperty</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.5-1.2.2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-3.5-1.2.2.1">Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-2.2.2" class="relref">2.2.2</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.2" class="relref">5.2</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.2" class="relref">sdfProperty</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.5-1.2.2.1" class="pilcrow">¶</a>
 </li>
-              <li class="normal" id="section-3.5-1.2.2.2">Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.5-1.2.2.2" class="pilcrow">¶</a>
+              <li class="normal" id="section-3.5-1.2.2.2">Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.5-1.2.2.2" class="pilcrow">¶</a>
 </li>
             </ul>
 </li>
         </ul>
-<p id="section-3.5-2">Similarly to leaf nodes, leaf-list nodes hold data of simple types in YANG but as items in an array. As such, leaf-list definitions are converted to sdfProperty if they occur on the top-level or one level below in a module. On any other level a leaf-list becomes a property of the compound-type definition corresponding to the leaf-list's parent definition. In both cases the type is set to <code>array</code>. The items of the array are of simple data types since leaf-list definitions can only have simple data types as well. The minimal and maximal number of elements in a YANG leaf-list can be specified by the <code>min-elements</code> and <code>max-elements</code> sub-statements. This is analogous to SDF's <code>minItems</code> and <code>maxItems</code> data qualities which are set accordingly by the converter. A YANG leaf-list can specify whether the system or the user is responsible for ordering the leaf-lists entries. This information is stored in the <code>ordered-by</code> statement in YANG which is represented in SDF by a remark in the description (as shown in <a href="#design-roundtrips" class="xref">Section 5.2</a>) of the SDF equivalent to the leaf-list node in question. Since leaf-list nodes are just leaf nodes that can occur multiple times the <code>units</code> and <code>default</code> statements of leaf-list nodes are converted as described in <a href="#design-leaf" class="xref">Section 3.4</a>.<a href="#section-3.5-2" class="pilcrow">¶</a></p>
+<p id="section-3.5-2">Similarly to <code>leaf</code> nodes, <code>leaf-list</code> nodes hold data of simple types in YANG but as items in an array. As such, leaf-lists are converted to sdfProperties if they occur on the top-level or one level below in a module. On any other level a leaf-list becomes an entry to the <code>properties</code> quality of the compound-type definition corresponding to the parent node of the leaf-list. In both cases the type is set to <code>array</code>. The items of the array are of simple data types since <code>leaf-list</code> nodes can only have simple data types as well. The minimal and maximal number of elements in a YANG leaf-list can be specified by the <code>min-elements</code> and <code>max-elements</code> sub-statements. This is analogue to the <code>minItems</code> and <code>maxItems</code> qualities of SDF which are set accordingly by the converter. A leaf-list can specify whether the system or the user is responsible for ordering the entries of the leaf-list. This information is stored in the <code>ordered-by</code> statement in YANG which is represented in SDF by a remark in the description (as shown in <a href="#design-roundtrips" class="xref">Section 5.2</a>) of the SDF equivalent to the <code>leaf-list</code> node in question.
+Since <code>leaf-list</code> nodes are just <code>leaf</code> nodes that can occur multiple times, the <code>units</code> and <code>default</code> statements of <code>leaf-list</code> nodes are converted as described for <code>leaf</code> nodes in <a href="#design-leaf" class="xref">Section 3.4</a>.<a href="#section-3.5-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="list-statement">
@@ -1916,16 +2096,68 @@ A sub-statement to the container statement that cannot be represented in SDF as 
           <li class="normal" id="section-3.6-1.2">
             <p id="section-3.6-1.2.1">SDF:<a href="#section-3.6-1.2.1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-3.6-1.2.2.1">Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-2.2.2" class="relref">2.2.2</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.2" class="relref">5.2</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.2" class="relref">sdfProperty</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.6-1.2.2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-3.6-1.2.2.1">Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-2.2.2" class="relref">2.2.2</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.2" class="relref">5.2</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.2" class="relref">sdfProperty</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.6-1.2.2.1" class="pilcrow">¶</a>
 </li>
-              <li class="normal" id="section-3.6-1.2.2.2">Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.6-1.2.2.2" class="pilcrow">¶</a>
+              <li class="normal" id="section-3.6-1.2.2.2">Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.6-1.2.2.2" class="pilcrow">¶</a>
 </li>
             </ul>
 </li>
         </ul>
-<p id="section-3.6-2">Since list nodes are similar to leaf-list nodes with the difference that they represent an assortment of nodes that can occur multiple times they are also converted similarly. List nodes one the top-level or one level below become sdfProperties. On any other level a list node is converted to a property of the compound-type definition corresponding to the list's parent node. The type is set to <code>array</code> for both alternatives. Since lists contain a set of nodes the items of the corresponding array are of type object.  The minimal and maximal number of elements in a YANG list can be specified by the <code>min-elements</code> and <code>max-elements</code> sub-statements. This is analogous to SDF's <code>minItems</code> and <code>maxItems</code> data qualities which are set accordingly by the converter. List nodes in YANG can define one or multiple keys that identify the list entries via the <code>key</code> statement. There is no SDF quality representing this feature. To preserve the information the list keys are stored in the description of the SDF definition analogously to the YANG list node as described in <a href="#design-roundtrips" class="xref">Section 5.2</a>.
-The YANG list's <code>unique</code> sub-statement defines a list of descendant leaf nodes of the list that must have a unique combination of values each. This concept is comparable SDF's <code>uniqeItems</code> data quality. However, the boolean-typed uniqueItems quality specifies whether all items of an SDF array have to be unique as opposed to only a selection of unique items in the YANG statement unique. To mitigate this discrepancy a note is added to the SDF equivalents of all descendant leaf nodes of a list that are marked as unique as shown in <a href="#design-roundtrips" class="xref">Section 5.2</a>.
-Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> statement of a list node is converted as described in <a href="#sec-map-leaflist" class="xref">Section 3.5</a>.<a href="#section-3.6-2" class="pilcrow">¶</a></p>
+<p id="section-3.6-2">The <code>list</code> statement of YANG is similar to the <code>leaf-list</code> statement. The only difference is that, opposed to leaf-lists, lists represent an assortment of <em>nodes</em> that can occur multiple times. Therefore, YANG lists are mapped to SDF similarly to leaf-lists. <code>List</code> nodes on the top-level or one level below become sdfProperties. On any other level a list is converted to an entry to the <code>properties</code> quality of the compound-type definition corresponding to the parent node of the list. The type is set to <code>array</code> for both alternatives. Since lists contain a set of nodes, the items of the corresponding array are of type <code>object</code>.  The minimal and maximal number of elements in a list can be specified by the <code>min-elements</code> and <code>max-elements</code> sub-statements. This is analogue to the <code>minItems</code> and <code>maxItems</code> qualities of SDF which are set accordingly by the converter. <code>List</code> nodes in YANG can define one or multiple keys leafs of the list via the <code>key</code> statement. There is no SDF quality that could represent this feature. To preserve the information the names of the list keys are stored in the description of the SDF definition in question as described in section <a href="#design-roundtrips" class="xref">Section 5.2</a>. 
+The <code>unique</code> sub-statement of the YANG list defines a number of descendant <code>leaf</code> nodes of the list that must have a unique combination of values in a module instance. This concept can be partly represented through the <code>uniqueItems</code> quality of SDF. However, the boolean-typed <code>uniqueItems</code> quality only specifies that the items of an SDF array have to be unique with <em>all</em> of their values combined. The YANG statement <code>unique</code> specifies a <em>selection</em> of <code>leaf</code> node values in the list that must be unique when combined. Thus, in addition to setting the <code>uniqueItems</code> quality of the SDF equivalent of the YANG list to true, a conversion note is added to the SDF equivalents of all leafs that are mentioned in the <code>unique</code> statement. This is done as shown in Section <a href="#design-roundtrips" class="xref">Section 5.2</a>. The <code>ordered-by</code> statement of a list is also preserved in a conversion note. 
+An example conversion of a <code>list</code> node with the mentioned sub-statements to SDF can be found in <a href="#fig-list" class="xref">Figure 7</a> and <a href="#fig-listtosdf" class="xref">Figure 8</a>.<a href="#section-3.6-2" class="pilcrow">¶</a></p>
+<span id="name-yang-list-node"></span><div id="fig-list">
+<figure id="figure-7">
+          <div class="alignLeft art-text artwork" id="section-3.6-3.1">
+<pre>
+{
+    list server {
+        key "name";
+        unique "ip";
+        ordered-by user;
+        min-elements 1;
+        max-elements 100;
+        leaf name { type string; }
+        leaf ip { type string; }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-7" class="selfRef">Figure 7</a>:
+<a href="#name-yang-list-node" class="selfRef">YANG list node</a>
+          </figcaption></figure>
+</div>
+<span id="name-sdf-conversion-of-the-yang-l"></span><div id="fig-listtosdf">
+<figure id="figure-8">
+          <div class="alignLeft art-text artwork" id="section-3.6-4.1">
+<pre>
+{
+    "sdfProperty": {
+        "server": {
+            "description": "!Conversion note: key name!\n!Conversion note: ordered-by user!\n",
+            "items": {
+                "properties": {
+                    "ip": {
+                        "description": "!Conversion note: unique!\n",
+                        "type": "string"
+                    },
+                    "name": { "type": "string" }
+                },
+                "type": "object"
+            },
+            "maxItems": 100.0,
+            "minItems": 1.0,
+            "type": "array",
+            "uniqueItems": true
+        }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-8" class="selfRef">Figure 8</a>:
+<a href="#name-sdf-conversion-of-the-yang-l" class="selfRef">SDF conversion of the YANG list node from the last figure</a>
+          </figcaption></figure>
+</div>
 </section>
 </div>
 <div id="grouping-statement">
@@ -1936,10 +2168,10 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.7-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.12" class="relref">7.12</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.12" class="relref">grouping</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.7-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.7-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.5" class="relref">5.5</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.5" class="relref">sdfData</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.7-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.7-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.5" class="relref">5.5</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.5" class="relref">sdfData</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.7-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-3.7-2">Grouping nodes are very similar to container nodes with the difference that the set of nodes defined in a grouping do not occur in the data tree unless the grouping has been referenced one or more times by <code>uses</code> nodes. Thus, a grouping node is converted to a compound-type sdfData definition which also defines a reusable definition that is not a declaration.<a href="#section-3.7-2" class="pilcrow">¶</a></p>
+<p id="section-3.7-2"><code>Grouping</code> nodes are very similar to <code>container</code> nodes with the difference that the set of nodes contained in a grouping does not occur in the data tree unless the grouping has been referenced at least once by a <code>uses</code> node. Thus, a <code>grouping</code> node is converted to a compound-type <code>sdfData</code> definition which defines a reusable definition that is not a declaration as well. The nodes inside the grouping are converted as entries to the <code>properties</code> quality in SDF. <a href="#fig-usesgrouping" class="xref">Figure 9</a> and <a href="#fig-usesgroupingsdf" class="xref">Figure 10</a> contain an example conversion of a grouping.<a href="#section-3.7-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="uses-statement">
@@ -1950,10 +2182,77 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.8-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.13" class="relref">7.13</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.13" class="relref">uses</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.8-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.8-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.4" class="relref">4.4</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.4" class="relref">sdfRef</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.8-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.8-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.4" class="relref">4.4</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.4" class="relref">sdfRef</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.8-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-3.8-2">A <code>uses</code> node has the purpose of referencing a grouping node. The set of child nodes of the referenced grouping are copied to wherever the <code>uses</code> node is featured. Some of the referenced grouping's sub-statements can be altered via the refine statement of the <code>uses</code> node. In SDF a <code>uses</code> node is represented by the sdfRef quality which is added to the definition corresponding to the parent node of the <code>uses</code> node. As an argument the sdfRef contains a reference to the sdfData definition corresponding to the grouping referenced by the <code>uses</code> node. If the <code>uses</code> node contains a refine statement its contents are converted as they would be if they occurred in a node.<a href="#section-3.8-2" class="pilcrow">¶</a></p>
+<p id="section-3.8-2">A <code>uses</code> node has the purpose of referencing a <code>grouping</code> node. The set of child nodes of the referenced grouping are copied to wherever the <code>uses</code> node is featured. Some of the sub-statements of the referenced grouping can be altered 
+via the <code>refine</code> statement of the <code>uses</code> node. In SDF a <code>uses</code> node is represented by the <code>sdfRef</code> quality which is added to the definition in question. As an argument the sdfRef contains a reference to the <code>sdfData</code> definition corresponding to the grouping referenced by the <code>uses</code> node. If the <code>uses</code> node contains a <code>refine</code> statement, the specified refinements are also applied in the target SDF definition. An example for such a conversion is illustrated in <a href="#fig-usesgrouping" class="xref">Figure 9</a> and <a href="#fig-usesgroupingsdf" class="xref">Figure 10</a>.<a href="#section-3.8-2" class="pilcrow">¶</a></p>
+<span id="name-yang-module-with-uses-and-g"></span><div id="fig-usesgrouping">
+<figure id="figure-9">
+          <div class="alignLeft art-text artwork" id="section-3.8-3.1">
+<pre>
+{
+    module restaurant {
+        // [...]
+        grouping dish {
+            leaf name { type string; }
+            leaf price { type int32; }
+        }
+        list menu {
+            // [...]
+            uses dish {
+                refine name { mandatory true; }
+            }
+        }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-9" class="selfRef">Figure 9</a>:
+<a href="#name-yang-module-with-uses-and-g" class="selfRef">YANG module with uses and grouping statements</a>
+          </figcaption></figure>
+</div>
+<span id="name-sdf-conversion-of-the-yang-mo"></span><div id="fig-usesgroupingsdf">
+<figure id="figure-10">
+          <div class="alignLeft art-text artwork" id="section-3.8-4.1">
+<pre>
+{
+    {
+        ; [...]
+        "sdfData": {
+            "dish": {
+                "properties": {
+                    "name": { "type": "string" },
+                    "price": {
+                        ; [...]
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "sdfProperty": {
+            "menu": {
+                "items": {
+                    "properties": {
+                        "dish": {
+                            "sdfRef": "#/sdfData/dish",
+                            "required": [ "name" ],
+                        }
+                    }
+                    "type": "object"
+                },
+                "type": "array"
+            }
+        }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-10" class="selfRef">Figure 10</a>:
+<a href="#name-sdf-conversion-of-the-yang-mo" class="selfRef">SDF conversion of the YANG module from the last figure</a>
+          </figcaption></figure>
+</div>
 </section>
 </div>
 <div id="choice-statement">
@@ -1964,10 +2263,104 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.9-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.9" class="relref">7.9</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.9" class="relref">choice</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.9-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.9-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7.2" class="relref">4.7.2</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7.2" class="relref">sdfChoice</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.9-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.9-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7.2" class="relref">4.7.2</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7.2" class="relref">sdfChoice</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.9-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-3.9-2">Conversion of the choice definitions from YANG is quite simple since it is similar to the sdfChoice quality. A choice definition is converted to an sdfChoice definition. The case definitions or other child definitions of the choice become one of the named alternatives of the resulting sdfChoice each.<a href="#section-3.9-2" class="pilcrow">¶</a></p>
+<p id="section-3.9-2">Conversion of the <code>choice</code> statement from YANG is simple since it is similar to the <code>sdfChoice</code> quality. The <code>choice</code> statement is used to define alternative sub-trees for the node the choice occurs in. Only one of the alternatives is present in the data tree. A YANG choice is converted to an sdfProperty if it occurs on top-level or one level below, like the <code>snack</code> definition in <a href="#fig-choice" class="xref">Figure 11</a> and <a href="#fig-choicesdf" class="xref">Figure 12</a>. On any other level a choice is mapped to an entry of the <code>properties</code> quality of the compound-type definition corresponding to the parent node of the choice. The <code>food-level2</code> definition in <a href="#fig-choice" class="xref">Figure 11</a> and <a href="#fig-choicesdf" class="xref">Figure 12</a> is an example of this kind of mapping. The SDF equivalent of the choice contains the <code>sdfChoice</code> quality.  <code>Case</code> or other child nodes of the choice are mapped to SDF as one of the named alternatives of the sdfChoice each. What cannot be represented is the <code>default</code> sub-statement of the YANG choice that defines which of the alternatives is considered the default one. This information is preserved in a conversion note as described in Section <a href="#design-roundtrips" class="xref">Section 5.2</a>.<a href="#section-3.9-2" class="pilcrow">¶</a></p>
+<span id="name-yang-container-using-the-ch"></span><div id="fig-choice">
+<figure id="figure-11">
+          <div class="alignLeft art-text artwork" id="section-3.9-3.1">
+<pre>
+{
+    container food {
+        container food-level2 {
+            choice dinner {
+                default home-cooked;
+                case restaurant {
+                    leaf steak { type boolean; }
+                    leaf pizza { type boolean; }
+                }
+                case home-cooked {
+                    leaf pasta { type boolean; }
+                }
+            }
+        }
+        choice snack {
+            case sports-arena {
+                leaf pretzel { type boolean; }
+                leaf beer { type boolean; }
+            }
+            case late-night {
+                leaf chocolate { type boolean; }
+            }
+        }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-11" class="selfRef">Figure 11</a>:
+<a href="#name-yang-container-using-the-ch" class="selfRef">YANG container using the choice statement</a>
+          </figcaption></figure>
+</div>
+<span id="name-sdf-conversion-of-the-yang-c"></span><div id="fig-choicesdf">
+<figure id="figure-12">
+          <div class="alignLeft art-text artwork" id="section-3.9-4.1">
+<pre>
+{
+    "sdfObject": {
+        "food": {
+            "sdfProperty": {
+                "food-level2": {
+                    "properties": {
+                        "dinner": {
+                            "description": "!Conversion note: default home-cooked!\n",
+                            "sdfChoice": {
+                                "home-cooked": {
+                                    "properties": {
+                                        "pasta": { "type": "boolean" }
+                                    },
+                                    "type": "object"
+                                },
+                                "restaurant": {
+                                    "properties": {
+                                        "pizza": { "type": "boolean" },
+                                        "steak": { "type": "boolean" }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "type": "object"
+                },
+                "snack": {
+                    "description": "!Conversion note: default late-night!\n",
+                    "sdfChoice": {
+                        "late-night": {
+                            "properties": {
+                                "chocolate": { "type": "boolean" }
+                            },
+                            "type": "object"
+                        },
+                        "sports-arena": {
+                            "properties": {
+                                "beer": { "type": "boolean" },
+                                "pretzel": { "type": "boolean" }
+                            },
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-12" class="selfRef">Figure 12</a>:
+<a href="#name-sdf-conversion-of-the-yang-c" class="selfRef">SDF conversion of the YANG container from the last figure</a>
+          </figcaption></figure>
+</div>
 </section>
 </div>
 <div id="rpc-statement">
@@ -1978,7 +2371,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.10-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.14" class="relref">7.14</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.14" class="relref">rpc</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.10-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.10-1.2">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-2.2.3" class="relref">2.2.3</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.3" class="relref">5.3</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.3" class="relref">sdfAction</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.10-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.10-1.2">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-2.2.3" class="relref">2.2.3</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.3" class="relref">5.3</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.3" class="relref">sdfAction</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.10-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.10-2">Remote procedure calls (RPCs) can be modelled in YANG with RPC nodes which have up to one <code>input</code> child node holding the commands input data and up to one <code>output</code> node for the output data. In YANG RPCs can only occur on the top-level because in contrast to actions in YANG they do not belong to a container. This can easily be represented by sdfActions. The corresponding sdfAction is not placed inside an sdfObject or sdfThing but at the top-level of the SDF model to represent independence from a container. The input node of the RPC is converted to the sdfInputData quality of the sdfAction which is of type object. Equivalently the output node of the RPC becomes the sdfAction's sdfOutputData which is also of type object. Groupings and typedefs in the RPC are converted to sdfData definitions inside the sdfAction.<a href="#section-3.10-2" class="pilcrow">¶</a></p>
@@ -1992,7 +2385,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.11-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.15" class="relref">7.15</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.15" class="relref">action</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.11-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.11-1.2">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-2.2.3" class="relref">2.2.3</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.3" class="relref">5.3</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.3" class="relref">sdfAction</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.11-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.11-1.2">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-2.2.3" class="relref">2.2.3</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.3" class="relref">5.3</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.3" class="relref">sdfAction</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.11-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.11-2">Action nodes in YANG work similarly to RPC nodes in the way that they are used to model operations that can be invoked in the module and also have up to one input and output child node respectively. As mentioned before YANG actions are affiliated to a container though. The representation of this affiliation is not quite trivial because YANG containers are not translated to sdfObjects in all cases. Only sdfObjects can have sdfActions, though. If an action occurs in a container that is a below-top-level container (and thus not converted to sdfObject) the affiliation cannot be represented directly in SDF as of now. To keep the semantics of the affiliation a copy of the contents of the converted container is added to the sdfAction's sdfInputData. Like for RPC nodes, the input nodes of the action are converted to the sdfInputData quality of the sdfAction which is of type object. Equivalently the output nodes of the action become the sdfAction's sdfOutputData which is also of type object. Groupings and typedefs in the action node are converted to sdfData definitions inside the sdfAction.<a href="#section-3.11-2" class="pilcrow">¶</a></p>
@@ -2006,7 +2399,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.12-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.16" class="relref">7.16</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.16" class="relref">notification</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.12-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.12-1.2">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-2.2.4" class="relref">2.2.4</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.4" class="relref">5.4</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.4" class="relref">sdfEvent</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.12-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.12-1.2">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-2.2.4" class="relref">2.2.4</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.4" class="relref">5.4</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.4" class="relref">sdfEvent</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.12-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.12-2">In YANG, notification nodes are used to model notification messages. Notification nodes are converted to sdfEvent definitions. Their child nodes are converted to the sdfEvent's sdfOutputData which is of type object. Groupings and typedefs in the notification node are converted to sdfData definitions inside the sdfEvent.<a href="#section-3.12-2" class="pilcrow">¶</a></p>
@@ -2020,7 +2413,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.13-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.17" class="relref">7.17</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.17" class="relref">augment</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.13-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.13-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.6." class="relref">4.6.</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.6." class="relref">common qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.13-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.13-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6." class="relref">4.6.</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6." class="relref">common qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.13-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.13-2">The augment statement can either occur at the top-level of a module to add nodes to an existing target module or sub-module or in a <code>uses</code> statement to augment the targeted grouping. The conversion of the augment statement to SDF is not trivial because SDF does not feature this mechanism directly.<a href="#section-3.13-2" class="pilcrow">¶</a></p>
@@ -2036,7 +2429,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.14-1.1">YANG: Sections <a href="https://rfc-editor.org/rfc/rfc7950#section-7.10" class="relref">7.10</a> and <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.11" class="relref">7.11</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.11" class="relref">augment</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.14-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.14-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.6" class="relref">4.6</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.6" class="relref">common qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.14-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.14-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6" class="relref">4.6</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6" class="relref">common qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.14-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.14-2">The <code>anydata</code> and <code>anyxml</code> statements are designated for nodes in the schema tree whose structure is unknown at the module's design time or in general. Since this is not a concept that can be represented in SDF as of now, anydata and anyxml nodes are not converted. To preserve the information (e.g., for round trips) a comment is added to the SDF element corresponding to the anydata/anyxml node's parent node as described in <a href="#design-roundtrips" class="xref">Section 5.2</a>.<a href="#section-3.14-2" class="pilcrow">¶</a></p>
@@ -2050,7 +2443,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.15-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.4" class="relref">7.4</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.4" class="relref">type</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.15-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.15-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.15-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.15-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.15-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.15-2">Conversion for the <code>type</code> statement from YANG is very straightforward if the argument is a simple data type since the SDF data qualities also contain a <code>type</code> quality. A derived type used as an argument to the YANG <code>type</code> statement is converted to an <code>sdfRef</code> to the <code>sdfData</code> corresponding to that derived type. If the derived type is restricted (e.g., via the length statement) the restrictions are converted as they would be for the base type and added to the SDF definition containing the type in question.<a href="#section-3.15-2" class="pilcrow">¶</a></p>
@@ -2065,7 +2458,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.16-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-9.4" class="relref">9.4</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-9.4" class="relref">string</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.16-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.16-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.16-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.16-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.16-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.16-2">The YANG built-in type string is converted to SDF's built-in type string. Strings in YANG can be restricted regarding their length and patterns (containing regular expressions).<a href="#section-3.16-2" class="pilcrow">¶</a></p>
@@ -2082,7 +2475,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.17-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-9.3" class="relref">9.3</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-9.3" class="relref">decimal64</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.17-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.17-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.17-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.17-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.17-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.17-2">The decimal64 built-in type of YANG is converted to the number type in SDF. A decimal64 type in YANG has a mandatory <code>fraction-digits</code> sub-statement that specifies the possible number of digits after the decimal separator. The value of the fraction-digits statement is converted to the <code>multipleOf</code> data quality of SDF which states the resolution of a number, i.e., the size of the minimal distance between number values.<a href="#section-3.17-2" class="pilcrow">¶</a></p>
@@ -2097,7 +2490,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.18-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-9.2" class="relref">9.2</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-9.2" class="relref">integer</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.18-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.18-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.18-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.18-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.18-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.18-2">In YANG there are 8 different integer types (int8, uint8, int16, uint16, int32, uint32, int64, uint64). Each of them is converted to integer in SDF. A comment specifying the exact type is added as described in <a href="#design-roundtrips" class="xref">Section 5.2</a>. Additionally, the <code>minimum</code> and <code>maximum</code> qualities of the SDF definition the converted type belongs to are set to the respective minimum and maximum values of the integer type in question. If the YANG type also specifies a range the minimum and maximum SDF qualities are altered accordingly. Like the decimal64 YANG built-in type integer types can also be restricted by a range statement. This range statement is converted as described in <a href="#design-dec64" class="xref">Section 3.17</a>.<a href="#section-3.18-2" class="pilcrow">¶</a></p>
@@ -2111,7 +2504,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.19-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-9.5" class="relref">9.5</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-9.5" class="relref">boolean</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.19-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.19-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.19-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.19-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.19-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.19-2">YANG's boolean built-in type is converted to SDF's boolean type. There are no further sub-statements to this type in YANG.<a href="#section-3.19-2" class="pilcrow">¶</a></p>
@@ -2125,7 +2518,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.20-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-9.8" class="relref">9.8</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-9.8" class="relref">binary</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.20-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.20-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.20-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.20-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.20-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.20-2">If the argument of the YANG type statement is <code>binary</code> the SDF type quality is set to string. In addition, the sdfType quality is set to <code>byte-string</code>. A YANG binary can have a sub-statement restricting its length. This is converted to SDF via the <code>minLength</code> and <code>maxLength</code> data qualities. Like the string YANG built-in type binary types can also be restricted by a length statement. This length statement is converted as described in <a href="#design-string" class="xref">Section 3.16</a><a href="#section-3.20-2" class="pilcrow">¶</a></p>
@@ -2139,7 +2532,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.21-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-9.6" class="relref">9.6</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-9.6" class="relref">enumeration</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.21-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.21-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.21-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.21-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.21-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.21-2">The YANG built-in type <code>enumeration</code> is used to map string-valued alternatives to integer values. Additionally, each string can have a description and other sub-statements. SDF also specifies an <code>enum</code> quality which is used to represent YANG enumerations. Since the SDF enum quality only holds an array of strings all other information is stored in the description of the SDF definition the enum belongs to.<a href="#section-3.21-2" class="pilcrow">¶</a></p>
@@ -2153,7 +2546,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.22-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-9.8" class="relref">9.8</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-9.8" class="relref">bits</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.22-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.22-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.22-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.22-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.22-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.22-2">Since SDF does not specify a built-in type to represent a set of named bits and their positions like YANG does this YANG built-in type has to be converted to SDF type object with one property of type boolean for each bit. The property is named after the bit's name and the bit's position is stored in the property's description as described in <a href="#design-roundtrips" class="xref">Section 5.2</a>.<a href="#section-3.22-2" class="pilcrow">¶</a></p>
@@ -2167,7 +2560,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.23-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-9.12" class="relref">9.12</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-9.12" class="relref">union</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.23-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.23-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7.2" class="relref">4.7.2</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7.2" class="relref">sdfChoice</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.23-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.23-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7.2" class="relref">4.7.2</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7.2" class="relref">sdfChoice</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.23-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.23-2">Although the <code>union</code> built-in type of YANG does not exist as a built-in type in SDF its meaning can be easily represented by the sdfChoice quality. YANG unions hold a set of alternative types. The corresponding sdfChoice contains a set of named alternatives each containing only the SDF type quality and named after the respective type in the YANG union.<a href="#section-3.23-2" class="pilcrow">¶</a></p>
@@ -2181,7 +2574,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.24-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-9.9" class="relref">9.9</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-9.9" class="relref">leafref</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span> Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-9.10" class="relref">9.10</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-9.10" class="relref">identityref</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.24-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.24-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.4" class="relref">4.4</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.4" class="relref">sdfRef</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.24-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.24-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.4" class="relref">4.4</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.4" class="relref">sdfRef</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.24-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.24-2">YANG's built-in types <code>leafref</code> and <code>identityref</code> are used to reference a leaf node or identity definition respectively. They are represented in SDF by the sdfRef quality. As an argument said sdfRef quality contains a reference to the SDF element corresponding to the target of the leafref or identityref statement.<a href="#section-3.24-2" class="pilcrow">¶</a></p>
@@ -2195,7 +2588,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.25-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-9.11" class="relref">9.11</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-9.11" class="relref">empty</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.25-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.25-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.25-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.25-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.25-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.25-2">Another concept that is not contained in SDF directly is that of YANG's built-in type <code>empty</code>. YANG elements with this type convey meaning by their mere existence or non-existence. This is represented in SDF using the compound-type with an empty set of properties.<a href="#section-3.25-2" class="pilcrow">¶</a></p>
@@ -2222,7 +2615,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.27-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-9.3" class="relref">9.3</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-9.3" class="relref">typedef</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.27-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.27-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.4" class="relref">4.4</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.4" class="relref">sdfRef</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.27-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.27-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.4" class="relref">4.4</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.4" class="relref">sdfRef</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.27-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.27-2">The SDF class <code>sdfData</code> is used to represent YANG <code>typedefs</code> after conversion. The usage of a derived type via the <code>type</code> statement is converted to an <code>sdfRef</code> to the corresponding sdfData definition. If a derived type is restricted according to its base type (e.g., with a range statement) the restrictions are converted as they would be for the base type and added to the sdfData definition.<a href="#section-3.27-2" class="pilcrow">¶</a></p>
@@ -2236,7 +2629,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.28-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.18" class="relref">7.18</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.18" class="relref">identity</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.28-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.28-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.5" class="relref">5.5</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.5" class="relref">sdfData</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.28-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.28-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.5" class="relref">5.5</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.5" class="relref">sdfData</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.28-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.28-2">The YANG identity statement is used to denote the name and existence of an identity. Identities can be based on one ore more other identities. They are referenced with the <code>identityref</code> statement. This concept is converted to SDF by sdfData definitions for each identity. If an identity is based on one other identity this is represented in by an sdfRef to the sdfData element corresponding to the base identity. If an identity has multiple base identities it is converted to a compound-type sdfData definition with one property for each base identity. Each property contains an sdfRef to the sdfData element corresponding to one of the base identities.<a href="#section-3.28-2" class="pilcrow">¶</a></p>
@@ -2250,7 +2643,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.29-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.21.1" class="relref">7.21.1</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.21.1" class="relref">config</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.29-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.29-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.29-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.29-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.29-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.29-2">The config statement of YANG can have the boolean values <code>true</code> or <code>false</code> as arguments. If config is set to true the element containing the config statement represents readable and writable configuration data. If config is set to false, the element containing the config statement represents read-only state data. This is transferred to SDF via the <code>readable</code> and <code>writable</code> data qualities. YANG config with the argument true is converted to readable and writable being set to true, config with the argument false is converted as readable set to true and writable set to false. There are, however, cases in which the SDF definition corresponding to the YANG element containing the config statement is not one that can use data qualities (i.e., is not sdfData or sdfProperty). This is the case if a top-level container which is converted to sdfObject holds a config statement. In this case, all definitions inside the sdfObject that can use data qualities have readable and writable set as described above.<a href="#section-3.29-2" class="pilcrow">¶</a></p>
@@ -2264,7 +2657,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.30-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.21.2" class="relref">7.21.2</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.21.2" class="relref">status</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.30-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.30-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.6" class="relref">4.6</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.6" class="relref">common qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.30-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.30-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6" class="relref">4.6</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6" class="relref">common qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.30-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.30-2">The status statement of YANG is used to express whether a definition is current, deprecated or obsolete which are the three possible arguments of the statement. In SDF there is no quality with a similar meaning. Thus, the YANG status statement is represented by a note in the description of the SDF definition corresponding to the YANG element the status statement occurred in as described in <a href="#design-roundtrips" class="xref">Section 5.2</a>.<a href="#section-3.30-2" class="pilcrow">¶</a></p>
@@ -2278,7 +2671,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.31-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.21.4" class="relref">7.21.4</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.21.4" class="relref">reference</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.31-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.31-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.6" class="relref">4.6</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.6" class="relref">common qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.31-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.31-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6" class="relref">4.6</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6" class="relref">common qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.31-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.31-2">In YANG the reference statement holds a human-readable reference to an external document related to its containing YANG definition. This is simply stored in the description of the SDF definition analogously to the reference statement's parent YANG definition as described in <a href="#design-roundtrips" class="xref">Section 5.2</a>.<a href="#section-3.31-2" class="pilcrow">¶</a></p>
@@ -2292,7 +2685,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.32-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.5.3" class="relref">7.5.3</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.5.3" class="relref">must</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span> Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.21.5" class="relref">7.21.5</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.21.5" class="relref">when</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.32-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.32-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.6" class="relref">4.6</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.6" class="relref">common qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.32-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.32-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6" class="relref">4.6</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6" class="relref">common qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.32-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.32-2">As mentioned before in <a href="#design-module" class="xref">Section 3.1</a> YANG provides means to impose conditions on its definitions. If a node in an instance of the YANG module has an unfulfilled must or when condition it is invalidated. Must and when conditions use XML Path Language expressions to indicate dependencies. This feature is not realizable in SDF as of now. However, there is a query language similar to XML Path Language for JSON called JSONPath (CITE!). If SDF adopts JSONPath or something similar in the future the converter can be extended to process the functionality of must and when statements.<a href="#section-3.32-2" class="pilcrow">¶</a></p>
@@ -2306,7 +2699,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <ul class="normal">
 <li class="normal" id="section-3.33-1.1">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.19" class="relref">7.19</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.19" class="relref">extension</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-3.33-1.1" class="pilcrow">¶</a>
 </li>
-          <li class="normal" id="section-3.33-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.6" class="relref">4.6</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.6" class="relref">common qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.33-1.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-3.33-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6" class="relref">4.6</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6" class="relref">common qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.33-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
 <p id="section-3.33-2">The extension statement in YANG has the purpose of defining new statements for the YANG language. This is not a concept that can be transferred to SDF yet and thus has to be stored in the description of the SDF definition analogously to the extension statement's parent YANG definition as described in <a href="#design-roundtrips" class="xref">Section 5.2</a>.<a href="#section-3.33-2" class="pilcrow">¶</a></p>
@@ -2326,7 +2719,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-information-block" class="section-name selfRef">Information Block</a>
         </h3>
 <ul class="normal">
-<li class="normal" id="section-4.1-1.1">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-3.1" class="relref">3.1</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-3.1" class="relref">information block</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.1-1.1" class="pilcrow">¶</a>
+<li class="normal" id="section-4.1-1.1">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-3.1" class="relref">3.1</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-3.1" class="relref">information block</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.1-1.1" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-4.1-1.2">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.1" class="relref">7.1</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.1" class="relref">module</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-4.1-1.2" class="pilcrow">¶</a>
 </li>
@@ -2340,7 +2733,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-namespace-section" class="section-name selfRef">Namespace Section</a>
         </h3>
 <ul class="normal">
-<li class="normal" id="section-4.2-1.1">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-3.2" class="relref">3.2</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4" class="relref">4</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4" class="relref">namespaces section</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.2-1.1" class="pilcrow">¶</a>
+<li class="normal" id="section-4.2-1.1">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-3.2" class="relref">3.2</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4" class="relref">4</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4" class="relref">namespaces section</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.2-1.1" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-4.2-1.2">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.1.3" class="relref">7.1.3</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.1.3" class="relref">namespace</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span> Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.1.5" class="relref">7.1.5</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.1.5" class="relref">import</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-4.2-1.2" class="pilcrow">¶</a>
 </li>
@@ -2354,7 +2747,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-sdfthing" class="section-name selfRef">sdfThing</a>
         </h3>
 <ul class="normal">
-<li class="normal" id="section-4.3-1.1">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-2.2.6" class="relref">2.2.6</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-6.3" class="relref">6.3</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-6.3" class="relref">sdfThing</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.3-1.1" class="pilcrow">¶</a>
+<li class="normal" id="section-4.3-1.1">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-2.2.6" class="relref">2.2.6</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-6.3" class="relref">6.3</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-6.3" class="relref">sdfThing</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.3-1.1" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-4.3-1.2">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.5" class="relref">7.5</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.5" class="relref">container</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-4.3-1.2" class="pilcrow">¶</a>
 </li>
@@ -2368,7 +2761,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-sdfobject" class="section-name selfRef">sdfObject</a>
         </h3>
 <ul class="normal">
-<li class="normal" id="section-4.4-1.1">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-2.2.1" class="relref">2.2.1</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.1" class="relref">5.1</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.1" class="relref">sdfObject</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.4-1.1" class="pilcrow">¶</a>
+<li class="normal" id="section-4.4-1.1">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-2.2.1" class="relref">2.2.1</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.1" class="relref">5.1</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.1" class="relref">sdfObject</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.4-1.1" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-4.4-1.2">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.5" class="relref">7.5</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.5" class="relref">container</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-4.4-1.2" class="pilcrow">¶</a>
 </li>
@@ -2382,7 +2775,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <a href="#section-4.5" class="section-number selfRef">4.5. </a><a href="#name-common-qualities" class="section-name selfRef">Common Qualities</a>
         </h3>
 <ul class="normal">
-<li class="normal" id="section-4.5-1.1">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.6" class="relref">4.6</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.6" class="relref">common qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.5-1.1" class="pilcrow">¶</a>
+<li class="normal" id="section-4.5-1.1">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6" class="relref">4.6</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6" class="relref">common qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.5-1.1" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-4.5-1.2">
             <p id="section-4.5-1.2.1">YANG:<a href="#section-4.5-1.2.1" class="pilcrow">¶</a></p>
@@ -2411,7 +2804,7 @@ Since list nodes are similar to leaf-list nodes the <code>ordered-by</code> stat
 <a href="#section-4.6" class="section-number selfRef">4.6. </a><a href="#name-data-qualities" class="section-name selfRef">Data Qualities</a>
         </h3>
 <ul class="normal">
-<li class="normal" id="section-4.6-1.1">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.6-1.1" class="pilcrow">¶</a>
+<li class="normal" id="section-4.6-1.1">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.6-1.1" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-4.6-1.2">
             <p id="section-4.6-1.2.1">YANG:<a href="#section-4.6-1.2.1" class="pilcrow">¶</a></p>
@@ -2451,7 +2844,7 @@ This is turned into a note in the description of the SDF definition's YANG equiv
 <a href="#section-4.7" class="section-number selfRef">4.7. </a><a href="#name-sdfdata" class="section-name selfRef">sdfData</a>
         </h3>
 <ul class="normal">
-<li class="normal" id="section-4.7-1.1">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-2.2.5" class="relref">2.2.5</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.5" class="relref">5.5</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.5" class="relref">sdfData</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.7-1.1" class="pilcrow">¶</a>
+<li class="normal" id="section-4.7-1.1">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-2.2.5" class="relref">2.2.5</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.5" class="relref">5.5</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.5" class="relref">sdfData</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.7-1.1" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-4.7-1.2">
             <p id="section-4.7-1.2.1">YANG:<a href="#section-4.7-1.2.1" class="pilcrow">¶</a></p>
@@ -2473,7 +2866,7 @@ This is turned into a note in the description of the SDF definition's YANG equiv
 <a href="#section-4.8" class="section-number selfRef">4.8. </a><a href="#name-sdfproperty" class="section-name selfRef">sdfProperty</a>
         </h3>
 <ul class="normal">
-<li class="normal" id="section-4.8-1.1">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-2.2.2" class="relref">2.2.2</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.2" class="relref">5.2</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.2" class="relref">sdfProperty</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.8-1.1" class="pilcrow">¶</a>
+<li class="normal" id="section-4.8-1.1">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-2.2.2" class="relref">2.2.2</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.2" class="relref">5.2</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.2" class="relref">sdfProperty</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.8-1.1" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-4.8-1.2">
             <p id="section-4.8-1.2.1">YANG:<a href="#section-4.8-1.2.1" class="pilcrow">¶</a></p>
@@ -2496,7 +2889,7 @@ This is turned into a note in the description of the SDF definition's YANG equiv
 <a href="#section-4.9" class="section-number selfRef">4.9. </a><a href="#name-sdfaction" class="section-name selfRef">sdfAction</a>
         </h3>
 <ul class="normal">
-<li class="normal" id="section-4.9-1.1">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-2.2.3" class="relref">2.2.3</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.3" class="relref">5.3</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.3" class="relref">sdfAction</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.9-1.1" class="pilcrow">¶</a>
+<li class="normal" id="section-4.9-1.1">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-2.2.3" class="relref">2.2.3</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.3" class="relref">5.3</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.3" class="relref">sdfAction</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.9-1.1" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-4.9-1.2">
             <p id="section-4.9-1.2.1">YANG:<a href="#section-4.9-1.2.1" class="pilcrow">¶</a></p>
@@ -2517,7 +2910,7 @@ This is turned into a note in the description of the SDF definition's YANG equiv
 <a href="#section-4.10" class="section-number selfRef">4.10. </a><a href="#name-sdfevent" class="section-name selfRef">sdfEvent</a>
         </h3>
 <ul class="normal">
-<li class="normal" id="section-4.10-1.1">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-2.2.4" class="relref">2.2.4</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.4" class="relref">5.4</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07#section-5.4" class="relref">sdfEvent</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.10-1.1" class="pilcrow">¶</a>
+<li class="normal" id="section-4.10-1.1">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-2.2.4" class="relref">2.2.4</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.4" class="relref">5.4</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.4" class="relref">sdfEvent</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-4.10-1.1" class="pilcrow">¶</a>
 </li>
           <li class="normal" id="section-4.10-1.2">YANG: Section <span><a href="https://rfc-editor.org/rfc/rfc7950#section-7.16" class="relref">7.16</a> (<a href="https://rfc-editor.org/rfc/rfc7950#section-7.16" class="relref">notification</a>)</span> of <span>[<a href="#RFC7950" class="xref">RFC7950</a>]</span><a href="#section-4.10-1.2" class="pilcrow">¶</a>
 </li>
@@ -2539,8 +2932,8 @@ This is turned into a note in the description of the SDF definition's YANG equiv
 <a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-differences-in-expressivene" class="section-name selfRef">Differences in Expressiveness of SDF and YANG</a>
         </h3>
 <p id="section-5.1-1">SDF and YANG differ in their expressiveness in different areas. Compared to the other format, both are stronger in some areas and weaker in others.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
-<p id="section-5.1-2">Areas in which YANG is more expressive are regular expressions, operations and some of the built-in types (<code>bits</code> and <code>empty</code>). Specifically, in YANG multiple regular expressions that all have to match can be defined and they can also be labelled as invert-match expressions. Both features are difficult to express in SDF as of now. Operations in YANG can be defined on their own or with an affiliation to a YANG container. This affiliation is not always trivial to represent in SDF. The YANG built-in types <code>bits</code> and <code>empty</code> do not have equivalents in SDF. The semantics of those types could, however, easily be mapped to SDF.<a href="#section-5.1-2" class="pilcrow">¶</a></p>
-<p id="section-5.1-3">SDF offers more possibilities to define default and constant values, the latter especially in conjunction with minimum and maximum values. YANG uses a single statement, the <code>range</code> statement, for constant, minimum and maximum values. Although there can be multiple values or ranges in one range statement that are interpreted as alternatives they all need to be disjunct. This imposes a strict limit on what can be expressed through the statement. Furthermore, labelling definitions as readable, observable and nullable, as possible in SDF, is foreign to YANG.<a href="#section-5.1-3" class="pilcrow">¶</a></p>
+<p id="section-5.1-2">Areas in which YANG is more expressive are regular expressions, operations, some of the built-in types (<code>bits</code> and <code>empty</code>) and the retrospective augmentation of existing definitions. Specifically, in YANG multiple regular expressions that all have to match can be defined and they can also be labelled as invert-match expressions. Both features are difficult to express in SDF as of now. Furthermore, YANG and SDF use slightly different regular expression languages. YANG uses a regular expression language as defined by W3C Schema while SDF adopts the one from JSON Schema. While the two languages share most of their features some of them are also specific to one language. Operations in YANG can be defined on their own or with an affiliation to a YANG container. This affiliation is not always trivial to represent in SDF. The YANG built-in types <code>bits</code> and <code>empty</code> do not have equivalents in SDF. The semantics of those types could, however, easily be mapped to SDF. A YANG statement whose semantics cannot be fully mapped to SDF is the <code>augment</code> statement. The augmentation can be applied and then converted but cannot be represented as a retrospective addition to an SDF definition or model.<a href="#section-5.1-2" class="pilcrow">¶</a></p>
+<p id="section-5.1-3">SDF offers more possibilities to define default and constant values, the latter especially in conjunction with minimum and maximum values. YANG uses a single statement, the <code>range</code> statement, for constant, minimum and maximum values. Although there can be multiple values or ranges in one range statement that are interpreted as alternatives they all need to be disjunct. This imposes a strict limit on what can be expressed through the statement. Furthermore, labelling definitions as readable, observable and nullable, as possible in SDF, is foreign to YANG. SDF is also more expressive in the way it labels definitions that must obligatorily occur in model instances. Basically all definitions can be labelled as such through the \textit{sdfRequired} and \textit{required} qualities. In YANG, only leaf, choice, anydata and anyxml nodes can be marked with the \textit{mandatory} statement directly. Containers, lists and leaf-lists can only be made mandatory indirectly and there is no such mechanism in YANG for all other kinds of nodes.<a href="#section-5.1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="design-roundtrips">
@@ -2550,7 +2943,7 @@ This is turned into a note in the description of the SDF definition's YANG equiv
         </h3>
 <p id="section-5.2-1">One of the bigger issues in building the converter is the facilitation of round trips, i.e. converting a model from one format to the other and in a next step back to the original. This issue is tightly linked to the differences in expressiveness between the two formats which makes mapping between them non-injective and thus non-traceable without additional measures.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
 <p id="section-5.2-2">To be able to track the origins of an SDF element after conversion from YANG, currently, a "conversion note" is added to the description of said element. The note specifies a statement and optionally an argument to said statement. An example for a note hinting the original argument to the <code>type</code> statement was <code>bits</code> is: "!Conversion note: type bits!". This approach is not able to preserve all information from the YANG module without exceptions, though,  since substatements cannot be specified. It is, however, sufficient in the majority of cases.<a href="#section-5.2-2" class="pilcrow">¶</a></p>
-<p id="section-5.2-3">This issue was also discussed in one of the ASDF working group's Interim Meetings where the possibility to introduce a new round trip mechanism native to SDF was suggested. Instead of overloading the SDF file with additional information that adds no functionality there is also the possibility to preserve information from the original model in a separate mapping file. Mapping files for SDF models contain selectors that assign additional information to the selected SDF element or element group \parencite{asdf-interim-roundtrips}. No decision has been made yet on the definite structure of such mapping files. Therefore, some requirements from the perspective of this SDF YANG converter are listed here. Generally speaking, the information attached to an SDF element should have at least the same information content in the mapping file as in the previously mentioned conversion note, i.e. a statement and optionally an argument. To also cater to statements with further substatements it should be possible to specify multiple arguments and for the argument to be another statement itself. Another solution would be to reference the whole, associated YANG element of the selected SDF element. This way, all information would be preserved seamlessly. Round trips would also be made very easy because the original YANG definition would stay attached to each SDF definition.<a href="#section-5.2-3" class="pilcrow">¶</a></p>
+<p id="section-5.2-3">This issue was also discussed in one of the ASDF working group's Interim Meetings where the possibility to introduce a new round trip mechanism native to SDF was suggested. Instead of overloading the SDF file with additional information that adds no functionality there is also the possibility to preserve information from the original model in a separate mapping file. Mapping files for SDF models contain selectors that assign additional information to the selected SDF element or element group. No decision has been made yet on the definite structure of such mapping files. Therefore, some requirements from the perspective of this SDF YANG converter are listed here. Generally speaking, the information attached to an SDF element should have at least the same information content in the mapping file as in the previously mentioned conversion note, i.e. a statement and optionally an argument. To also cater to statements with further substatements it should be possible to specify multiple arguments and for the argument to be another statement itself. Another solution would be to reference the whole, associated YANG element of the selected SDF element. This way, all information would be preserved seamlessly. Round trips would also be made very easy because the original YANG definition would stay attached to each SDF definition.<a href="#section-5.2-3" class="pilcrow">¶</a></p>
 <p id="section-5.2-4">To preserve the original SDF language element after conversion to YANG a new "sdf-spec" extension is defined in YANG. The extension states the original SDF quality.<a href="#section-5.2-4" class="pilcrow">¶</a></p>
 <p id="section-5.2-5">The eventuality that round trips occur in model conversion makes building the converter significantly more complex because all features of the target format have to be accounted for. Features of the target format that would otherwise not be used for conversion must now be considered in the case of a round trip.<a href="#section-5.2-5" class="pilcrow">¶</a></p>
 </section>
@@ -2562,10 +2955,10 @@ This is turned into a note in the description of the SDF definition's YANG equiv
         </h3>
 <p id="section-5.3-1">Both SDF and YANG offer the possibility to reference predefined types. SDF uses only a single quality for this purpose (<code>sdfRef</code>) whereas YANG has several statements that are all used in different referencing contexts (<code>leafref</code>, <code>identityref</code>, <code>type</code>, <code>uses</code>). The way the <code>uses</code> and <code>sdfRef</code> expressions work and are converted regularly leads to additional containers in YANG or additional properties (when using the compound-type) in SDF that make instances of the same model in SDF and YANG in-equivalent and complicate round trips. If no additional elements are inserted information, for example the name of an element, is lost.<a href="#section-5.3-1" class="pilcrow">¶</a></p>
 <p id="section-5.3-2">Both a uses node and the sdfRef quality embed the content of the referenced expression where they are located. Issues arise because YANG provides only groupings to be embedded via the uses statement. Groupings are the non-declaration-equivalent to containers. There is no non-declaration-equivalent to YANG list nodes, however. This means that list type definitions in YANG need not be packaged in a grouping. If such a grouping with a single list inside is transcribed from YANG to SDF there will be an extra layer that looks redundant but otherwise does no harm.%example?
-For the reasons stated above, an sdfData definition of type array with items of compound-type is converted to a list node inside a grouping in YANG. Problems arise when said sdfData definition is embedded via sdfRef because this cannot be converted directly to YANG. Such a scenario is illustrated in <a href="#lst-objectarray" class="xref">Figure 1</a> (SDF) and <a href="#lst-objectarrayyang" class="xref">Figure 2</a> (conversion to YANG). The sdfData definition <code>menu</code> is converted to the YANG list <code>menu</code> inside a grouping <code>menu</code>. The menu being referenced via sdfRef in the sdfProperty definitions <code>menu_english</code> and <code>menu_german</code> is equivalent to copying the qualities of the menu there. In the YANG conversion the containers <code>menu_enlish</code> and <code>menu_german</code> both use the grouping <code>menu</code>. This means the list node <code>menu</code> from said grouping is copied into the containers. The containers are necessary to preserve the names <code>menu_english</code> and <code>menu_german</code> and also because there cannot be two uses nodes with the same target grouping under the same parent node.<a href="#section-5.3-2" class="pilcrow">¶</a></p>
+For the reasons stated above, an sdfData definition of type array with items of compound-type is converted to a list node inside a grouping in YANG. Problems arise when said sdfData definition is embedded via sdfRef because this cannot be converted directly to YANG. Such a scenario is illustrated in <a href="#lst-objectarray" class="xref">Figure 13</a> (SDF) and <a href="#lst-objectarrayyang" class="xref">Figure 14</a> (conversion to YANG). The sdfData definition <code>menu</code> is converted to the YANG list <code>menu</code> inside a grouping <code>menu</code>. The menu being referenced via sdfRef in the sdfProperty definitions <code>menu_english</code> and <code>menu_german</code> is equivalent to copying the qualities of the menu there. In the YANG conversion the containers <code>menu_enlish</code> and <code>menu_german</code> both use the grouping <code>menu</code>. This means the list node <code>menu</code> from said grouping is copied into the containers. The containers are necessary to preserve the names <code>menu_english</code> and <code>menu_german</code> and also because there cannot be two uses nodes with the same target grouping under the same parent node.<a href="#section-5.3-2" class="pilcrow">¶</a></p>
 <span id="name-abbreviated-sdf-model-with-"></span><div id="lst-objectarray">
-<figure id="figure-1">
-          <div class="artwork art-text alignLeft" id="section-5.3-3.1">
+<figure id="figure-13">
+          <div class="alignLeft art-text artwork" id="section-5.3-3.1">
 <pre>
 {
   ; [...]
@@ -2594,13 +2987,13 @@ For the reasons stated above, an sdfData definition of type array with items of 
 }
 </pre>
 </div>
-<figcaption><a href="#figure-1" class="selfRef">Figure 1</a>:
+<figcaption><a href="#figure-13" class="selfRef">Figure 13</a>:
 <a href="#name-abbreviated-sdf-model-with-" class="selfRef">Abbreviated SDF model with type definitions of types object and array</a>
           </figcaption></figure>
 </div>
 <span id="name-abbreviated-yang-conversion"></span><div id="lst-objectarrayyang">
-<figure id="figure-2">
-          <div class="artwork art-text alignLeft" id="section-5.3-4.1">
+<figure id="figure-14">
+          <div class="alignLeft art-text artwork" id="section-5.3-4.1">
 <pre>
 module restaurant {
   // [...]
@@ -2624,7 +3017,7 @@ module restaurant {
 }
 </pre>
 </div>
-<figcaption><a href="#figure-2" class="selfRef">Figure 2</a>:
+<figcaption><a href="#figure-14" class="selfRef">Figure 14</a>:
 <a href="#name-abbreviated-yang-conversion" class="selfRef">Abbreviated YANG conversion of the SDF model with type definitions of types object and array</a>
           </figcaption></figure>
 </div>
@@ -2668,7 +3061,7 @@ found at <span>[<a href="#SDF-YANG-CONVERTER" class="xref">SDF-YANG-CONVERTER</a
 <dl class="references">
 <dt id="I-D.ietf-asdf-sdf">[I-D.ietf-asdf-sdf]</dt>
         <dd>
-<span class="refAuthor">Koster, M.</span> and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"Semantic Definition Format (SDF) for Data and Interactions of Things"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-asdf-sdf-07</span>, <time datetime="2021-07-12" class="refDate">12 July 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07">https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-07</a>&gt;</span>. </dd>
+<span class="refAuthor">Koster, M.</span> and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"Semantic Definition Format (SDF) for Data and Interactions of Things"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-asdf-sdf-08</span>, <time datetime="2021-10-25" class="refDate">25 October 2021</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08">https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC7950">[RFC7950]</dt>
       <dd>
