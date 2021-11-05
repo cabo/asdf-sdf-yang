@@ -2374,7 +2374,7 @@ via the <code>refine</code> statement of the <code>uses</code> node. In SDF a <c
           <li class="normal" id="section-3.10-1.2">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-2.2.3" class="relref">2.2.3</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.3" class="relref">5.3</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.3" class="relref">sdfAction</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.10-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-3.10-2">Remote procedure calls (RPCs) can be modelled in YANG with RPC nodes which have up to one <code>input</code> child node holding the commands input data and up to one <code>output</code> node for the output data. In YANG RPCs can only occur on the top-level because in contrast to actions in YANG they do not belong to a container. This can easily be represented by sdfActions. The corresponding sdfAction is not placed inside an sdfObject or sdfThing but at the top-level of the SDF model to represent independence from a container. The input node of the RPC is converted to the sdfInputData quality of the sdfAction which is of type object. Equivalently the output node of the RPC becomes the sdfAction's sdfOutputData which is also of type object. Groupings and typedefs in the RPC are converted to sdfData definitions inside the sdfAction.<a href="#section-3.10-2" class="pilcrow">¶</a></p>
+<p id="section-3.10-2">Remote procedure calls (RPCs) can be modeled in YANG with <code>rpc</code> nodes which have up to one <code>input</code> child node holding the commands input data and up to one <code>output</code> node for the output data. In YANG RPCs can only occur on the top-level because in contrast to actions in YANG they do not belong to a container. This can easily be represented by sdfActions. The corresponding sdfAction is not placed inside an sdfObject or sdfThing but at the top-level of the SDF model to represent independence from a container. The input node of the RPC is converted to the <code>sdfInputData</code> quality of the sdfAction which is of type <code>object</code>. Equivalently, the <code>output</code> node of the RPC becomes the sdfOutputData of the sdfAction, which is also of type <code>object</code>. Groupings and typedefs in the RPC are converted to <code>sdfData</code> definitions inside the sdfAction.<a href="#section-3.10-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="action-statement">
@@ -2388,7 +2388,114 @@ via the <code>refine</code> statement of the <code>uses</code> node. In SDF a <c
           <li class="normal" id="section-3.11-1.2">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-2.2.3" class="relref">2.2.3</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.3" class="relref">5.3</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.3" class="relref">sdfAction</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.11-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-3.11-2">Action nodes in YANG work similarly to RPC nodes in the way that they are used to model operations that can be invoked in the module and also have up to one input and output child node respectively. As mentioned before YANG actions are affiliated to a container though. The representation of this affiliation is not quite trivial because YANG containers are not translated to sdfObjects in all cases. Only sdfObjects can have sdfActions, though. If an action occurs in a container that is a below-top-level container (and thus not converted to sdfObject) the affiliation cannot be represented directly in SDF as of now. To keep the semantics of the affiliation a copy of the contents of the converted container is added to the sdfAction's sdfInputData. Like for RPC nodes, the input nodes of the action are converted to the sdfInputData quality of the sdfAction which is of type object. Equivalently the output nodes of the action become the sdfAction's sdfOutputData which is also of type object. Groupings and typedefs in the action node are converted to sdfData definitions inside the sdfAction.<a href="#section-3.11-2" class="pilcrow">¶</a></p>
+<p id="section-3.11-2"><code>Action</code> nodes in YANG work similarly to <code>rpc</code> nodes in the way that they are used to model operations that can be invoked in the module and also have up to one <code>input</code> and <code>output</code> child node respectively. As mentioned before, YANG actions are affiliated to a container. The representation of this affiliation is not quite trivial because YANG containers are not translated to sdfObjects in all cases. Only sdfObjects can have sdfActions, however. If an action occurs in a container that is a below-top-level container (and thus not converted to sdfObject), as illustrated in <a href="#fig-action" class="xref">Figure 13</a>, the affiliation cannot be represented directly in SDF as of now. <a href="#fig-actioninstance" class="xref">Figure 14</a> shows how an XML instance of calling the action in <a href="#fig-action" class="xref">Figure 13</a> and the reply would look like. As an input, the action specifies the container <code>server</code> it is affiliated to and its name. The actual action, <code>reset</code> and the value of its input, <code>reset-at</code> are specified inside the container instance. The result after converting the container from <a href="#fig-action" class="xref">Figure 13</a> to SDF can be found in <a href="#fig-actionsdf" class="xref">Figure 15</a>: To ensure equivalence of model instances a copy of the contents of the converted container is set as the sdfInputData of the sdfAction. The sdfInputData is of type <code>object</code>. The conversion of the actual action along with its input is added to the copy of the container conversion as another entry to its <code>properties</code> quality.
+Furthermore, a conversion note is added as described in Section <a href="#design-roundtrips" class="xref">Section 5.2</a>. Equivalently, the <code>output</code> nodes of the action become the sdfOutputData of the sdfAction which is also of type <code>object</code>. Groupings and typedefs in the <code>action</code> node are converted to <code>sdfData</code> definitions inside the sdfAction.<a href="#section-3.11-2" class="pilcrow">¶</a></p>
+<span id="name-yang-container-using-the-ac"></span><div id="fig-action">
+<figure id="figure-13">
+          <div class="alignLeft art-text artwork" id="section-3.11-3.1">
+<pre>
+{
+    container example-container {}
+        container server {
+            leaf name { type string; }
+            action reset {
+                input {
+                    leaf reset-at { type string; }
+                }
+                output {
+                    leaf reset-finished-at { type string; }
+                }
+            }
+        }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-13" class="selfRef">Figure 13</a>:
+<a href="#name-yang-container-using-the-ac" class="selfRef">YANG container using the action statement</a>
+          </figcaption></figure>
+</div>
+<span id="name-xml-instance-of-the-action-"></span><div id="fig-actioninstance">
+<figure id="figure-14">
+          <div class="alignLeft art-text artwork" id="section-3.11-4.1">
+<pre>
+{
+    &lt;rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0"&gt;
+        &lt;action xmlns="urn:ietf:params:xml:ns:yang:1"&gt;
+            &lt;server xmlns="urn:example:server-farm"&gt;
+                &lt;name&gt;apache-1&lt;/name&gt;
+                &lt;reset&gt;
+                    &lt;reset-at&gt;2014-07-29T13:42:00Z&lt;/reset-at&gt;
+                &lt;/reset&gt;
+            &lt;/server&gt;
+        &lt;/action&gt;
+    &lt;/rpc&gt;
+
+    &lt;rpc-reply message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0"&gt;
+        &lt;reset-finished-at xmlns="urn:example:server-farm"&gt;
+            2014-07-29T13:42:12Z
+        &lt;/reset-finished-at&gt;
+    &lt;/rpc-reply&gt;
+}
+</pre>
+</div>
+<figcaption><a href="#figure-14" class="selfRef">Figure 14</a>:
+<a href="#name-xml-instance-of-the-action-" class="selfRef">XML instance of the action from the last figure</a>
+          </figcaption></figure>
+</div>
+<span id="name-sdf-conversion-of-the-yang-co"></span><div id="fig-actionsdf">
+<figure id="figure-15">
+          <div class="alignLeft art-text artwork" id="section-3.11-5.1">
+<pre>
+{
+    "sdfObject": {
+        "example-container": {
+          "sdfAction": {
+            "reset": {
+              "description": "Action connected to server\n\n",
+              "sdfInputData": {
+                "properties": {
+                  "server": {
+                    "properties": {
+                      "name": { "type": "string"  },
+                      "reset": {
+                        "properties": {
+                          "reset-at": { "type": "string" }
+                        },
+                        "type": "object"
+                      }
+                    },
+                    "type": "object"
+                  }
+                },
+                "required": [ "server" ],
+                "type": "object"
+              },
+              "sdfOutputData": {
+                "properties": {
+                  "reset-finished-at": { "type": "string" }
+                },
+                "type": "object"
+              }
+            }
+          },
+          "sdfProperty": {
+            "server": {
+              "properties": {
+                "name": { "type": "string" }
+              },
+              "type": "object"
+            }
+          }
+        }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-15" class="selfRef">Figure 15</a>:
+<a href="#name-sdf-conversion-of-the-yang-co" class="selfRef">SDF conversion of the YANG container from Figure 13</a>
+          </figcaption></figure>
+</div>
 </section>
 </div>
 <div id="notification-statement">
@@ -2402,7 +2509,7 @@ via the <code>refine</code> statement of the <code>uses</code> node. In SDF a <c
           <li class="normal" id="section-3.12-1.2">SDF: Sections <a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-2.2.4" class="relref">2.2.4</a> and <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.4" class="relref">5.4</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-5.4" class="relref">sdfEvent</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.12-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-3.12-2">In YANG, notification nodes are used to model notification messages. Notification nodes are converted to sdfEvent definitions. Their child nodes are converted to the sdfEvent's sdfOutputData which is of type object. Groupings and typedefs in the notification node are converted to sdfData definitions inside the sdfEvent.<a href="#section-3.12-2" class="pilcrow">¶</a></p>
+<p id="section-3.12-2">In YANG, <code>notification</code> nodes are used to model notification messages. <code>Notification</code> nodes are converted to <code>sdfEvent</code> definitions. Their child nodes are converted to the sdfOutputData of the sdfEvent which is of type <code>object</code>. Groupings and typedefs in the <code>notification</code> node are converted to <code>sdfData</code> definitions inside the sdfEvent.<a href="#section-3.12-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="augment-statement">
@@ -2416,9 +2523,65 @@ via the <code>refine</code> statement of the <code>uses</code> node. In SDF a <c
           <li class="normal" id="section-3.13-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6." class="relref">4.6.</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6." class="relref">common qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.13-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-3.13-2">The augment statement can either occur at the top-level of a module to add nodes to an existing target module or sub-module or in a <code>uses</code> statement to augment the targeted grouping. The conversion of the augment statement to SDF is not trivial because SDF does not feature this mechanism directly.<a href="#section-3.13-2" class="pilcrow">¶</a></p>
-<p id="section-3.13-3">Since the tool used to deserialize YANG modules (Libyang) adds the nodes into the <code>augment</code> statement's target automatically in case the target is a module or sub-module this is adopted for conversion. The SDF model that corresponds to the augmentation target is converted with the augmentation already applied. A comment is added to the description as described in <a href="#design-roundtrips" class="xref">Section 5.2</a> to preserve where the augmentation was made from. If the resulting SDF model has to be converted back to YANG definitions that are marked as augmentations are converted back accordingly. This way of converting the <code>augment</code> statement from YANG to SDF causes problems if the augmentation target lies within a module whose converted version is already available and should not be replaced. Because, as of now, SDF does not offer means to extend already existing models retroactively these augmentations cannot be converted to SDF.<a href="#section-3.13-3" class="pilcrow">¶</a></p>
-<p id="section-3.13-4">When the augmentation target is a grouping the augmentation cannot be represented in SDF, either. The reason for this is that grouping nodes are converted to SDF definitions with the type <code>object</code>. The nodes inside the grouping are converted with the help of the <code>properties</code> quality. It is currently not possible to add properties to the <code>properties</code> quality, it can only be overridden as a whole.<a href="#section-3.13-4" class="pilcrow">¶</a></p>
+<p id="section-3.13-2">The <code>augment</code> statement can either occur at the top-level of a module to add nodes to an existing target module or sub-module, or in a <code>uses</code> statement to augment the targeted and thus integrated grouping. The conversion of the <code>augment</code> statement to SDF is not trivial because SDF does not feature this mechanism.<a href="#section-3.13-2" class="pilcrow">¶</a></p>
+<p id="section-3.13-3">The tool used to deserialize YANG modules, Libyang, adds the nodes into the target of the <code>augment</code> statement automatically for targets that are modules or sub-modules. This is adopted in the mapping: The SDF model that corresponds to target of the the <code>augment</code> statement is converted with the augmentation already applied. A conversion note is added to the description as described in section <a href="#design-roundtrips" class="xref">Section 5.2</a> to preserve where the augmentation was issued from. This mapping is illustrated in <a href="#fig-augmented" class="xref">Figure 16</a>, <a href="#fig-augmenting" class="xref">Figure 17</a> and <a href="#fig-augmentsdf" class="xref">Figure 18</a>. If the resulting SDF model has to be converted back to YANG, definitions that are marked as augmentations are converted back accordingly. This way of mapping the <code>augment</code> statement to SDF causes problems if the augmentation target lies within a module whose converted version is already available and should not be replaced. Because, as of now, SDF does not offer means to extend already existing models retroactively these augmentations cannot be converted to SDF.<a href="#section-3.13-3" class="pilcrow">¶</a></p>
+<p id="section-3.13-4">When the target of the augment is a grouping the augmentation cannot be represented in SDF, either. The reason for this is that <code>grouping</code> nodes are converted to SDF definitions with the type <code>object</code>. The nodes inside the grouping are converted with the help of the <code>properties</code> quality. It is currently not possible to add properties to the <code>properties</code> quality, it can only be overridden as a whole.<a href="#section-3.13-4" class="pilcrow">¶</a></p>
+<span id="name-yang-module-that-serves-as-"></span><div id="fig-augmented">
+<figure id="figure-16">
+          <div class="alignLeft art-text artwork" id="section-3.13-5.1">
+<pre>
+{
+    module example-module {
+        // [...]
+        leaf leaf1 { type string; }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-16" class="selfRef">Figure 16</a>:
+<a href="#name-yang-module-that-serves-as-" class="selfRef">YANG module that serves as an augmentation target</a>
+          </figcaption></figure>
+</div>
+<span id="name-yang-module-using-the-augme"></span><div id="fig-augmenting">
+<figure id="figure-17">
+          <div class="alignLeft art-text artwork" id="section-3.13-6.1">
+<pre>
+{
+    module augmenting-module {
+        // [...]
+        augment "/example" {
+            leaf additional-leaf { type string; }
+       }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-17" class="selfRef">Figure 17</a>:
+<a href="#name-yang-module-using-the-augme" class="selfRef">YANG module using the augment statement on the module from the last figure</a>
+          </figcaption></figure>
+</div>
+<span id="name-sdf-conversion-of-the-yang-mod"></span><div id="fig-augmentsdf">
+<figure id="figure-18">
+          <div class="alignLeft art-text artwork" id="section-3.13-7.1">
+<pre>
+{
+    {
+        ; [...]
+        "sdfProperty": {
+            "leaf1": { "type": "string" },
+            "additional-leaf": {
+                "description": "!Conversion note: augmented-by augmenting-module!\n",
+                "type": "string"
+            }
+        }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-18" class="selfRef">Figure 18</a>:
+<a href="#name-sdf-conversion-of-the-yang-mod" class="selfRef">SDF conversion of the YANG module from Figure 16 after conversion of the YANG module from Figure 17</a>
+          </figcaption></figure>
+</div>
 </section>
 </div>
 <div id="anydata-and-anyxml-statements">
@@ -2432,7 +2595,7 @@ via the <code>refine</code> statement of the <code>uses</code> node. In SDF a <c
           <li class="normal" id="section-3.14-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6" class="relref">4.6</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.6" class="relref">common qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.14-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-3.14-2">The <code>anydata</code> and <code>anyxml</code> statements are designated for nodes in the schema tree whose structure is unknown at the module's design time or in general. Since this is not a concept that can be represented in SDF as of now, anydata and anyxml nodes are not converted. To preserve the information (e.g., for round trips) a comment is added to the SDF element corresponding to the anydata/anyxml node's parent node as described in <a href="#design-roundtrips" class="xref">Section 5.2</a>.<a href="#section-3.14-2" class="pilcrow">¶</a></p>
+<p id="section-3.14-2">The <code>anydata</code> and <code>anyxml</code> statements are designated for nodes in the schema tree whose structure is unknown at the design time of the module or in general. Since this is not a concept that can be represented in SDF as of now, <code>anydata</code> and <code>anyxml</code> nodes are not converted. Instead, to preserve the information a conversion note is added to the SDF element corresponding to the parent node of the <code>anydata</code> or <code>anyxml</code> node as described in section <a href="#design-roundtrips" class="xref">Section 5.2</a>.<a href="#section-3.14-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="type-statement">
@@ -2446,8 +2609,8 @@ via the <code>refine</code> statement of the <code>uses</code> node. In SDF a <c
           <li class="normal" id="section-3.15-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.15-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-3.15-2">Conversion for the <code>type</code> statement from YANG is very straightforward if the argument is a simple data type since the SDF data qualities also contain a <code>type</code> quality. A derived type used as an argument to the YANG <code>type</code> statement is converted to an <code>sdfRef</code> to the <code>sdfData</code> corresponding to that derived type. If the derived type is restricted (e.g., via the length statement) the restrictions are converted as they would be for the base type and added to the SDF definition containing the type in question.<a href="#section-3.15-2" class="pilcrow">¶</a></p>
-<p id="section-3.15-3">There are multiple sub-statements to the type statement that depend on its value.<a href="#section-3.15-3" class="pilcrow">¶</a></p>
+<p id="section-3.15-2">The <code>type</code> statement of YANG is used to specify the built-in or derived type used by a <code>leaf</code> or <code>typedef</code> node. Mapping this statement to YANG is trivial if the argument is a simple data type because the SDF data qualities also contain a <code>type</code> quality. A derived type used as an argument to the YANG <code>type</code> statement is converted via the <code>sdfRef</code> quality. As an argument, the <code>sdfRef</code> quality contains a reference to the <code>sdfData</code> definition corresponding to the derived type. If the derived type is restricted, for example with the <code>length</code> statement, the restrictions are converted as they would be for the base type and added to the SDF definition containing the type in question.<a href="#section-3.15-2" class="pilcrow">¶</a></p>
+<p id="section-3.15-3">There are multiple sub-statements to the <code>type</code> statement that depend on its value. The conversion of those sub-statements is discussed in the section of the built-in type the sub-statement belongs to.<a href="#section-3.15-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="design-string">
@@ -2461,10 +2624,86 @@ via the <code>refine</code> statement of the <code>uses</code> node. In SDF a <c
           <li class="normal" id="section-3.16-1.2">SDF: Section <span><a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">4.7</a> (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-asdf-sdf-08#section-4.7" class="relref">data qualities</a>)</span> of <span>[<a href="#I-D.ietf-asdf-sdf" class="xref">I-D.ietf-asdf-sdf</a>]</span><a href="#section-3.16-1.2" class="pilcrow">¶</a>
 </li>
         </ul>
-<p id="section-3.16-2">The YANG built-in type string is converted to SDF's built-in type string. Strings in YANG can be restricted regarding their length and patterns (containing regular expressions).<a href="#section-3.16-2" class="pilcrow">¶</a></p>
-<p id="section-3.16-3">The length statement can specify either a constant length, a lower inclusive length, an upper inclusive length or both a lower and upper inclusive length. A length statement can also specify more than one disjoint constant length or length ranges. The values <code>min</code> and <code>max</code> in a length statement represent the minimum and maximum lengths accepted for strings. If the length statement in YANG does not contain a constant value but a length range it is converted to the <code>minLength</code> and <code>maxLength</code> data qualities in SDF. If a constant value is defined through the YANG length statement the <code>minLength</code> and <code>maxLength</code> qualities are set to the same value. If the length statement specifies multiple length ranges or constant values the sdfChoice quality is used for conversion. The named alternatives of the sdfChoice contain the single converted length ranges or constant values each. If the <code>min</code> and <code>max</code> values are present in the YANG length statement they are converted to the respective minimum and maximum lengths accepted for strings.<a href="#section-3.16-3" class="pilcrow">¶</a></p>
-<p id="section-3.16-4">To represent YANG string patterns the <code>pattern</code> data quality of SDF can be used. One problem in the conversion of patterns is that YANG strings can be restricted by multiple patterns but SDF definitions of type string can have at most one pattern. To represent multiple patterns from YANG in SDF the patterns are combined into one regular expression with the help of positive look-ahead. This, however, does not always convey the meaning of the original regular expression. Another issue is the possibility to declare invert-match patterns in YANG. These types of patterns are converted to SDF by adding negative look-ahead to the regular expression. To preserve the original patterns and to facilitate round trips the original patterns are stored in the description of the containing definition as described in <a href="#design-roundtrips" class="xref">Section 5.2</a>.<a href="#section-3.16-4" class="pilcrow">¶</a></p>
-<p id="section-3.16-5">Another, more general problem regarding the conversion of regular expressions from YANG to SDF is the fact that YANG uses a regular expression language as defined by W3C Schema while SDF adopts the one from JSON Schema. Both regular expression languages share most of their features but differ in some details. Since this does not cause problems in most cases and regarding the time constraints of this thesis, this issue is not given any further attention beyond what was stated in this paragraph. There is, however, a project of the IETF Network Working Group to create an interoperable regular expression format I-Regexp. Once the work on the draft has progressed the format might be adopted by the converter.<a href="#section-3.16-5" class="pilcrow">¶</a></p>
+<p id="section-3.16-2">The YANG built-in type <code>string</code> is converted to the SDF built-in type <code>string</code>. Strings in YANG can be restricted in length and by regular expressions.<a href="#section-3.16-2" class="pilcrow">¶</a></p>
+<p id="section-3.16-3">The <code>length</code> statement can specify either a constant length, a lower inclusive length, an upper inclusive length or both a lower and upper inclusive length. A <code>length</code> statement can also specify more than one disjoint constant length or length ranges. The values <code>min</code> and <code>max</code> in a <code>length</code> statement represent the minimum and maximum lengths accepted for strings. If the <code>length</code> statement in YANG does not contain a constant value but a length range it is converted to the <code>minLength</code> and <code>maxLength</code> SDF qualities. This is illustrated in <a href="#fig-string" class="xref">Figure 19</a> and <a href="#fig-stringsdf" class="xref">Figure 20</a>. If a constant value is defined through the YANG <code>length</code> statement the <code>minLength</code> and <code>maxLength</code> qualities are set to the same value. If the <code>length</code> statement specifies multiple length ranges or constant values the <code>sdfChoice</code> quality is used for conversion. The named alternatives of the sdfChoice contain the single converted length ranges or constant values each. If the <code>min</code> and <code>max</code> values are present in the YANG <code>length</code> statement they are converted to the respective minimum and maximum lengths accepted for strings.<a href="#section-3.16-3" class="pilcrow">¶</a></p>
+<p id="section-3.16-4">The YANG <code>pattern</code> statement can be used to hold regular expressions that the affiliated string has to match. To patterns from YANG in SDF the <code>pattern</code> quality can be used. One problem in the conversion of patterns is that YANG strings can be restricted by multiple patterns but SDF strings can have at most one pattern. To represent multiple patterns from YANG in SDF the patterns are combined into one regular expression with the help of positive look-ahead. <a href="#fig-string" class="xref">Figure 19</a> contains an example leaf of type <code>string</code> with multiple defined patterns which is converted as shown in <a href="#fig-stringsdf" class="xref">Figure 20</a>. 
+This does not always convey the meaning of the original regular expression. Another issue is the possibility to declare invert-match patterns in YANG. These types of patterns are converted to SDF by adding negative look-ahead to the regular expression, as illustrated in <a href="#fig-invertmatch" class="xref">Figure 21</a> and <a href="#fig-invertmatchsdf" class="xref">Figure 22</a>. To preserve the original patterns and to facilitate round trips, the original patterns are stored with a conversion note in the description of the containing definition as described in section <a href="#design-roundtrips" class="xref">Section 5.2</a>.<a href="#section-3.16-4" class="pilcrow">¶</a></p>
+<span id="name-yang-leaf-node-with-type-st"></span><div id="fig-string">
+<figure id="figure-19">
+          <div class="alignLeft art-text artwork" id="section-3.16-5.1">
+<pre>
+{
+    leaf example {
+        type string {
+            length "1..4";
+            pattern "[0-9]*";
+            pattern "[a-z]*";
+        }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-19" class="selfRef">Figure 19</a>:
+<a href="#name-yang-leaf-node-with-type-st" class="selfRef">YANG leaf node with type string, multiple pattern statements and a length statement</a>
+          </figcaption></figure>
+</div>
+<span id="name-sdf-conversion-of-the-yang-le"></span><div id="fig-stringsdf">
+<figure id="figure-20">
+          <div class="alignLeft art-text artwork" id="section-3.16-6.1">
+<pre>
+{
+    "sdfProperty": {
+        "example": {
+            "description": "!Conversion note: pattern [0-9]*!\n!Conversion note: pattern [a-z]*!\n",
+            "maxLength": 4.0,
+            "minLength": 1.0,
+            "pattern": "(?=[0-9]*)[a-z]*",
+            "type": "string"
+        }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-20" class="selfRef">Figure 20</a>:
+<a href="#name-sdf-conversion-of-the-yang-le" class="selfRef">SDF conversion of the YANG leaf from the last figure</a>
+          </figcaption></figure>
+</div>
+<span id="name-yang-leaf-definition-with-t"></span><div id="fig-invertmatch">
+<figure id="figure-21">
+          <div class="alignLeft art-text artwork" id="section-3.16-7.1">
+<pre>
+{
+    leaf example {
+        type string {
+            pattern "[0-9]*" { modifier invert-match; }
+        }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-21" class="selfRef">Figure 21</a>:
+<a href="#name-yang-leaf-definition-with-t" class="selfRef">YANG `leaf` definition with type `string` and an invert-match pattern</a>
+          </figcaption></figure>
+</div>
+<span id="name-sdf-conversion-of-the-yang-lea"></span><div id="fig-invertmatchsdf">
+<figure id="figure-22">
+          <div class="alignLeft art-text artwork" id="section-3.16-8.1">
+<pre>
+{
+    "sdfProperty": {
+        "example": {
+            "description": "!Conversion note: pattern [0-9]*!\n",
+            "pattern": "((?!([0-9]*)).)*",
+            "type": "string"
+        }
+    }
+}
+</pre>
+</div>
+<figcaption><a href="#figure-22" class="selfRef">Figure 22</a>:
+<a href="#name-sdf-conversion-of-the-yang-lea" class="selfRef">SDF conversion of the YANG leaf from the last figure</a>
+          </figcaption></figure>
+</div>
 </section>
 </div>
 <div id="design-dec64">
@@ -2955,9 +3194,9 @@ This is turned into a note in the description of the SDF definition's YANG equiv
         </h3>
 <p id="section-5.3-1">Both SDF and YANG offer the possibility to reference predefined types. SDF uses only a single quality for this purpose (<code>sdfRef</code>) whereas YANG has several statements that are all used in different referencing contexts (<code>leafref</code>, <code>identityref</code>, <code>type</code>, <code>uses</code>). The way the <code>uses</code> and <code>sdfRef</code> expressions work and are converted regularly leads to additional containers in YANG or additional properties (when using the compound-type) in SDF that make instances of the same model in SDF and YANG in-equivalent and complicate round trips. If no additional elements are inserted information, for example the name of an element, is lost.<a href="#section-5.3-1" class="pilcrow">¶</a></p>
 <p id="section-5.3-2">Both a uses node and the sdfRef quality embed the content of the referenced expression where they are located. Issues arise because YANG provides only groupings to be embedded via the uses statement. Groupings are the non-declaration-equivalent to containers. There is no non-declaration-equivalent to YANG list nodes, however. This means that list type definitions in YANG need not be packaged in a grouping. If such a grouping with a single list inside is transcribed from YANG to SDF there will be an extra layer that looks redundant but otherwise does no harm.%example?
-For the reasons stated above, an sdfData definition of type array with items of compound-type is converted to a list node inside a grouping in YANG. Problems arise when said sdfData definition is embedded via sdfRef because this cannot be converted directly to YANG. Such a scenario is illustrated in <a href="#lst-objectarray" class="xref">Figure 13</a> (SDF) and <a href="#lst-objectarrayyang" class="xref">Figure 14</a> (conversion to YANG). The sdfData definition <code>menu</code> is converted to the YANG list <code>menu</code> inside a grouping <code>menu</code>. The menu being referenced via sdfRef in the sdfProperty definitions <code>menu_english</code> and <code>menu_german</code> is equivalent to copying the qualities of the menu there. In the YANG conversion the containers <code>menu_enlish</code> and <code>menu_german</code> both use the grouping <code>menu</code>. This means the list node <code>menu</code> from said grouping is copied into the containers. The containers are necessary to preserve the names <code>menu_english</code> and <code>menu_german</code> and also because there cannot be two uses nodes with the same target grouping under the same parent node.<a href="#section-5.3-2" class="pilcrow">¶</a></p>
+For the reasons stated above, an sdfData definition of type array with items of compound-type is converted to a list node inside a grouping in YANG. Problems arise when said sdfData definition is embedded via sdfRef because this cannot be converted directly to YANG. Such a scenario is illustrated in <a href="#lst-objectarray" class="xref">Figure 23</a> (SDF) and <a href="#lst-objectarrayyang" class="xref">Figure 24</a> (conversion to YANG). The sdfData definition <code>menu</code> is converted to the YANG list <code>menu</code> inside a grouping <code>menu</code>. The menu being referenced via sdfRef in the sdfProperty definitions <code>menu_english</code> and <code>menu_german</code> is equivalent to copying the qualities of the menu there. In the YANG conversion the containers <code>menu_enlish</code> and <code>menu_german</code> both use the grouping <code>menu</code>. This means the list node <code>menu</code> from said grouping is copied into the containers. The containers are necessary to preserve the names <code>menu_english</code> and <code>menu_german</code> and also because there cannot be two uses nodes with the same target grouping under the same parent node.<a href="#section-5.3-2" class="pilcrow">¶</a></p>
 <span id="name-abbreviated-sdf-model-with-"></span><div id="lst-objectarray">
-<figure id="figure-13">
+<figure id="figure-23">
           <div class="alignLeft art-text artwork" id="section-5.3-3.1">
 <pre>
 {
@@ -2987,12 +3226,12 @@ For the reasons stated above, an sdfData definition of type array with items of 
 }
 </pre>
 </div>
-<figcaption><a href="#figure-13" class="selfRef">Figure 13</a>:
+<figcaption><a href="#figure-23" class="selfRef">Figure 23</a>:
 <a href="#name-abbreviated-sdf-model-with-" class="selfRef">Abbreviated SDF model with type definitions of types object and array</a>
           </figcaption></figure>
 </div>
 <span id="name-abbreviated-yang-conversion"></span><div id="lst-objectarrayyang">
-<figure id="figure-14">
+<figure id="figure-24">
           <div class="alignLeft art-text artwork" id="section-5.3-4.1">
 <pre>
 module restaurant {
@@ -3017,7 +3256,7 @@ module restaurant {
 }
 </pre>
 </div>
-<figcaption><a href="#figure-14" class="selfRef">Figure 14</a>:
+<figcaption><a href="#figure-24" class="selfRef">Figure 24</a>:
 <a href="#name-abbreviated-yang-conversion" class="selfRef">Abbreviated YANG conversion of the SDF model with type definitions of types object and array</a>
           </figcaption></figure>
 </div>
