@@ -112,7 +112,7 @@ Table of Contents
      4.4.  SdfObject Quality
      4.5.  Common Qualities
      4.6.  Data Qualities
-     4.7.  Data Qualities
+     4.7.  SdfData Quality
      4.8.  SdfProperty Quality
      4.9.  SdfAction Quality
      4.10. SdfEvent Quality
@@ -399,7 +399,7 @@ Table of Contents
    |             | was converted to leaf   |                           |
    |             | or leaf-list node       |                           |
    +-------------+-------------------------+---------------------------+
-   |             | referenced definition   | uses node that            |
+   |             | referenced definition   | "uses" node that          |
    |             | was converted to        | references                |
    |             | grouping node           | corresponding grouping    |
    |             |                         | (and refine if            |
@@ -581,23 +581,23 @@ Table of Contents
 
                        Figure 1: Example YANG module
 
-    {
-        "defaultNamespace": "foo",
-        "info": {
-            "copyright": "Copyright Foo Inc.",
-            "license": "License XY",
-            "title": "ietf-foo",
-            "version": "2016-03-20"
-        },
-        "namespace": { "foo": "urn:ietf:params:xml:ns:yang:ietf-foo" },
-        "sdfData": {
-            "ietf-foo-info": {
-                "description": "This is an example module\n\nCopyright Foo Inc.\n\nLicense XY\n!Conversion note: revision 2016-03-20!\n\n!Conversion note: organization Foo Inc.!\n\n!Conversion note: contact foo@mail.com!\n!Conversion note: feature bar!\n\n!Conversion note: feature baz!\n"
-            }
-        }
-    }
+       {
+           "defaultNamespace": "foo",
+           "info": {
+               "copyright": "Copyright Foo Inc.",
+               "license": "License XY",
+               "title": "ietf-foo",
+               "version": "2016-03-20"
+           },
+           "namespace": { "foo": "urn:ietf:params:xml:ns:yang:ietf-foo" },
+           "sdfData": {
+               "ietf-foo-info": {
+                   "description": "This is an example module\n\nCopyright Foo Inc.\n\nLicense XY\n!Conversion note: revision 2016-03-20!\n\n!Conversion note: organization Foo Inc.!\n\n!Conversion note: contact foo@mail.com!\n!Conversion note: feature bar!\n\n!Conversion note: feature baz!\n"
+               }
+           }
+       }
 
-     Figure 2: SDF conversion of YANG module from the last figure
+        Figure 2: SDF conversion of YANG module from the last figure
 
 3.2.  Submodule
 
@@ -667,29 +667,29 @@ Table of Contents
 
       Figure 3: YANG module with multiple nested container statements
 
-    {
-        ; [...]
-        "sdfObject": {
-            "level0": {
-                "sdfProperty": {
-                    "level1": {
-                        "properties": {
-                            "level2": {
-                                "properties": {
-                                    "description": "!Conversion note: presence Enables SSH!\n",
-                                    ; [...]
-                                },
-                                "type": "object"
-                            }
-                        },
-                        "type": "object"
-                    }
-                }
-            }
-        }
-    }
+       {
+           ; [...]
+           "sdfObject": {
+               "level0": {
+                   "sdfProperty": {
+                       "level1": {
+                           "properties": {
+                               "level2": {
+                                   "properties": {
+                                       "description": "!Conversion note: presence Enables SSH!\n",
+                                       ; [...]
+                                   },
+                                   "type": "object"
+                               }
+                           },
+                           "type": "object"
+                       }
+                   }
+               }
+           }
+       }
 
-   Figure 4: SDF conversion of the YANG module from the last figure
+      Figure 4: SDF conversion of the YANG module from the last figure
 
 3.4.  Leaf Statement
 
@@ -866,27 +866,27 @@ Table of Contents
 
                           Figure 7: YANG list node
 
-    "sdfProperty": {
-        "server": {
-            "description": "!Conversion note: key name!\n!Conversion note: ordered-by user!\n",
-            "items": {
-                "properties": {
-                    "ip": {
-                        "description": "!Conversion note: unique!\n",
-                        "type": "string"
-                    },
-                    "name": { "type": "string" }
-                },
-                "type": "object"
-            },
-            "maxItems": 100.0,
-            "minItems": 1.0,
-            "type": "array",
-            "uniqueItems": true
-        }
-    }
+       "sdfProperty": {
+           "server": {
+               "description": "!Conversion note: key name!\n!Conversion note: ordered-by user!\n",
+               "items": {
+                   "properties": {
+                       "ip": {
+                           "description": "!Conversion note: unique!\n",
+                           "type": "string"
+                       },
+                       "name": { "type": "string" }
+                   },
+                   "type": "object"
+               },
+               "maxItems": 100.0,
+               "minItems": 1.0,
+               "type": "array",
+               "uniqueItems": true
+           }
+       }
 
- Figure 8: SDF conversion of the YANG list node from the last figure
+    Figure 8: SDF conversion of the YANG list node from the last figure
 
 3.7.  Grouping Statement
 
@@ -1018,55 +1018,55 @@ Table of Contents
 
             Figure 11: YANG container using the choice statement
 
-    "sdfObject": {
-        "food": {
-            "sdfProperty": {
-                "food-level2": {
-                    "properties": {
-                        "dinner": {
-                            "description": "!Conversion note: default home-cooked!\n",
-                            "sdfChoice": {
-                                "home-cooked": {
-                                    "properties": {
-                                        "pasta": { "type": "boolean" }
-                                    },
-                                    "type": "object"
-                                },
-                                "restaurant": {
-                                    "properties": {
-                                        "pizza": { "type": "boolean" },
-                                        "steak": { "type": "boolean" }
-                                    },
-                                    "type": "object"
-                                }
-                            }
-                        }
-                    },
-                    "type": "object"
-                },
-                "snack": {
-                    "description": "!Conversion note: default late-night!\n",
-                    "sdfChoice": {
-                        "late-night": {
-                            "properties": {
-                                "chocolate": { "type": "boolean" }
-                            },
-                            "type": "object"
-                        },
-                        "sports-arena": {
-                            "properties": {
-                                "beer": { "type": "boolean" },
-                                "pretzel": { "type": "boolean" }
-                            },
-                            "type": "object"
-                        }
-                    }
-                }
-            }
-        }
-    }
+       "sdfObject": {
+           "food": {
+               "sdfProperty": {
+                   "food-level2": {
+                       "properties": {
+                           "dinner": {
+                               "description": "!Conversion note: default home-cooked!\n",
+                               "sdfChoice": {
+                                   "home-cooked": {
+                                       "properties": {
+                                           "pasta": { "type": "boolean" }
+                                       },
+                                       "type": "object"
+                                   },
+                                   "restaurant": {
+                                       "properties": {
+                                           "pizza": { "type": "boolean" },
+                                           "steak": { "type": "boolean" }
+                                       },
+                                       "type": "object"
+                                   }
+                               }
+                           }
+                       },
+                       "type": "object"
+                   },
+                   "snack": {
+                       "description": "!Conversion note: default late-night!\n",
+                       "sdfChoice": {
+                           "late-night": {
+                               "properties": {
+                                   "chocolate": { "type": "boolean" }
+                               },
+                               "type": "object"
+                           },
+                           "sports-arena": {
+                               "properties": {
+                                   "beer": { "type": "boolean" },
+                                   "pretzel": { "type": "boolean" }
+                               },
+                               "type": "object"
+                           }
+                       }
+                   }
+               }
+           }
+       }
 
- Figure 12: SDF conversion of the YANG container from the last figure
+    Figure 12: SDF conversion of the YANG container from the last figure
 
 3.10.  RPC Statement
 
@@ -1263,19 +1263,19 @@ Table of Contents
       Figure 17: YANG module using the augment statement on the module
                             from the last figure
 
-    {
-        ; [...]
-        "sdfProperty": {
-            "leaf1": { "type": "string" },
-            "additional-leaf": {
-                "description": "!Conversion note: augmented-by augmenting-module!\n",
-                "type": "string"
-            }
-        }
-    }
+       {
+           ; [...]
+           "sdfProperty": {
+               "leaf1": { "type": "string" },
+               "additional-leaf": {
+                   "description": "!Conversion note: augmented-by augmenting-module!\n",
+                   "type": "string"
+               }
+           }
+       }
 
-  Figure 18: SDF conversion of the YANG module from Figure 16 after
-             conversion of the YANG module from Figure 17
+     Figure 18: SDF conversion of the YANG module from Figure 16 after
+                conversion of the YANG module from Figure 17
 
 3.14.  Anydata and Anyxml Statements
 
@@ -1368,17 +1368,17 @@ Table of Contents
         Figure 19: YANG leaf node with type string, multiple pattern
                      statements and a length statement
 
-    "sdfProperty": {
-        "example": {
-            "description": "!Conversion note: pattern [0-9]*!\n!Conversion note: pattern [a-z]*!\n",
-            "maxLength": 4.0,
-            "minLength": 1.0,
-            "pattern": "(?=[0-9]*)[a-z]*",
-            "type": "string"
-        }
-    }
+       "sdfProperty": {
+           "example": {
+               "description": "!Conversion note: pattern [0-9]*!\n!Conversion note: pattern [a-z]*!\n",
+               "maxLength": 4.0,
+               "minLength": 1.0,
+               "pattern": "(?=[0-9]*)[a-z]*",
+               "type": "string"
+           }
+       }
 
-   Figure 20: SDF conversion of the YANG leaf from the last figure
+      Figure 20: SDF conversion of the YANG leaf from the last figure
 
        leaf example {
            type string {
@@ -1606,41 +1606,41 @@ Table of Contents
    Section 5.2.  An example conversion of a leaf with type bits to SDF
    can be found in Figure 27 and Figure 28.
 
-    leaf example {
-       type bits {
-            bit auto-adapt {
-                description "1 if automatic adaption is enabled, 0 otherwise";
-                position 1;
-            }
-            bit battery-only { position 2; }
-            bit disable-sensor { position 0; }
+       leaf example {
+          type bits {
+               bit auto-adapt {
+                   description "1 if automatic adaption is enabled, 0 otherwise";
+                   position 1;
+               }
+               bit battery-only { position 2; }
+               bit disable-sensor { position 0; }
+          }
        }
-    }
 
-        Figure 27: YANG leaf that is of the built-in type bits
+           Figure 27: YANG leaf that is of the built-in type bits
 
-    "sdfProperty": {
-        "example": {
-            "description": "!Conversion note: type bits!\n",
-            "properties": {
-                "auto-adapt": {
-                    "description": "Bit at position 1: 1 if automatic adaption is enabled, 0 otherwise",
-                    "type": "boolean"
-                },
-                "battery-only": {
-                    "description": "Bit at position 2",
-                    "type": "boolean"
-                },
-                "disable-sensor": {
-                    "description": "Bit at position 0",
-                    "type": "boolean"
-                }
-            },
-            "type": "object"
-        }
-    }
+       "sdfProperty": {
+           "example": {
+               "description": "!Conversion note: type bits!\n",
+               "properties": {
+                   "auto-adapt": {
+                       "description": "Bit at position 1: 1 if automatic adaption is enabled, 0 otherwise",
+                       "type": "boolean"
+                   },
+                   "battery-only": {
+                       "description": "Bit at position 2",
+                       "type": "boolean"
+                   },
+                   "disable-sensor": {
+                       "description": "Bit at position 0",
+                       "type": "boolean"
+                   }
+               },
+               "type": "object"
+           }
+       }
 
-   Figure 28: SDF conversion of the YANG leaf from the last figure
+      Figure 28: SDF conversion of the YANG leaf from the last figure
 
 3.23.  Union Built-In Type
 
@@ -1981,49 +1981,49 @@ Table of Contents
    refine statement which can be a sub-statement to uses node (see
    compoundArrayPropertyRef in Figure 33 and Figure 34).
 
-    {
-        ; [...]
-        "sdfObject": {
-            "ExampleObject": {
-                "sdfData": {
-                    "simpleData": { "type": "string" },
-                    "compoundData": {
-                        "type": "object",
-                        "properties": {
-                            "A": { "type": "string" },
-                            "B": { "type": "string" }
-                        }
-                    },
-                    "simpleArrayData": {
-                        "type": "array",
-                        "items": { "type": "string" }
-                    },
-                    "compoundArrayData": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "A": { "type": "string" },
-                                "B": { "type": "string" }
-                            }
-                        }
-                    }
-                },
-                "sdfProperty": {
-                    "simpleDataRef": {
-                        "sdfRef": "#/sdfObject/ExampleObject/sdfData/simpleData",
-                        "pattern": "[a-z]*"
-                    },
-                    "compoundDataRef": { "sdfRef": "#/sdfObject/ExampleObject/sdfData/compoundData" },
-                    "simpleArrayDataRef": { "sdfRef": "#/sdfObject/ExampleObject/sdfData/simpleArrayData" },
-                    "compoundArrayDataRef": { "sdfRef": "#/sdfObject/ExampleObject/sdfData/compoundArrayData" }
-                }
-            }
-        }
-    }
+       {
+           ; [...]
+           "sdfObject": {
+               "ExampleObject": {
+                   "sdfData": {
+                       "simpleData": { "type": "string" },
+                       "compoundData": {
+                           "type": "object",
+                           "properties": {
+                               "A": { "type": "string" },
+                               "B": { "type": "string" }
+                           }
+                       },
+                       "simpleArrayData": {
+                           "type": "array",
+                           "items": { "type": "string" }
+                       },
+                       "compoundArrayData": {
+                           "type": "array",
+                           "items": {
+                               "type": "object",
+                               "properties": {
+                                   "A": { "type": "string" },
+                                   "B": { "type": "string" }
+                               }
+                           }
+                       }
+                   },
+                   "sdfProperty": {
+                       "simpleDataRef": {
+                           "sdfRef": "#/sdfObject/ExampleObject/sdfData/simpleData",
+                           "pattern": "[a-z]*"
+                       },
+                       "compoundDataRef": { "sdfRef": "#/sdfObject/ExampleObject/sdfData/compoundData" },
+                       "simpleArrayDataRef": { "sdfRef": "#/sdfObject/ExampleObject/sdfData/simpleArrayData" },
+                       "compoundArrayDataRef": { "sdfRef": "#/sdfObject/ExampleObject/sdfData/compoundArrayData" }
+                   }
+               }
+           }
+       }
 
-   Figure 31: SDF model that uses the sdfRef with different sdfData
-                             definitions
+      Figure 31: SDF model that uses the sdfRef with different sdfData
+                                definitions
 
        module exampleModel {
            // [...]
@@ -2067,89 +2067,89 @@ Table of Contents
 
       Figure 32: YANG conversion of the SDF model from the last figure
 
-    {
-        ; [...]
-        "sdfObject": {
-            "ExampleObject2": {
-                "sdfProperty": {
-                    "simpleProperty": { "type": "string" },
-                    "compoundProperty": {
-                        "type": "object",
-                        "properties": {
-                            "A": { "type": "string" },
-                            "B": { "type": "string" }
-                        }
-                    },
-                    "simpleArrayProperty": {
-                        "type": "array",
-                        "items": { "type": "string" }
-                    },
-                    "compoundArrayProperty": {
-                        "type": "array",
-                        "items": {
-                            "type": "object",
-                            "properties": {
-                                "A": { "type": "string" },
-                                "B": { "type": "string" }
-                            }
-                        }
-                    },
-                    "simplePropertyRef": { "sdfRef": "#/sdfObject/ExampleObject2/sdfProperty/simpleProperty" },
-                    "compoundPropertyRef": { "sdfRef": "#/sdfObject/ExampleObject2/sdfProperty/compoundProperty" },
-                    "simpleArrayPropertyRef": { "sdfRef": "#/sdfObject/ExampleObject2/sdfProperty/simpleArrayProperty" },
-                    "compoundArrayPropertyRef": {
-                        "sdfRef": "#/sdfObject/ExampleObject2/sdfProperty/compoundArrayProperty",
-                        "minItems": 4
-                    }
-                }
-            }
-        }
-    }
+       {
+           ; [...]
+           "sdfObject": {
+               "ExampleObject2": {
+                   "sdfProperty": {
+                       "simpleProperty": { "type": "string" },
+                       "compoundProperty": {
+                           "type": "object",
+                           "properties": {
+                               "A": { "type": "string" },
+                               "B": { "type": "string" }
+                           }
+                       },
+                       "simpleArrayProperty": {
+                           "type": "array",
+                           "items": { "type": "string" }
+                       },
+                       "compoundArrayProperty": {
+                           "type": "array",
+                           "items": {
+                               "type": "object",
+                               "properties": {
+                                   "A": { "type": "string" },
+                                   "B": { "type": "string" }
+                               }
+                           }
+                       },
+                       "simplePropertyRef": { "sdfRef": "#/sdfObject/ExampleObject2/sdfProperty/simpleProperty" },
+                       "compoundPropertyRef": { "sdfRef": "#/sdfObject/ExampleObject2/sdfProperty/compoundProperty" },
+                       "simpleArrayPropertyRef": { "sdfRef": "#/sdfObject/ExampleObject2/sdfProperty/simpleArrayProperty" },
+                       "compoundArrayPropertyRef": {
+                           "sdfRef": "#/sdfObject/ExampleObject2/sdfProperty/compoundArrayProperty",
+                           "minItems": 4
+                       }
+                   }
+               }
+           }
+       }
 
-      Figure 33: SDF model that uses the sdfRef with sdfProperty
-                             definitions
+         Figure 33: SDF model that uses the sdfRef with sdfProperty
+                                definitions
 
-    module exampleModel {
-        // [...]
-        grouping compoundArrayProperty {
-            list compoundArrayProperty {
-                helper:sdf-spec "sdfProperty";
-                key "A";
-                leaf A { type string; }
-                leaf B { type string; }
-            }
-        }
-        grouping compoundProperty {
-            helper:sdf-spec "sdfProperty";
-            leaf A { type string; }
-            leaf B { type string; }
-        }
-        container ExampleObject2 {
-            helper:sdf-spec "sdfObject";
-            container compoundPropertyRef {
-                helper:sdf-spec "sdfProperty";
-                uses compoundProperty;
-            }
-            uses compoundProperty;
-            leaf-list simpleArrayProperty { type string; }
+       module exampleModel {
+           // [...]
+           grouping compoundArrayProperty {
+               list compoundArrayProperty {
+                   helper:sdf-spec "sdfProperty";
+                   key "A";
+                   leaf A { type string; }
+                   leaf B { type string; }
+               }
+           }
+           grouping compoundProperty {
+               helper:sdf-spec "sdfProperty";
+               leaf A { type string; }
+               leaf B { type string; }
+           }
+           container ExampleObject2 {
+               helper:sdf-spec "sdfObject";
+               container compoundPropertyRef {
+                   helper:sdf-spec "sdfProperty";
+                   uses compoundProperty;
+               }
+               uses compoundProperty;
+               leaf-list simpleArrayProperty { type string; }
 
-            leaf-list simpleArrayPropertyRef {
-                type leafref { path "/ExampleObject2/simpleArrayProperty"; }
-            }
-            leaf simpleProperty { type string; }
-            leaf simplePropertyRef {
-                type leafref { path "/ExampleObject2/simpleProperty"; }
-            }
-            container compoundArrayPropertyRef {
-                uses compoundArrayProperty {
-                    refine compoundArrayProperty { min-elements 4; }
-                }
-            }
-            uses compoundArrayProperty;
-        }
-    }
+               leaf-list simpleArrayPropertyRef {
+                   type leafref { path "/ExampleObject2/simpleArrayProperty"; }
+               }
+               leaf simpleProperty { type string; }
+               leaf simplePropertyRef {
+                   type leafref { path "/ExampleObject2/simpleProperty"; }
+               }
+               container compoundArrayPropertyRef {
+                   uses compoundArrayProperty {
+                       refine compoundArrayProperty { min-elements 4; }
+                   }
+               }
+               uses compoundArrayProperty;
+           }
+       }
 
-   Figure 34: YANG conversion of the SDF model from the last figure
+      Figure 34: YANG conversion of the SDF model from the last figure
 
    The common quality sdfRequired contains a list of SDF declarations
    that are mandatory to be present in an instance of the SDF model.
@@ -2181,42 +2181,42 @@ Table of Contents
    declaration originally listed in the sdfRequired quality is preserved
    in the sdf-spec extension as described in Section 5.2.
 
-    "sdfObject": {
-        "ExampleObject": {
-            "sdfRequired": [
-                "#/sdfObject/ExampleObject/sdfProperty/simpleProperty",
-                "#/sdfObject/ExampleObject/sdfEvent/compoundProperty",
-                "#/sdfObject/ExampleObject/sdfEvent/simpleArrayProperty",
-                "#/sdfObject/ExampleObject/sdfEvent/compoundArrayProperty"
-            ],
-            "sdfProperty": {
-                "simpleProperty": { "type": "string" },
-                "compoundProperty": {
-                    "type": "object",
-                    "properties": {
-                        "A": { "type": "string" },
-                        "B": { "type": "string" }
-                    }
-                },
-                "simpleArrayProperty": {
-                    "type": "array",
-                    "items": { "type": "string" }
-                },
-                "compoundArrayProperty": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "A": { "type": "string" },
-                            "B": { "type": "string" }
-                        }
-                    }
-                }
-            }
-        }
-    }
+       "sdfObject": {
+           "ExampleObject": {
+               "sdfRequired": [
+                   "#/sdfObject/ExampleObject/sdfProperty/simpleProperty",
+                   "#/sdfObject/ExampleObject/sdfEvent/compoundProperty",
+                   "#/sdfObject/ExampleObject/sdfEvent/simpleArrayProperty",
+                   "#/sdfObject/ExampleObject/sdfEvent/compoundArrayProperty"
+               ],
+               "sdfProperty": {
+                   "simpleProperty": { "type": "string" },
+                   "compoundProperty": {
+                       "type": "object",
+                       "properties": {
+                           "A": { "type": "string" },
+                           "B": { "type": "string" }
+                       }
+                   },
+                   "simpleArrayProperty": {
+                       "type": "array",
+                       "items": { "type": "string" }
+                   },
+                   "compoundArrayProperty": {
+                       "type": "array",
+                       "items": {
+                           "type": "object",
+                           "properties": {
+                               "A": { "type": "string" },
+                               "B": { "type": "string" }
+                           }
+                       }
+                   }
+               }
+           }
+       }
 
-      Figure 35: SDF model that contains the sdfRequired quality
+         Figure 35: SDF model that contains the sdfRequired quality
 
        container ExampleObject {
            helper:sdf-spec "sdfObject";
@@ -2265,9 +2265,10 @@ Table of Contents
       -  Section 7.4.1 (type) of [RFC7950]
 
    The set of qualities labeled as _data qualities_ contains qualities
-   from JSON Schema Validation that SDF adopted as well as qualities
-   specifically defined for SDF.  In the first group there is a total of
-   18 qualities out of which some are interdependent.
+   inspired by the json-schema.org specifications that SDF adopted as
+   well as qualities specifically defined for SDF.  In the first group
+   there is a total of 18 qualities out of which some are
+   interdependent.
 
    The quality that a lot of the other qualities presence or absence
    depends on is the type quality.  The type can be one of number,
@@ -2387,12 +2388,12 @@ Table of Contents
    regular expressions.
 
    The string type in SDF can be supplemented by the format quality.
-   This quality can specify one of the JSON schema formats.  This could
-   be translated to YANG referencing typedefs from the widely used ietf-
-   yang-types module.  To not rely on external modules, the format is
-   only preserved through an addition of the sdf-spec extension to the
-   YANG equivalent of the SDF definition the format quality is contained
-   in.
+   This quality can specify one of the formats found on json-schema.org.
+   This could be translated to YANG referencing typedefs from the widely
+   used ietf-yang-types module.  To not rely on external modules, the
+   format is only preserved through an addition of the sdf-spec
+   extension to the YANG equivalent of the SDF definition the format
+   quality is contained in.
 
    The length of an array in SDF can be restricted by the minItems and
    maxItems qualities.  In YANG, both list and leaf-list nodes use the
@@ -2587,7 +2588,7 @@ Table of Contents
    YANG but are preserved by adding an sdf-spec extension to the YANG
    equivalent of their containing SDF definition.
 
-4.7.  Data Qualities
+4.7.  SdfData Quality
 
    *  SDF: Sections 2.2.5 and 5.5 (sdfData) of [I-D.ietf-asdf-sdf]
 
@@ -2910,7 +2911,7 @@ Table of Contents
 
        "sdfData": {
            "someValue": {
-               "type": "integer"
+               "type": "integer",
                "minimum": 1,
                "maximum": 5,
                "const": 3
