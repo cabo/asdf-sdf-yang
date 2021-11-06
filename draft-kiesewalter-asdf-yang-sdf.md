@@ -241,7 +241,7 @@ If the `deviation` statement (introducing a deviation from the original YANG mod
 
             // ... more statements
         }
-{: #lst-module title="Example YANG module"}
+{: #lst-module .language-yang title="Example YANG module"}
         {
             "defaultNamespace": "foo",
             "info": {
@@ -257,7 +257,7 @@ If the `deviation` statement (introducing a deviation from the original YANG mod
                 }
             }
         }
-{: #lst-moduletosdf title="SDF conversion of YANG module from the last figure"}
+{: #lst-moduletosdf .language-json title="SDF conversion of YANG module from the last figure"}
 
 Submodule
 ---------
@@ -291,7 +291,7 @@ A sub-statement to the `container` statement that cannot be represented in SDF a
                 }
             }
         }
-{: #lst-container title="YANG module with multiple nested container statements"}
+{: #lst-container .language-yang title="YANG module with multiple nested container statements"}
 
         {
             ; [...]
@@ -314,7 +314,7 @@ A sub-statement to the `container` statement that cannot be represented in SDF a
                 }
             }
         }
-{: #lst-containertosdf title="SDF conversion of the YANG module from the last figure"}
+{: #lst-containertosdf .language-json title="SDF conversion of the YANG module from the last figure"}
 
 Leaf Statement         {#design-leaf}
 --------------
@@ -343,7 +343,7 @@ Leaf Statement         {#design-leaf}
                 }
             }
         }
-{: #fig-leaf title="YANG module containing multiple leaf statements"}
+{: #fig-leaf .language-yang title="YANG module containing multiple leaf statements"}
 
         {
             ; [...]
@@ -370,7 +370,7 @@ Leaf Statement         {#design-leaf}
                 }
             }
         }
-{: #fig-leaftosdf title="SDF conversion of the YANG module from the last figure"}
+{: #fig-leaftosdf .language-json title="SDF conversion of the YANG module from the last figure"}
 
 Leaf-List Statement    {#sec-map-leaflist}
 -------------------
@@ -403,7 +403,7 @@ The `unique` sub-statement of the YANG list defines a number of descendant `leaf
             leaf name { type string; }
             leaf ip { type string; }
         }
-{: #fig-list title="YANG list node"}
+{: #fig-list .language-yang title="YANG list node"}
 
         "sdfProperty": {
             "server": {
@@ -424,7 +424,7 @@ The `unique` sub-statement of the YANG list defines a number of descendant `leaf
                 "uniqueItems": true
             }
         }
-{: #fig-listtosdf title="SDF conversion of the YANG list node from the last figure"}
+{: #fig-listtosdf .language-json title="SDF conversion of the YANG list node from the last figure"}
 
 Grouping Statement
 ------------------
@@ -456,7 +456,7 @@ via the `refine` statement of the `uses` node. In SDF a `uses` node is represent
                 }
             }
         }
-{: #fig-usesgrouping title="YANG module with uses and grouping statements"}
+{: #fig-usesgrouping .language-yang title="YANG module with uses and grouping statements"}
 
         {
             ; [...]
@@ -487,7 +487,7 @@ via the `refine` statement of the `uses` node. In SDF a `uses` node is represent
                 }
             }
         }
-{: #fig-usesgroupingsdf title="SDF conversion of the YANG module from the last figure"}
+{: #fig-usesgroupingsdf .language-json title="SDF conversion of the YANG module from the last figure"}
 
 Choice Statement
 ----------------
@@ -520,7 +520,7 @@ Conversion of the `choice` statement from YANG is simple since it is similar to 
                 }
             }
         }
-{: #fig-choice title="YANG container using the choice statement"}
+{: #fig-choice .language-yang title="YANG container using the choice statement"}
 
         "sdfObject": {
             "food": {
@@ -569,7 +569,7 @@ Conversion of the `choice` statement from YANG is simple since it is similar to 
                 }
             }
         }
-{: #fig-choicesdf title="SDF conversion of the YANG container from the last figure"}
+{: #fig-choicesdf .language-json title="SDF conversion of the YANG container from the last figure"}
 
 RPC Statement
 -------------
@@ -601,7 +601,7 @@ Furthermore, a conversion note is added as described in {{design-roundtrips}}. E
                 }
             }
         }
-{: #fig-action title="YANG container using the action statement"}
+{: #fig-action .language-yang title="YANG container using the action statement"}
 
         <rpc message-id="101" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
             <action xmlns="urn:ietf:params:xml:ns:yang:1">
@@ -662,7 +662,7 @@ Furthermore, a conversion note is added as described in {{design-roundtrips}}. E
               }
             }
         }
-{: #fig-actionsdf title="SDF conversion of the YANG container from Figure 13"}
+{: #fig-actionsdf .language-json title="SDF conversion of the YANG container from Figure 13"}
 
 Notification Statement
 -----------------------
@@ -688,7 +688,7 @@ When the target of the augment is a grouping the augmentation cannot be represen
             // [...]
             leaf leaf1 { type string; }
         }
-{: #fig-augmented title="YANG module that serves as an augmentation target"}
+{: #fig-augmented .language-yang title="YANG module that serves as an augmentation target"}
 
         module augmenting-module {
             // [...]
@@ -696,7 +696,7 @@ When the target of the augment is a grouping the augmentation cannot be represen
                 leaf additional-leaf { type string; }
            }
         }
-{: #fig-augmenting title="YANG module using the augment statement on the module from the last figure"}
+{: #fig-augmenting .language-yang title="YANG module using the augment statement on the module from the last figure"}
         {
             ; [...]
             "sdfProperty": {
@@ -707,7 +707,7 @@ When the target of the augment is a grouping the augmentation cannot be represen
                 }
             }
         }
-{: #fig-augmentsdf title="SDF conversion of the YANG module from Figure 16 after conversion of the YANG module from Figure 17"}
+{: #fig-augmentsdf .language-json title="SDF conversion of the YANG module from Figure 16 after conversion of the YANG module from Figure 17"}
 
 Anydata and Anyxml Statements
 -----------------------------
@@ -747,7 +747,7 @@ This does not always convey the meaning of the original regular expression. Anot
                 pattern "[a-z]*";
             }
         }
-{: #fig-string title="YANG leaf node with type string, multiple pattern statements and a length statement"}
+{: #fig-string .language-yang title="YANG leaf node with type string, multiple pattern statements and a length statement"}
 
         "sdfProperty": {
             "example": {
@@ -758,14 +758,14 @@ This does not always convey the meaning of the original regular expression. Anot
                 "type": "string"
             }
         }
-{: #fig-stringsdf title="SDF conversion of the YANG leaf from the last figure"}
+{: #fig-stringsdf .language-json title="SDF conversion of the YANG leaf from the last figure"}
 
         leaf example {
             type string {
                 pattern "[0-9]*" { modifier invert-match; }
             }
         }
-{: #fig-invertmatch title="YANG leaf definition with type string and an invert-match pattern"}
+{: #fig-invertmatch .language-yang title="YANG leaf definition with type string and an invert-match pattern"}
 
         "sdfProperty": {
             "example": {
@@ -774,7 +774,7 @@ This does not always convey the meaning of the original regular expression. Anot
                 "type": "string"
             }
         }
-{: #fig-invertmatchsdf title="SDF conversion of the YANG leaf from the last figure"}
+{: #fig-invertmatchsdf .language-json title="SDF conversion of the YANG leaf from the last figure"}
 
 Another, more general problem regarding the conversion of regular expressions from YANG to SDF is the fact that YANG uses a regular expression language as defined by W3C Schema while SDF adopts ECMAscript regular expressions. Both regular expression languages share most of their features. Since this does not cause problems in most cases and regarding the time constraints of this thesis, this issue is not given any further attention beyond what was stated in this paragraph. There is, however, a project of the IETF Network Working Group to create an interoperable regular expression format. Once the work on the draft has progressed the format might be adopted by the SDF/YANG converter.
 
@@ -854,7 +854,7 @@ A YANG `decimal64` type can be restricted by means of the `range` statement spec
                 }
             }
         }
-{: #fig-dec64sdf title="SDF conversion of the YANG module from the last figure"}
+{: #fig-dec64sdf .language-json title="SDF conversion of the YANG module from the last figure"}
 
 Integer Built-In Types
 ----------------------
@@ -868,7 +868,7 @@ In YANG there are 8 different integer types: `int8`, `uint8`, `int16`, `uint16`,
         leaf example {
            type int32;
         }
-{: #fig-int title="YANG leaf with the int32 built-in type"}
+{: #fig-int .language-yang title="YANG leaf with the int32 built-in type"}
 
         "sdfProperty": {
             "example": {
@@ -878,7 +878,7 @@ In YANG there are 8 different integer types: `int8`, `uint8`, `int16`, `uint16`,
                 "type": "integer"
             }
         }
-{: #fig-intsdf title="SDF conversion of the YANG leaf from the last figure"}
+{: #fig-intsdf .language-json title="SDF conversion of the YANG leaf from the last figure"}
 
 Boolean Built-In Type
 ---------------------
@@ -922,7 +922,7 @@ SDF does not specify a built-in type to represent a set of named bits and their 
                 bit disable-sensor { position 0; }
            }
         }
-{: #fig-bits title="YANG leaf that is of the built-in type bits"}
+{: #fig-bits .language-yang title="YANG leaf that is of the built-in type bits"}
 
         "sdfProperty": {
             "example": {
@@ -944,7 +944,7 @@ SDF does not specify a built-in type to represent a set of named bits and their 
                 "type": "object"
             }
         }
-{: #fig-bitssdf title="SDF conversion of the YANG leaf from the last figure"}
+{: #fig-bitssdf .language-json title="SDF conversion of the YANG leaf from the last figure"}
 
 Union Built-In Type
 -------------------
@@ -960,7 +960,7 @@ YANG unions hold a set of alternatives for the `type` statement. Although the `u
                 type boolean;
             }
         }
-{: #fig-union title="YANG leaf that uses the union built-in type"}
+{: #fig-union .language-yang title="YANG leaf that uses the union built-in type"}
 
         "sdfProperty": {
             "example": {
@@ -975,7 +975,7 @@ YANG unions hold a set of alternatives for the `type` statement. Although the `u
                 }
             }
         }
-{: #fig-unionsdf title="SDF conversion of the YANG leaf from the last figure"}
+{: #fig-unionsdf .language-json title="SDF conversion of the YANG leaf from the last figure"}
 
 Leafref and Identityref Built-In Types
 --------------------------------------
@@ -1153,7 +1153,7 @@ If the YANG equivalent of the referenced definition is a `grouping` node the sdf
                 }
             }
         }
-{: #fig-sdfRef title="SDF model that uses the sdfRef with different sdfData definitions"}
+{: #fig-sdfRef .language-json title="SDF model that uses the sdfRef with different sdfData definitions"}
 
         module exampleModel {
             // [...]
@@ -1194,7 +1194,7 @@ If the YANG equivalent of the referenced definition is a `grouping` node the sdf
                 }
             }
         }
-{: #fig-sdfRefyang title="YANG conversion of the SDF model from the last figure"}
+{: #fig-sdfRefyang .language-yang title="YANG conversion of the SDF model from the last figure"}
 
         {
             ; [...]
@@ -1234,7 +1234,7 @@ If the YANG equivalent of the referenced definition is a `grouping` node the sdf
                 }
             }
         }
-{: #fig-sdfRef2 title="SDF model that uses the sdfRef with sdfProperty definitions"}
+{: #fig-sdfRef2 .language-json title="SDF model that uses the sdfRef with sdfProperty definitions"}
 
         module exampleModel {
             // [...]
@@ -1275,7 +1275,7 @@ If the YANG equivalent of the referenced definition is a `grouping` node the sdf
                 uses compoundArrayProperty;
             }
         }
-{: #fig-sdfRefyang2 title="YANG conversion of the SDF model from the last figure"}
+{: #fig-sdfRefyang2 .language-yang title="YANG conversion of the SDF model from the last figure"}
 
 
 The common quality `sdfRequired` contains a list of SDF declarations that are mandatory to be present in an instance of the SDF model. The issue with the conversion of this quality is that in YANG not all nodes can be marked with the `mandatory` statement while in SDF all declarations (that means sdfProperties, sdfActions and sdfEvents that occur in an sdfObject) can be mentioned in the sdfRequired list. In YANG only `leaf` and `choice` nodes (and `anyxml` and `anydata` nodes but these are not used for conversion) can be directly labeled as mandatory. `List` and `leaf-list` nodes can indirectly be made mandatory through the `min-elements` statement. Furthermore, `container` nodes without a `presence` statement that have at least one mandatory node as a child are also mandatory themselves. Not all SDF declarations are always converted to YANG `leaf`, `choice`, `list` or `leaf-list` nodes, however. Thus, if the YANG node equivalent to the mandatory SDF declaration is a non-presence container, its sub-tree is traversed until a `leaf` or `choice` node is found. This `leaf` or `choice` node is labeled as mandatory, now making its parent container mandatory as well because one of its child nodes is mandatory. An example for such a conversion is illustrated in the `compoundProperty` definition in {{fig-sdfRequired}} and {{fig-sdfRequiredyang}}. Consequently, if the parent node of the now mandatory container would be a container it would now be mandatory as well. Alternatively, if a `list` or `leaf-list` node is found first, the `min-elements` statement of the node is set to `1` if it is not already set to a value greater than zero, which also makes a node mandatory. This is illustrated in the `simpleArrayProperty` and `compoundArrayProperty` definitions in {{fig-sdfRequired}} and {{fig-sdfRequiredyang}}. To prevent loss of information and to facilitate round trips, the declaration originally listed in the `sdfRequired` quality is preserved in the `sdf-spec` extension as described in {{design-roundtrips}}.
@@ -1314,7 +1314,7 @@ The common quality `sdfRequired` contains a list of SDF declarations that are ma
                 }
             }
         }
-{: #fig-sdfRequired title="SDF model that contains the sdfRequired quality"}
+{: #fig-sdfRequired .language-json title="SDF model that contains the sdfRequired quality"}
 
         container ExampleObject {
             helper:sdf-spec "sdfObject";
@@ -1351,7 +1351,7 @@ The common quality `sdfRequired` contains a list of SDF declarations that are ma
                 mandatory true;
             }
         }
-{: #fig-sdfRequiredyang title="YANG conversion of the last figure"}
+{: #fig-sdfRequiredyang .language-yang title="YANG conversion of the last figure"}
 
 Data Qualities {#sec-map-dataquali}
 --------------
@@ -1380,7 +1380,7 @@ If a constant value is defined in an SDF definition, the data quality `const` is
                 }
             }
         }
-{: #fig-const title="SdfObject that contains the const quality"}
+{: #fig-const .language-json title="SdfObject that contains the const quality"}
 
         container Display {
             helper:sdf-spec "sdfObject";
@@ -1391,7 +1391,7 @@ If a constant value is defined in an SDF definition, the data quality `const` is
                 type int64 { range "300"; }
             }
         }
-{: #fig-constyang title="YANG conversion of the sdfObject from the last figure"}
+{: #fig-constyang .language-yang title="YANG conversion of the sdfObject from the last figure"}
 
 
 The `default` data quality in SDF holds the default value for its definition. Since YANG `leaf` and `leaf-list` nodes have a `default` sub-statement, SDF default values of simple types or of type `array` with items of simple types can easily be represented.
@@ -1406,7 +1406,7 @@ The data qualities `minimum`, `maximum`, `exclusiveMinimum` and `exclusiveMaximu
                 "maximum": 1000
             }
         }
-{: #fig-constminmax title="SdfProperty that uses the minimum and maximum qualities in conjunction with the const quality"}
+{: #fig-constminmax .language-json title="SdfProperty that uses the minimum and maximum qualities in conjunction with the const quality"}
 
         leaf displayWidth {
             type union {
@@ -1414,7 +1414,7 @@ The data qualities `minimum`, `maximum`, `exclusiveMinimum` and `exclusiveMaximu
                 type int64 { range "100..1000"; }
             }
         }
-{: #fig-constminmaxyang title="YANG conversion of the sdfProperty from the last figure"}
+{: #fig-constminmaxyang .language-yang title="YANG conversion of the sdfProperty from the last figure"}
 
 
 The `multipleOf` data quality is one that can only be used in conjunction with the `number` type in SDF and states the resolution of the decimal value, that is, of which decimal number the value is a multiple of. This quality is converted to the `fraction-digits` sub-statement to the `type` statement in YANG by counting the digits after the decimal separator of the value of the `multipleOf` quality. Since the `fraction-digits` statement is mandatory in YANG, it is set to `6` by default. This is done because six is also the default decimal resolution of the `std::to_string()` method of the C++ standard library. This method is used for transferring data from the C++ objects that represent SDF definitions into JSON.
@@ -1453,7 +1453,7 @@ Another restriction for SDF arrays is the `uniqueItems` quality that can be set 
                 }
             }
         }
-{: #fig-uniqueitems title="SdfObject containing the uniqueItems quality"}
+{: #fig-uniqueitems .language-json title="SdfObject containing the uniqueItems quality"}
 
         container ExampleObject {
             helper:sdf-spec "sdfObject";
@@ -1470,7 +1470,7 @@ Another restriction for SDF arrays is the `uniqueItems` quality that can be set 
                 config true;
             }
         }
-{: #fig-uniqueitemsyang title="YANG conversion of the sdfObject from the last figure"}
+{: #fig-uniqueitemsyang .language-yang title="YANG conversion of the sdfObject from the last figure"}
 
 
 The `items` data quality of SDF is a quality that specifies item constraints for the items of an array-typed SDF definition using a subset of the common and data qualities. SDF definitions with the type `array` are converted to `list` or `leaf-list` nodes. These node types in themselves indicate that a node represents an array. Thus, the qualities defined in the item constraints of an array are converted to the sub-statements of the equivalent `list` or `leaf-list` node as described in this section. {{fig-uniqueitems}} and {{fig-uniqueitemsyang}} contain an illustration of this mapping.
@@ -1496,7 +1496,7 @@ An important data quality is the `sdfChoice` quality. It represents the choice b
                 }
             }
         }
-{: #fig-sdfchoice title="SdfObject with an sdfChoice quality"}
+{: #fig-sdfchoice .language-json title="SdfObject with an sdfChoice quality"}
 
         container ExampleObject {
             helper:sdf-spec "sdfObject";
@@ -1512,7 +1512,7 @@ An important data quality is the `sdfChoice` quality. It represents the choice b
                 }
             }
         }
-{: #fig-sdfchoiceyang title="YANG conversion of the sdfObject from the last figure"}
+{: #fig-sdfchoiceyang .language-yang title="YANG conversion of the sdfObject from the last figure"}
 
 
 SDF also offers the possibility to define the choice between string values by means of the `enum` data quality. It consists of an array of strings. This concept also exists in YANG with the `enumeration` type and the corresponding `enum` sub-statement to the `type` statement. For an SDF definition that contains the `enum` quality the YANG type of its equivalent is set to `enumeration`. Each of the strings in the array of the `enum` SDF quality is converted to an `enum` entry in the `type` statement in YANG. The `enum` entries are also assigned an associated value.
@@ -1529,7 +1529,7 @@ so a `readable` quality that is set to `false` cannot be represented in YANG. Th
 
 The `observable` and `nullable` qualities in SDF cannot be represented in YANG but are preserved by adding an `sdf-spec` extension to the YANG equivalent of their containing SDF definition.
 
-Data Qualities {#sec-map-sdfData}
+SdfData Quality {#sec-map-sdfData}
 --------------
 
 * SDF: {{Sections 2.2.5 and 5.5 (sdfData) of -sdf}}
@@ -1588,7 +1588,7 @@ SdfProperty Quality {#sec-map-sdfProp}
                 }
             }
         }
-{: #fig-sdfproperty title="SdfObject with an sdfProperty definition"}
+{: #fig-sdfproperty .language-json title="SdfObject with an sdfProperty definition"}
 
         container ExampleObject {
             helper:sdf-spec "sdfObject";
@@ -1604,7 +1604,7 @@ SdfProperty Quality {#sec-map-sdfProp}
             leaf-list simpleArrayProperty { type string; }
             leaf simpleProperty { type string; }
         }
-{: #fig-sdfpropertyyang title="YANG conversion of the sdfObject from the last figure"}
+{: #fig-sdfpropertyyang .language-yang title="YANG conversion of the sdfObject from the last figure"}
 
 SdfAction Quality
 -----------------
@@ -1639,7 +1639,7 @@ To represent operations that can be invoked in a model the `sdfAction` class is 
                 }
             }
         }
-{: #fig-sdfaction title="SdfObject definition that contains an sdfAction definition"}
+{: #fig-sdfaction .language-json title="SdfObject definition that contains an sdfAction definition"}
 
         container ExampleObject {
             helper:sdf-spec "sdfObject";
@@ -1653,7 +1653,7 @@ To represent operations that can be invoked in a model the `sdfAction` class is 
                 }
             }
         }
-{: #fig-sdfactionyang title="YANG conversion of the sdfObject from the last figure"}
+{: #fig-sdfactionyang .language-yang title="YANG conversion of the sdfObject from the last figure"}
 
 SdfEvent Quality
 ----------------
@@ -1674,13 +1674,13 @@ The purpose of the sdfEvent class is to model signals that inform about occurren
                 }
             }
         }
-{: #fig-sdfevent title="SdfEvent definition"}
+{: #fig-sdfevent .language-json title="SdfEvent definition"}
 
         notification warning {
             leaf warningDevice { type string; }
             leaf warningReason { type string; }
         }
-{: #fig-sdfeventyang title="YANG conversion of the sdfEvent from the last figure"}
+{: #fig-sdfeventyang .language-yang title="YANG conversion of the sdfEvent from the last figure"}
 
 
 Challenges
@@ -1704,13 +1704,13 @@ SDF offers more possibilities to define default and constant values, the latter 
                 "const": 3
             }
         }
-{: #fig-q-sdf-range title="SdfData definition with the qualities minimum, maximum and const"}
+{: #fig-q-sdf-range .language-json title="SdfData definition with the qualities minimum, maximum and const"}
 
         typedef someValue {
             type int32;
             range "1 .. 5 | 3" // invalid in YANG
         }
-{: #fig-q-yang-range title="YANG conversion of the SDF definition in the last figure"}
+{: #fig-q-yang-range .language-yang title="YANG conversion of the SDF definition in the last figure"}
 
 
 Round Trips      {#design-roundtrips}
@@ -1758,7 +1758,7 @@ Another issue with the mapping of type references is the accessibility of elemen
                 }
             }
         }
-{: #lst-objectarray title="SDF model with type definitions of types object and array"}
+{: #lst-objectarray .language-json title="SDF model with type definitions of types object and array"}
 
         module restaurant {
             // [...]
@@ -1780,7 +1780,7 @@ Another issue with the mapping of type references is the accessibility of elemen
                 container menu_german { uses menu; }
             }
         }
-{: #lst-objectarrayyang title="YANG conversion of the SDF model in the last figure"}
+{: #lst-objectarrayyang .language-yang title="YANG conversion of the SDF model in the last figure"}
 
 
 Implementation Considerations
