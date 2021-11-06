@@ -1698,7 +1698,7 @@ SDF offers more possibilities to define default and constant values, the latter 
 
         "sdfData": {
             "someValue": {
-                "type": "integer"
+                "type": "integer",
                 "minimum": 1,
                 "maximum": 5,
                 "const": 3
