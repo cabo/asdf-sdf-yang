@@ -1360,7 +1360,7 @@ Data Qualities {#sec-map-dataquali}
 * YANG:
    * {{Section 7.4.1 (type) of -yang}}
 
-The set of qualities labeled as *data qualities* contains qualities from JSON Schema Validation that SDF adopted as well as qualities specifically defined for SDF. In the first group there is a total of 18 qualities out of which some are interdependent.
+The set of qualities labeled as *data qualities* contains qualities inspired by the json-schema.org specifications that SDF adopted as well as qualities specifically defined for SDF. In the first group there is a total of 18 qualities out of which some are interdependent.
 
 The quality that a lot of the other qualities presence or absence depends on is the `type` quality. The type can be one of `number`, `string`, `boolean`, `integer`, `array` or `object`. This quality is directly converted to the YANG `type` statement for all simple type. The type `number` becomes `decimal64`, integer becomes `int64`. The types `string` and `boolean` have built-in type equivalents in YANG. The types `array` and `object` cannot be converted to a YANG built-in type directly. Instead SDF definitions with these types are converted as described in {{sec-map-sdfProp}} and {{sec-map-sdfData}}, that is type `array` is mapped to `leaflist` or `list` nodes and type `object` is mapped to `container` nodes.
 
@@ -1423,7 +1423,7 @@ The `minLength` and `maxLength` data qualities of SDF are used to hold the minim
 
 The SDF `pattern` data quality holds regular expressions for `string` typed definitions. This can be converted directly to the `pattern` sub-statement of the `type` statement in YANG. As already mentioned in {{design-string}} regular expressions cannot be converted directly between SDF and YANG in theory, due to the differing languages used for regular expressions. Because of the time limitations of this thesis no further measures are taken to insure the conformance of converted regular expressions.
 
-The `string` type in SDF can be supplemented by the `format` quality. This quality can specify one of the JSON schema formats.
+The `string` type in SDF can be supplemented by the `format` quality. This quality can specify one of the formats found on json-schema.org.
 This could be translated to YANG referencing typedefs from the widely used `ietf-yang-types` module. To not rely on external modules, the format is only preserved through an addition of the `sdf-spec` extension to the YANG equivalent of the SDF definition the `format` quality is contained in.
 
 The length of an array in SDF can be restricted by the `minItems` and `maxItems` qualities. In YANG, both `list` and `leaf-list` nodes use the sub-statements `min-elements` and `max-elements` to express the same concept. They are therefore used to convert the SDF array length qualities.
